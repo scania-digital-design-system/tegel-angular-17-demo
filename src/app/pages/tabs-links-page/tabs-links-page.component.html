@@ -1,0 +1,88 @@
+<h3>Tabs with links.</h3>
+<p>
+  These tabs are linking to different pages (with different URLs), and this means that you can link
+  to an individual tab via a URL. Try clicking this
+  <a routerLink="second-tab">link</a>
+  and you'll land on a page for the second tab.
+</p>
+<div class="tds-u-pb3 tabs">
+  <tds-folder-tabs
+    mode-variant="secondary"
+    [selectedIndex]="currentPathIndex"
+  >
+    <tds-folder-tab>
+      <a routerLink="first-tab">First tab</a>
+    </tds-folder-tab>
+    <tds-folder-tab>
+      <a routerLink="second-tab">Second tab</a>
+    </tds-folder-tab>
+    <tds-folder-tab>
+      <a routerLink="third-tab">Third tab</a>
+    </tds-folder-tab>
+  </tds-folder-tabs>
+  <app-tabs-subpage [pathIndex]="currentPathIndex"/>
+
+  <tds-inline-tabs
+    mode-variant="secondary"
+    [selectedIndex]="currentPathIndex"
+  >
+    <tds-inline-tab>
+      <a routerLink="first-tab">First tab</a>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <a routerLink="second-tab">Second tab</a>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <a routerLink="third-tab">Third tab</a>
+    </tds-inline-tab>
+  </tds-inline-tabs>
+  <app-tabs-subpage [pathIndex]="currentPathIndex"/>
+
+
+  <tds-navigation-tabs
+    mode-variant="secondary"
+    [selectedIndex]="currentPathIndex"
+  >
+    <tds-navigation-tab>
+      <a routerLink="first-tab">First tab</a>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <a routerLink="second-tab">Second tab</a>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <a routerLink="third-tab">Third tab</a>
+    </tds-navigation-tab>
+  </tds-navigation-tabs>
+  <app-tabs-subpage [pathIndex]="currentPathIndex"/>
+
+<!-- 
+  <tds-inline-tabs
+    mode-variant="secondary"
+    default-selected-index="1"
+  >
+    <tds-inline-tab>
+      <a routerLink="folder-tabs">Folder tabs</a>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <a routerLink="inline-tabs">Inline tabs</a>
+    </tds-inline-tab>
+    <tds-inline-tab>
+      <a routerLink="navigation-tabs">Navigation tabs</a>
+    </tds-inline-tab>
+  </tds-inline-tabs>
+  <tds-navigation-tabs
+    mode-variant="secondary"
+    default-selected-index="2"
+  >
+    <tds-navigation-tab>
+      <a routerLink="folder-tabs">Folder tabs</a>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <a routerLink="inline-tabs">Inline tabs</a>
+    </tds-navigation-tab>
+    <tds-navigation-tab>
+      <a routerLink="navigation-tabs">Navigation tabs</a>
+    </tds-navigation-tab>
+  </tds-navigation-tabs> -->
+
+</div>

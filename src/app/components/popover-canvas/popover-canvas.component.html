@@ -1,0 +1,79 @@
+<div>
+  <div class="tds-headline-02 tds-u-pb1">Popover Canvas</div>
+  <div class="popover-container">
+    <tds-button
+      id="popover-canvas-button-a"
+      aria-label="menu"
+      only-icon
+      variant="ghost"
+      size="sm"
+    >
+      <tds-icon
+        slot="icon"
+        class="tds-btn-icon"
+        size="16px"
+        name="kebab"
+      ></tds-icon>
+    </tds-button>
+  </div>
+
+  <!-- Note: On version 1.0.0 of the @scania/tegel-angular wrapper, the referenceEl property 
+    didn't work when passed a tds- element. So selector is used here instead. -->
+  <tds-popover-canvas
+    placement="top"
+    selector="#popover-canvas-button-a"
+  >
+    <div class="tds-u-p2">
+      <div class="tds-headline-02 tds-u-mt0">A Popover Canvas!</div>
+      <p class="tds-body-01">Where you can put anything you want!</p>
+      <tds-link>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://tegel.scania.com"
+        >
+          Even links!
+        </a>
+      </tds-link>
+    </div>
+  </tds-popover-canvas>
+
+  <div class="tds-u-flex tds-u-gap3">
+    <tds-button
+      id="popover-canvas-button-b"
+      aria-label="menu"
+      only-icon
+      type="secondary"
+      size="sm"
+      disabled
+    >
+      <tds-icon
+        slot="icon"
+        class="tds-btn-icon"
+        size="16px"
+        name="print"
+      ></tds-icon>
+    </tds-button>
+    <tds-toggle
+      size="lg"
+      (tdsToggle)="handleTogglePrinterInformation($event)"
+    >
+      <div slot="label">Show printer information</div>
+    </tds-toggle>
+  </div>
+  <!-- Use show when controlling visibility manually.
+    Here we use it to hide/show with the toggle instead of the button. -->
+  <tds-popover-canvas
+    placement="top"
+    selector="#popover-canvas-button-b"
+    [show]="showPrinterInformation"
+  >
+    <div class="tds-u-p2">
+      <div class="tds-headline-04">Printer Notification</div>
+      <p>Your document, <em>"Unicorn_Dreams.pdf"</em>, has been queued.</p>
+      <p>Current Status: <strong>In Progress</strong></p>
+      <p>Please await completion. Do not turn off the device.</p>
+      <p>Contact the IT Support, if any errors occur.</p>
+    </div>
+  </tds-popover-canvas>
+</div>

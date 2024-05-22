@@ -1,0 +1,69 @@
+<div class="tds-headline-02 tds-u-mb0 tds-u-mt3">Accordion</div>
+
+<p class="tds-body-02 tds-u-mb0">Icon Position</p>
+<div>
+  <tds-radio-button
+    name="icon-position"
+    value="end"
+    [checked]="iconPosition === 'end'"
+    (tdsChange)="handleIconPositionChange('end')"
+  >
+    <div slot="label">End</div>
+  </tds-radio-button>
+  <tds-radio-button
+    name="icon-position"
+    value="start"
+    [checked]="iconPosition === 'start'"
+    (tdsChange)="handleIconPositionChange('start')"
+  >
+    <div slot="label">Start</div>
+  </tds-radio-button>
+  <br />
+  <tds-toggle (tdsToggle)="handlePaddingResetToggle($event)">
+    <div slot="label">Enable Padding Reset</div>
+  </tds-toggle>
+  <br />
+  <tds-toggle
+    ref="accordionToggleRef"
+    [checked]="checkboxState"
+    (tdsToggle)="handleAccordionToggle($event)"
+  >
+    <div slot="label">Enable Accordion</div>
+  </tds-toggle>
+</div>
+<br />
+<tds-accordion>
+  <tds-accordion-item
+    (tdsToggle)="handleAccordionItemClick('1')"
+    [disabled]="!checkboxState"
+    [expandIconPosition]="iconPosition"
+    expanded="true"
+    [paddingReset]="paddingReset"
+    header="Item 1"
+  >
+    This is the panel, which contains associated information with the header. Usually, it contains
+    text, set in the same size as the header. Lorem ipsum doler sit amet.
+  </tds-accordion-item>
+  <tds-accordion-item
+    header="Item 2"
+    [expanded]="expandedItem === 'item2'"
+    [expandIconPosition]="iconPosition"
+    [disabled]="!checkboxState"
+    [paddingReset]="paddingReset"
+    (tdsToggle)="handleAccordionItemClick('2')"
+  >
+    This is the panel, which contains associated information with the header. Usually, it contains
+    text, set in the same size as the header. Lorem ipsum doler sit amet.
+  </tds-accordion-item>
+  <tds-accordion-item
+    header="Item 3"
+    [expanded]="expandedItem === 'item3'"
+    [expandIconPosition]="iconPosition"
+    [disabled]="!checkboxState"
+    [paddingReset]="paddingReset"
+    (tdsToggle)="handleAccordionItemClick('3')"
+  >
+    This is the panel, which contains associated information with the header. Usually, it contains
+    text, set in the same size as the header. Lorem ipsum doler sit amet.
+  </tds-accordion-item>
+</tds-accordion>
