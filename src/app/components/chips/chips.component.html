@@ -1,6 +1,15 @@
 <div class="tds-headline-02 tds-u-pb1">Chip</div>
 
 <legend class="tds-body-01 tds-u-pb1">Button</legend>
+
+<v1-tds-chip [type]="'radio'" size="lg" chipId="chip1" label="Chip Label" disabled="true" placeholder="Enter your username"> <tds-icon
+  slot="prefix"
+  name="lock_inactive"
+  size="16px"
+></tds-icon>
+<span slot="label">Prefixed chip Lock</span></v1-tds-chip>
+<br/>
+
 <div class="tds-u-flex tds-u-gap1 tds-u-mb3">
   <tds-chip
     size="lg"
