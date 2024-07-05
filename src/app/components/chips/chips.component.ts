@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import BreadcrumbsComponent from "../../navigation/breadcrumbs/breadcrumbs.component";
 import { TegelModule } from "@scania/tegel-angular-17";
 
@@ -7,6 +7,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
   selector: "app-chips",
   templateUrl: "./chips.component.html",
   standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
   imports: [CommonModule, TegelModule],
 })
 export default class ChipsComponent {

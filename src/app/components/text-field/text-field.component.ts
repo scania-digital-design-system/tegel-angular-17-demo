@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
@@ -6,5 +6,6 @@ import { TegelModule } from "@scania/tegel-angular-17";
   standalone: true,
   templateUrl: "./text-field.component.html",
   imports: [TegelModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // Add this line
 })
 export default class TextFieldComponent {}
