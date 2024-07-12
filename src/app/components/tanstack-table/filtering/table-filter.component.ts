@@ -18,7 +18,7 @@ declare module "@tanstack/angular-table" {
       <div class="flex space-x-2">
         <input
           debouncedInput
-          [debounce]="500"
+          [debounce]="200"
           type="number"
           class="w-24 border shadow rounded"
           [min]="column().getFacetedMinMaxValues()?.[0] ?? ''"
@@ -30,7 +30,7 @@ declare module "@tanstack/angular-table" {
 
         <input
           debouncedInput
-          [debounce]="500"
+          [debounce]="200"
           type="number"
           class="w-24 border shadow rounded"
           [min]="column().getFacetedMinMaxValues()?.[0] ?? ''"
@@ -55,18 +55,11 @@ declare module "@tanstack/angular-table" {
       }
     </select>
     } @else {
-    <datalist [id]="column().id + 'list'">
-      @for (value of sortedUniqueValues(); track value) {
-      <option [value]="value">
-        {{ value }}
-      </option>
-      }
-    </datalist>
     <input
       type="text"
       class="w-36 border shadow rounded"
       debouncedInput
-      [debounce]="500"
+      [debounce]="200"
       [attr.placeholder]="
         'Search... (' + column().getFacetedUniqueValues().size + ')'
       "

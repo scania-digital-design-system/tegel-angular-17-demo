@@ -37,6 +37,9 @@ export class ColumnSearchComponent {
     {
       accessorKey: "firstName",
       cell: (info) => info.getValue(),
+      meta: {
+        filterVariant: "text",
+      },
     },
     {
       accessorFn: (row) => row.lastName,
