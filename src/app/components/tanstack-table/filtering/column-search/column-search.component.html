@@ -1,0 +1,64 @@
+<h2 class="tds-headline-02">Column Search Feature</h2>
+<p class="tds-body-02">
+  This is a simple feature that allows you to search for a specific value in a
+  column.
+</p>
+
+<tds-table>
+  @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+  <tds-table-header>
+    @for (header of headerGroup.headers; track header.id) {
+    <tds-header-cell cellKey="{{ header.column.id }}">
+      @if (!header.isPlaceholder) {
+      <div
+        [ngClass]="{
+                    'cursor-pointer select-none': header.column.getCanSort(),
+                  }"
+      >
+        <ng-container
+          *flexRender="
+            header.column.columnDef.header;
+            props: header.getContext();
+            let headerCell
+          "
+        >
+          {{ headerCell }}
+        </ng-container>
+      </div>
+      }
+    </tds-header-cell>
+    }
+  </tds-table-header>
+  <tds-table-header>
+    @for (header of headerGroup.headers; track header.id) {
+    <tds-header-cell disablePadding="true" cellKey="{{ header.column.id }}">
+      @if (!header.isPlaceholder) { @if (header.column.getCanFilter()) {
+      <div>
+        <app-table-filter [column]="header.column" [table]="table" />
+      </div>
+      } }
+    </tds-header-cell>
+    }
+  </tds-table-header>
+  }
+
+  <tds-table-body>
+    @for (row of table.getRowModel().rows; track row.id) {
+    <tds-table-body-row>
+      @for (cell of row.getVisibleCells(); track cell.id) {
+      <tds-body-cell cellKey="{{ cell.column.id }}">
+        <ng-container
+          *flexRender="
+            cell.column.columnDef.cell;
+            props: cell.getContext();
+            let renderCell
+          "
+        >
+          {{ renderCell }}
+        </ng-container>
+      </tds-body-cell>
+      }
+    </tds-table-body-row>
+    }
+  </tds-table-body>
+</tds-table>

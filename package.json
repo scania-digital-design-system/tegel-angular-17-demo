@@ -19,6 +19,8 @@
     "@angular/platform-browser": "^18.1.0",
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
+    "@faker-js/faker": "^8.4.1",
+    "@tanstack/angular-table": "^8.19.2",
     "@scania/tegel-angular-17": "^1.13.0",
     "prettier": "^2.8.8",
     "rxjs": "~7.5.0",
