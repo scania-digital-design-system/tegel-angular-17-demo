@@ -14,7 +14,6 @@ import {
   getFacetedRowModel,
   getFacetedUniqueValues,
   getFilteredRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
 } from "@tanstack/angular-table";
 import { FilterComponent } from "../table-filter.component";
@@ -37,9 +36,6 @@ export class ColumnSearchComponent {
     {
       accessorKey: "firstName",
       cell: (info) => info.getValue(),
-      meta: {
-        filterVariant: "text",
-      },
     },
     {
       accessorFn: (row) => row.lastName,
@@ -50,16 +46,10 @@ export class ColumnSearchComponent {
     {
       accessorKey: "age",
       header: () => "Age",
-      meta: {
-        filterVariant: "range",
-      },
     },
     {
       accessorKey: "visits",
       header: () => "Visits",
-      meta: {
-        filterVariant: "range",
-      },
     },
     {
       accessorKey: "status",
@@ -71,9 +61,6 @@ export class ColumnSearchComponent {
     {
       accessorKey: "progress",
       header: "Profile Progress",
-      meta: {
-        filterVariant: "range",
-      },
     },
   ];
 
@@ -83,6 +70,7 @@ export class ColumnSearchComponent {
     state: {
       columnFilters: this.columnFilters(),
     },
+    globalFilterFn: "includesString",
     onColumnFiltersChange: (updater) => {
       updater instanceof Function
         ? this.columnFilters.update(updater)
@@ -91,12 +79,11 @@ export class ColumnSearchComponent {
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(), //client-side filtering
     getSortedRowModel: getSortedRowModel(),
-
     getFacetedRowModel: getFacetedRowModel(), // client-side faceting
     getFacetedUniqueValues: getFacetedUniqueValues(), // generate unique values for select filter/autocomplete
     getFacetedMinMaxValues: getFacetedMinMaxValues(), // generate min/max values for range filter
-    debugTable: true,
-    debugHeaders: true,
+    debugTable: false,
+    debugHeaders: false,
     debugColumns: false,
   }));
 
@@ -108,10 +95,6 @@ export class ColumnSearchComponent {
     const inputElement = event.target as HTMLInputElement;
     const page = inputElement.value ? Number(inputElement.value) - 1 : 0;
     this.table.setPageIndex(page);
-  }
-
-  onPageSizeChange(event: any): void {
-    this.table.setPageSize(Number(event.target.value));
   }
 
   refreshData(): void {

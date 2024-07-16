@@ -22,12 +22,6 @@
             >
               {{ headerCell }}
             </ng-container>
-
-            @if (header.column.getIsSorted() === 'asc') {
-            <span> 🔼</span>
-            } @if (header.column.getIsSorted() === 'desc') {
-            <span> 🔽</span>
-            }
           </div>
 
           @if (header.column.getCanFilter()) {

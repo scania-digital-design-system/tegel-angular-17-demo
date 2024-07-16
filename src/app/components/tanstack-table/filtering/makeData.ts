@@ -3,9 +3,9 @@ import { faker } from "@faker-js/faker";
 export type Person = {
   firstName: string;
   lastName: string;
-  age: number;
-  visits: number;
-  progress: number;
+  age: string;
+  visits: string;
+  progress: string;
   status: "relationship" | "complicated" | "single";
   subRows?: Person[];
 };
@@ -22,9 +22,9 @@ const newPerson = (): Person => {
   return {
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
-    age: faker.number.int(40),
-    visits: faker.number.int(1000),
-    progress: faker.number.int(100),
+    age: faker.number.int(40).toString(),
+    visits: faker.number.int(1000).toString(),
+    progress: faker.number.int(100).toString(),
     status: faker.helpers.shuffle<Person["status"]>([
       "relationship",
       "complicated",
