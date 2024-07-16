@@ -1,44 +1,43 @@
 <div class="p-2">
   <div class="h-2"></div>
 
-  <table>
-    <thead>
-      @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
-      <tr>
-        @for (header of headerGroup.headers; track header.id) {
-        <th [attr.colSpan]="header.colSpan">
-          @if (!header.isPlaceholder) {
-          <div
-            [ngClass]="{
+  <tds-table>
+    @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+    <tds-table-header>
+      @for (header of headerGroup.headers; track header.id) {
+      <tds-header-cell>
+        @if (!header.isPlaceholder) {
+        <div
+          [ngClass]="{
                     'cursor-pointer select-none': header.column.getCanSort(),
                   }"
+        >
+          <ng-container
+            *flexRender="
+              header.column.columnDef.header;
+              props: header.getContext();
+              let headerCell
+            "
           >
-            <ng-container
-              *flexRender="
-                header.column.columnDef.header;
-                props: header.getContext();
-                let headerCell
-              "
-            >
-              {{ headerCell }}
-            </ng-container>
-          </div>
+            {{ headerCell }}
+          </ng-container>
+        </div>
 
-          @if (header.column.getCanFilter()) {
-          <div>
-            <app-table-filter [column]="header.column" [table]="table" />
-          </div>
-          } }
-        </th>
-        }
-      </tr>
+        @if (header.column.getCanFilter()) {
+        <div>
+          <app-table-filter [column]="header.column" [table]="table" />
+        </div>
+        } }
+      </tds-header-cell>
       }
-    </thead>
-    <tbody>
+    </tds-table-header>
+    }
+
+    <tds-table-body>
       @for (row of table.getRowModel().rows; track row.id) {
-      <tr>
+      <tds-table-body-row>
         @for (cell of row.getVisibleCells(); track cell.id) {
-        <td>
+        <tds-body-cell>
           <ng-container
             *flexRender="
               cell.column.columnDef.cell;
@@ -48,12 +47,12 @@
           >
             {{ renderCell }}
           </ng-container>
-        </td>
+        </tds-body-cell>
         }
-      </tr>
+      </tds-table-body-row>
       }
-    </tbody>
-  </table>
+    </tds-table-body>
+  </tds-table>
 
   <ng-template #ageHeaderCell let-context>
     <span>Age 🥳</span>

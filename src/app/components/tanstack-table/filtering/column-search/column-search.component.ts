@@ -16,6 +16,7 @@ import {
   getFilteredRowModel,
   getSortedRowModel,
 } from "@tanstack/angular-table";
+import { TegelModule } from "@scania/tegel-angular-17";
 import { FilterComponent } from "../table-filter.component";
 import { makeData, type Person } from "../makeData";
 import { FormsModule } from "@angular/forms";
@@ -24,7 +25,13 @@ import { NgClass } from "@angular/common";
 @Component({
   selector: "app-column-search",
   standalone: true,
-  imports: [FilterComponent, FlexRenderDirective, FormsModule, NgClass],
+  imports: [
+    FilterComponent,
+    FlexRenderDirective,
+    FormsModule,
+    NgClass,
+    TegelModule,
+  ],
   templateUrl: "./column-search.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
