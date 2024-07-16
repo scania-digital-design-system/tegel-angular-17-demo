@@ -32,13 +32,13 @@ declare module "@tanstack/angular-table" {
       type="text"
       class="text-field-input-sm"
       debouncedInput
-      [debounce]="500"
+      [debounce]="2000"
       [attr.placeholder]="
         'Search... (' + column().getFacetedUniqueValues().size + ')'
       "
       [attr.list]="column().id + 'list'"
       [value]="columnFilterValue() ?? ''"
-      (changeEvent)="column().setFilterValue($any($event).target.value)"
+      (inputEvent)="column().setFilterValue($any($event).target.value)"
     />
     <div class="h-1"></div>
     }

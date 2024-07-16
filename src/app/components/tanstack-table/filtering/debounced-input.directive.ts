@@ -27,10 +27,10 @@ export class DebouncedInputDirective {
   readonly debounce = input<number>(500);
   readonly debounce$ = toObservable(this.debounce);
 
-  readonly changeEvent = outputFromObservable(
+  readonly inputEvent = outputFromObservable(
     this.debounce$.pipe(
       switchMap((debounce) => {
-        return fromEvent(this.#ref, "change").pipe(debounceTime(debounce));
+        return fromEvent(this.#ref, "input").pipe(debounceTime(debounce));
       })
     )
   );
