@@ -22,8 +22,14 @@
             {{ headerCell }}
           </ng-container>
         </div>
-
-        @if (header.column.getCanFilter()) {
+        }
+      </tds-header-cell>
+      }
+    </tds-table-header>
+    <tds-table-header>
+      @for (header of headerGroup.headers; track header.id) {
+      <tds-header-cell>
+        @if (!header.isPlaceholder) { @if (header.column.getCanFilter()) {
         <div>
           <app-table-filter [column]="header.column" [table]="table" />
         </div>

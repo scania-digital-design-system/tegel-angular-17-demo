@@ -42,6 +42,7 @@ export class ColumnSearchComponent {
   readonly columns: ColumnDef<Person>[] = [
     {
       accessorKey: "firstName",
+      header: () => "First Name",
       cell: (info) => info.getValue(),
     },
     {
