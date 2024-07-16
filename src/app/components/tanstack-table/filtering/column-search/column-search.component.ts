@@ -18,7 +18,7 @@ import {
 } from "@tanstack/angular-table";
 import { TegelModule } from "@scania/tegel-angular-17";
 import { FilterComponent } from "../table-filter.component";
-import { makeData, type Person } from "../makeData";
+import { makeData, type Person } from "../../makeData";
 import { FormsModule } from "@angular/forms";
 import { NgClass } from "@angular/common";
 
