@@ -32,7 +32,7 @@ declare module "@tanstack/angular-table" {
       type="text"
       class="text-field-input-sm"
       debouncedInput
-      [debounce]="2000"
+      [debounce]="500"
       [attr.placeholder]="
         'Search... (' + column().getFacetedUniqueValues().size + ')'
       "
