@@ -5,8 +5,10 @@ import {
   createAngularTable,
   FlexRenderDirective,
   getCoreRowModel,
+  FlexRenderComponent,
 } from "@tanstack/angular-table";
 import { TegelModule } from "@scania/tegel-angular-17";
+import { EditableCellComponent } from "./editable-cell/editable-cell.component"; // Import the new component
 
 type Person = {
   firstName: string;
@@ -47,42 +49,41 @@ const defaultData: Person[] = [
 const defaultColumns: ColumnDef<Person>[] = [
   {
     accessorKey: "firstName",
-    cell: (info) => info.getValue(),
-    footer: (info) => info.column.id,
+    header: () => "First Name",
   },
   {
     accessorFn: (row) => row.lastName,
     id: "lastName",
-    cell: (info) => `<i>${info.getValue<string>()}</i>`,
+
     header: () => `<span>Last Name</span>`,
-    footer: (info) => info.column.id,
   },
   {
     accessorKey: "age",
     header: () => "Age",
-    footer: (info) => info.column.id,
   },
   {
     accessorKey: "visits",
     header: () => `<span>Visits</span>`,
-    footer: (info) => info.column.id,
   },
   {
     accessorKey: "status",
     header: "Status",
-    footer: (info) => info.column.id,
   },
   {
     accessorKey: "progress",
     header: "Profile Progress",
-    footer: (info) => info.column.id,
   },
 ];
 
 @Component({
   selector: "app-editable-data",
   standalone: true,
-  imports: [RouterOutlet, FlexRenderDirective, TegelModule],
+  imports: [
+    RouterOutlet,
+    FlexRenderDirective,
+    TegelModule,
+    EditableCellComponent,
+  ], // Add the new component to imports
   templateUrl: "./editable-data.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -92,9 +93,19 @@ export class EditableDataComponent {
   table = createAngularTable(() => ({
     data: this.data(),
     columns: defaultColumns,
-    getCoreRowModel: getCoreRowModel(),
+    defaultColumn: {
+      cell: (info) =>
+        `<app-editable-cell [value]="${info.getValue()}" (valueChange)="$updateData(info.row.index, 'progress', $event)"></app-editable-cell>`,
+    },
+    getCoreRowModel: getCoreRowModel(), // Moved here
     debugTable: true,
   }));
+
+  updateData(rowIndex: number, columnId: string, value: any) {
+    const updatedData = [...this.data()];
+    (updatedData[rowIndex] as any)[columnId] = value; // Use type assertion
+    this.data.set(updatedData);
+  }
 
   rerender() {
     this.data.set([...defaultData.sort(() => -1)]);

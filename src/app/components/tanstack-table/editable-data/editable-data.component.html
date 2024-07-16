@@ -1,6 +1,6 @@
 <h2 class="tds-headline-02 tds-u-mt3">Edit Cell Data Feature</h2>
 <p class="tds-body-02">
-  This is a simple feature that allows you to edit the data in a cell. column.
+  This is a simple feature that allows you to edit the data in a cell.
 </p>
 <tds-table>
   @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
@@ -34,7 +34,10 @@
             let cell
           "
         >
-          <div [innerHTML]="cell"></div>
+          <app-editable-cell
+            [value]="cell"
+            (valueChange)="updateData(cell.row.index, cell.column.id, $event)"
+          ></app-editable-cell>
         </ng-container>
       </tds-body-cell>
       }
