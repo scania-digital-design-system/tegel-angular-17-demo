@@ -61,7 +61,7 @@ export class ColumnSearchComponent {
     },
     {
       accessorKey: "status",
-      header: "Status",
+      header: "Relationship Status",
       meta: {
         filterVariant: "select",
       },

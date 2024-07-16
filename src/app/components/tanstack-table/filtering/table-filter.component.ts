@@ -12,9 +12,11 @@ declare module "@tanstack/angular-table" {
 
 @Component({
   selector: "app-table-filter",
+  styleUrls: ["./table-filter.component.scss"],
   template: `
     @if (filterVariant() === 'select') {
     <select
+      class="text-field-input-sm"
       [value]="columnFilterValue()?.toString()"
       (change)="column().setFilterValue($any($event).target.value)"
     >
@@ -28,7 +30,7 @@ declare module "@tanstack/angular-table" {
     } @else {
     <input
       type="text"
-      class="w-36 border shadow rounded"
+      class="text-field-input-sm"
       debouncedInput
       [debounce]="500"
       [attr.placeholder]="
