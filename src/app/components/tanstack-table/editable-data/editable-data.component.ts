@@ -93,10 +93,7 @@ export class EditableDataComponent {
   table = createAngularTable(() => ({
     data: this.data(),
     columns: defaultColumns,
-    defaultColumn: {
-      cell: (info) =>
-        `<app-editable-cell [value]="${info.getValue()}" (valueChange)="$updateData(info.row.index, 'progress', $event)"></app-editable-cell>`,
-    },
+
     getCoreRowModel: getCoreRowModel(), // Moved here
     debugTable: true,
   }));
