@@ -93,15 +93,27 @@ export class EditableDataComponent {
   table = createAngularTable(() => ({
     data: this.data(),
     columns: defaultColumns,
-
     getCoreRowModel: getCoreRowModel(), // Moved here
     debugTable: true,
   }));
 
-  updateData(rowIndex: number, columnId: string, value: any) {
+  updateData(cellRow: any, cellID: any, event: any) {
+    console.log(
+      "cell row is",
+      cellRow,
+      "cell column is",
+      cellID,
+      "event is",
+      event
+    );
+    /*
+    TODO: See if and how to we kttp the main data updated, not it is only on cell level, global data is not updated, does it need to be updated here?
     const updatedData = [...this.data()];
+    console.log(updatedData);
     (updatedData[rowIndex] as any)[columnId] = value; // Use type assertion
+    console.log(updatedData);
     this.data.set(updatedData);
+    */
   }
 
   rerender() {
