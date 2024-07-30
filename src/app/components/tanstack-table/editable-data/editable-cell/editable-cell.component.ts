@@ -38,6 +38,7 @@ import { CommonModule } from "@angular/common";
 })
 export class EditableCellComponent implements OnChanges, OnDestroy {
   @Input() value: any;
+  @Input() cellIndex: any;
   @Output() valueChange = new EventEmitter<any>();
   isEditing = false;
   internalValue: any;
@@ -67,14 +68,12 @@ export class EditableCellComponent implements OnChanges, OnDestroy {
     this.isEditing = false;
     this.internalValue = event.target.value;
     this.valueChange.emit(this.internalValue);
-    console.log(this.internalValue, event);
   }
 
   onEnter(event: any) {
     this.isEditing = false;
     this.internalValue = event.target.value;
     this.valueChange.emit(this.internalValue);
-    console.log(this.internalValue, event);
   }
 
   onEscape(event: any) {

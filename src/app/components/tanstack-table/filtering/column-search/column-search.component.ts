@@ -37,7 +37,7 @@ import { NgClass } from "@angular/common";
 })
 export class ColumnSearchComponent {
   readonly columnFilters = signal<ColumnFiltersState>([]);
-  readonly data = signal(makeData(20));
+  readonly data = signal(makeData(10));
 
   readonly columns: ColumnDef<Person>[] = [
     {

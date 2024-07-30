@@ -27,18 +27,10 @@
     <tds-table-body-row>
       @for (cell of row.getVisibleCells(); track cell.id) {
       <tds-body-cell cellKey="{{ cell.column.id }}">
-        <ng-container
-          *flexRender="
-            cell.column.columnDef.cell;
-            props: cell.getContext();
-            let cell
-          "
-        >
-          <app-editable-cell
-            [value]="cell"
-            (valueChange)="updateData(row.index, cell.index, $event)"
-          ></app-editable-cell>
-        </ng-container>
+        <app-editable-cell
+          [value]="cell.getValue()"
+          (valueChange)="updateData(row.index, cell.column.id, $event)"
+        ></app-editable-cell>
       </tds-body-cell>
       }
     </tds-table-body-row>
