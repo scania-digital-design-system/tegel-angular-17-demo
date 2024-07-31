@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "@scania/tegel-angular-17": "file:scania-tegel-angular-17-1.11.0.tgz",
+    "@scania/tegel-angular-17": "file:scania-tegel-angular-17-1.12.1.tgz",
     "prettier": "^2.8.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
