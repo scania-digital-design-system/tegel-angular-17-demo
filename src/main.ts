@@ -6,8 +6,7 @@ import routes from "@routes/app-routing.module";
 import { defineCustomElements } from "@scania/tegel/loader";
 
 // Define the prefix for versioning
-const prefix = 'v1'; // The prefix they choose
-// (window as any).customElementPrefix = prefix; // Set the global prefix
+const prefix = 'custom'; // The prefix they choose
 
 // Register custom elements with the prefix
 defineCustomElements(window, {
