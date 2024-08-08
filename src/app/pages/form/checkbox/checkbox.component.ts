@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
@@ -11,8 +11,4 @@ import { TegelModule } from "@scania/tegel-angular-17";
 })
 export class CheckboxComponent {
   @Input() checkboxGroup: FormGroup;
-
-  handleCheckboxChange(event: any, name: string) {
-    this.checkboxGroup.get(name)?.setValue(event.detail.checked);
-  }
 }
