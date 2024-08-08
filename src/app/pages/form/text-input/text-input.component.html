@@ -1,7 +1,6 @@
 <ng-container [formGroup]="textFieldGroup">
   <section class="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
     <tds-text-field
-      ngDefaultControl
       mode-variant="secondary"
       name="text-field"
       label="Full name"
@@ -11,7 +10,6 @@
     >
     </tds-text-field>
     <tds-datetime
-      ngDefaultControl
       formControlName="dateOfBirth"
       mode-variant="secondary"
       label="Date of birth"
@@ -30,18 +28,13 @@
         label-position="outside"
         no-min-width
         placeholder="08 456 32"
-        ngDefaultControl
         formControlName="phoneNumber"
       >
         <span slot="prefix">
-          <tds-icon
-            name="phone"
-            size="16px"
-          ></tds-icon>
+          <tds-icon name="phone" size="16px"></tds-icon>
         </span>
       </tds-text-field>
       <tds-text-field
-        ngDefaultControl
         formControlName="address"
         mode-variant="secondary"
         type="text"
@@ -54,10 +47,7 @@
         placeholder="Majorvägen 32"
       >
         <span slot="prefix">
-          <tds-icon
-            name="pin"
-            size="16px"
-          ></tds-icon>
+          <tds-icon name="pin" size="16px"></tds-icon>
         </span>
       </tds-text-field>
     </div>

@@ -1,14 +1,15 @@
-import { CommonModule } from "@angular/common";
 import { Component, Input } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-radio-button",
+  selector: "app-toggle",
   standalone: true,
-  templateUrl: "./radio-button.component.html",
   imports: [CommonModule, ReactiveFormsModule, TegelModule],
+  templateUrl: "./toggle.component.html",
+  styleUrls: ["./toggle.component.css"],
 })
-export class RadioButtonComponent {
-  @Input() radioButtonGroup: FormGroup;
+export class ToggleComponent {
+  @Input() toggleGroup: FormGroup;
 }

@@ -2,7 +2,6 @@
   <section class="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
     <tds-dropdown
       formControlName="country"
-      ngDefaultControl
       mode-variant="secondary"
       name="country"
       label="Which country you want to select?"
@@ -12,10 +11,7 @@
       open-direction="down"
     >
       <tds-dropdown-option value="sweden"> Sweden </tds-dropdown-option>
-      <tds-dropdown-option
-        disabled
-        value="Finland"
-      >
+      <tds-dropdown-option disabled value="Finland">
         Finland
       </tds-dropdown-option>
       <tds-dropdown-option value="norway"> Norway </tds-dropdown-option>
@@ -23,8 +19,6 @@
 
     <tds-dropdown
       formControlName="norwegianTown"
-      ngDefaultControl
-      #norwayDropdown
       mode-variant="secondary"
       name="norwayTown"
       label="Which towns have you visited in Norway?"
@@ -33,17 +27,17 @@
       size="lg"
       open-direction="down"
       multiselect
-
     >
-      <tds-dropdown-option *ngFor="let town of nowegianTowns; let idx = index" value="{{town.value}}">
+      <tds-dropdown-option
+        *ngFor="let town of nowegianTowns; let idx = index"
+        value="{{ town.value }}"
+      >
         {{ town.label }}
       </tds-dropdown-option>
     </tds-dropdown>
 
     <tds-dropdown
       formControlName="swedishTown"
-      ngDefaultControl
-      #swedenDropdown
       mode-variant="secondary"
       name="favoriteSweTown"
       label="Select your favorite Swedish town."

@@ -1,36 +1,32 @@
 <ng-container [formGroup]="checkboxGroup">
+  <div>
+    <h5>Which offices do you work from?</h5>
     <div>
-      <h5>Which offices do you work from?</h5>
-      <div>
-        <tds-checkbox
-          name="sodertalje"
-          value="checkbox"
-          (tdsChange)="handleCheckboxChange($event, 'sodertalje')"
-        >
-          <span slot="label">Södertälje 321</span>
-        </tds-checkbox>
-        <tds-checkbox
-          name="sergel"
-          value="sergel"
-          (tdsChange)="handleCheckboxChange($event, 'sergel')"
-        >
-          <span slot="label">Sergel</span>
-        </tds-checkbox>
-        <tds-checkbox
-          name="homeOffice"
-          value="homeOffice"
-          (tdsChange)="handleCheckboxChange($event, 'homeOffice')"
-        >
-          <span slot="label">Home Office</span>
-        </tds-checkbox>
-        <tds-checkbox
-          name="building260"
-          value="building260"
-          (tdsChange)="handleCheckboxChange($event, 'building260')"
-          disabled
-        >
-          <span slot="label">Building 260</span>
-        </tds-checkbox>
-      </div>
+      <tds-checkbox
+        name="sodertalje"
+        value="sodertalje"
+        formControlName="sodertalje"
+      >
+        <span slot="label">Södertälje 321</span>
+      </tds-checkbox>
+      <tds-checkbox name="sergel" value="sergel" formControlName="sergel">
+        <span slot="label">Sergel</span>
+      </tds-checkbox>
+      <tds-checkbox
+        name="homeOffice"
+        value="homeOffice"
+        formControlName="homeOffice"
+      >
+        <span slot="label">Home Office</span>
+      </tds-checkbox>
+      <tds-checkbox
+        name="building260"
+        value="building260"
+        formControlName="building260"
+        [disabled]="true"
+      >
+        <span slot="label">Building 260</span>
+      </tds-checkbox>
     </div>
+  </div>
 </ng-container>
