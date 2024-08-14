@@ -62,6 +62,10 @@ const routes = [
     loadComponent: () => import("@pages/table-page/table-page.component"),
   },
   {
+    path: "ag-grid",
+    loadComponent: () => import("@pages/ag-grid/ag-grid-page.component"),
+  },
+  {
     path: "tanstack",
     loadComponent: () => import("@pages/tanstack-page/tanstack-page.component"),
   },

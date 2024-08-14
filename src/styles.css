@@ -1,6 +1,10 @@
 @import "reset.css";
-@import url('@scania/tegel/dist/tegel/tegel.css');
+@import url("@scania/tegel/dist/tegel/tegel.css");
 
+/* Core Data Grid CSS */
+@import url("ag-grid-community/styles/ag-grid.css");
+/* Quartz Theme Specific CSS */
+@import url("ag-grid-community/styles/ag-theme-quartz.css");
 
 .tds-mode-dark {
   color: var(--tds-grey-100);
@@ -16,7 +20,6 @@
   background-color: var(--tds-grey-900);
 }
 
-
 body {
   min-height: 100vh;
   display: flex;
@@ -24,7 +27,7 @@ body {
 }
 
 .capitalize {
-	text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 fieldset {
@@ -33,7 +36,6 @@ fieldset {
   min-width: 0;
   padding: 0;
 }
-
 
 .breadcrumbs {
   display: flex;
