@@ -91,14 +91,16 @@
         </tds-side-menu-item>
 
         <tds-side-menu-dropdown
-          [selected]="isActive('/table') || onSubRoute('/tanstack')"
+          [selected]="
+            isActive('/table') ||
+            onSubRoute('/tanstack') ||
+            onSubRoute('/ag-grid')
+          "
         >
           <tds-icon slot="icon" name="document_tool" size="24"></tds-icon>
           <span slot="label">Tables</span>
           <tds-side-menu-dropdown-list>
-            <tds-side-menu-dropdown-list-item
-              [selected]="isActive('/table') || onSubRoute('/ag-grid')"
-            >
+            <tds-side-menu-dropdown-list-item [selected]="isActive('/table')">
               <a routerLink="/table">Tegel Table</a>
             </tds-side-menu-dropdown-list-item>
 
