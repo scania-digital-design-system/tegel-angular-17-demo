@@ -10,7 +10,7 @@ import { AgGridModule } from "ag-grid-angular";
   standalone: true,
   encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
   templateUrl: "./ag-grid-column-search.component.html",
-  styleUrls: ["../../../assets/styles/main.css"],
+  styleUrls: ["ag-styles-loader.css"],
   imports: [TegelModule, AgGridModule, AgGridAngular],
 })
 export default class AgGridColumnSearchComponent {

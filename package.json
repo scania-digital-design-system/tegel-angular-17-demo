@@ -24,6 +24,7 @@
     "ag-grid-angular": "^31.3.2",
     "ag-grid-community": "^31.3.2",
     "@scania/tegel-angular-17": "^1.13.0",
+    "@scania/tegel-styles": "file:tegel-styles-1.0.0.tgz",
     "prettier": "^2.8.8",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -10,7 +10,7 @@ import { AgGridModule } from "ag-grid-angular";
   standalone: true,
   encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
   templateUrl: "./ag-grid-editable-cells.component.html",
-  styleUrls: ["../../../assets/styles/main.css"],
+  styleUrls: ["ag-styles-loader.css"],
   imports: [TegelModule, AgGridModule, AgGridAngular],
 })
 export default class AgGridEditableCellsComponent {
