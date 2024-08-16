@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, computed, input } from "@angular/core";
 import type { Column, RowData, Table } from "@tanstack/angular-table";
 import { DebouncedInputDirective } from "./debounced-input.directive";
+import { TegelModule } from "@scania/tegel-angular-17";
 
 declare module "@tanstack/angular-table" {
   //allows us to define custom properties for our columns
@@ -12,11 +13,9 @@ declare module "@tanstack/angular-table" {
 
 @Component({
   selector: "app-table-filter",
-  styleUrls: ["./table-filter.component.scss"],
   template: `
     @if (filterVariant() === 'select') {
     <select
-      class="text-field-input-sm"
       [value]="columnFilterValue()?.toString()"
       (change)="column().setFilterValue($any($event).target.value)"
     >
@@ -28,23 +27,24 @@ declare module "@tanstack/angular-table" {
       }
     </select>
     } @else {
-    <input
-      type="text"
-      class="text-field-input-sm"
-      debouncedInput
-      [debounce]="500"
-      [attr.placeholder]="
-        'Search... (' + column().getFacetedUniqueValues().size + ')'
-      "
-      [attr.list]="column().id + 'list'"
-      [value]="columnFilterValue() ?? ''"
-      (inputEvent)="column().setFilterValue($any($event).target.value)"
-    />
-    <div class="h-1"></div>
+    <tds-table-header-input-wrapper>
+      <input
+        type="text"
+        debouncedInput
+        [debounce]="500"
+        [attr.placeholder]="
+          'Search... (' + column().getFacetedUniqueValues().size + ')'
+        "
+        [attr.list]="column().id + 'list'"
+        [value]="columnFilterValue() ?? ''"
+        (inputEvent)="column().setFilterValue($any($event).target.value)"
+      />
+    </tds-table-header-input-wrapper>
+
     }
   `,
   standalone: true,
-  imports: [CommonModule, DebouncedInputDirective],
+  imports: [CommonModule, DebouncedInputDirective, TegelModule],
 })
 export class FilterComponent<T> {
   column = input.required<Column<any, any>>();
