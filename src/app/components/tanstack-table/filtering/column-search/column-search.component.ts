@@ -60,13 +60,6 @@ export class ColumnSearchComponent {
       header: () => "Visits",
     },
     {
-      accessorKey: "status",
-      header: "Relationship Status",
-      meta: {
-        filterVariant: "select",
-      },
-    },
-    {
       accessorKey: "progress",
       header: "Profile Progress",
     },
