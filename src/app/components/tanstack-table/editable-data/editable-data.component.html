@@ -1,0 +1,39 @@
+<h2 class="tds-headline-02 tds-u-mt3">Edit Cell Data Feature</h2>
+<p class="tds-body-02">
+  This is a simple feature that allows you to edit the data in a cell.
+</p>
+<tds-table>
+  @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+  <tds-table-header>
+    @for (header of headerGroup.headers; track header.id) { @if
+    (!header.isPlaceholder) {
+    <tds-header-cell cellKey="{{ header.column.id }}">
+      <ng-container
+        *flexRender="
+          header.column.columnDef.header;
+          props: header.getContext();
+          let header
+        "
+      >
+        <div [innerHTML]="header"></div>
+      </ng-container>
+    </tds-header-cell>
+    } }
+  </tds-table-header>
+  }
+
+  <tds-table-body>
+    @for (row of table.getRowModel().rows; track row.id) {
+    <tds-table-body-row>
+      @for (cell of row.getVisibleCells(); track cell.id) {
+      <tds-body-cell cellKey="{{ cell.column.id }}" disablePadding>
+        <app-editable-cell
+          [value]="cell.getValue()"
+          (valueChange)="updateData(row.index, cell.column.id, $event)"
+        ></app-editable-cell>
+      </tds-body-cell>
+      }
+    </tds-table-body-row>
+    }
+  </tds-table-body>
+</tds-table>
