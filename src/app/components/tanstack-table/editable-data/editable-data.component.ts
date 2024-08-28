@@ -33,10 +33,6 @@ const defaultColumns: ColumnDef<Person>[] = [
     header: () => `<span>Visits</span>`,
   },
   {
-    accessorKey: "status",
-    header: "Status",
-  },
-  {
     accessorKey: "progress",
     header: "Profile Progress",
   },
