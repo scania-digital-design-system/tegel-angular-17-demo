@@ -25,16 +25,6 @@ import { TegelModule } from "@scania/tegel-angular-17";
       />
     </tds-table-body-input-wrapper>
   `,
-  styles: [
-    `
-      div {
-        cursor: pointer;
-      }
-      input {
-        width: 100%;
-      }
-    `,
-  ],
 })
 export class EditableCellComponent implements OnChanges, OnDestroy {
   @Input() value: any;
@@ -65,19 +55,17 @@ export class EditableCellComponent implements OnChanges, OnDestroy {
   }
 
   onBlur(event: any) {
-    this.isEditing = false;
-    this.internalValue = event.target.value;
-    this.valueChange.emit(this.internalValue);
+    event.target.blur();
   }
 
   onEnter(event: any) {
-    this.isEditing = false;
     this.internalValue = event.target.value;
     this.valueChange.emit(this.internalValue);
+    event.target.blur();
   }
 
   onEscape(event: any) {
-    this.isEditing = false;
+    event.target.blur();
   }
 
   private onDocumentClick(event: MouseEvent) {
