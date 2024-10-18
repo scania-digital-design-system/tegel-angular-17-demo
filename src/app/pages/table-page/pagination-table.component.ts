@@ -53,6 +53,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
         pagination
         [pages]="pages"
         (tdsPagination)="handlePagination($event)"
+        [rowsPerPageValues]="rowsPerPageValuesArray"
       ></tds-table-footer>
     </tds-table>
   `,
@@ -61,15 +62,23 @@ import { TegelModule } from "@scania/tegel-angular-17";
   imports: [CommonModule, TegelModule],
 })
 export class PaginationTableComponent {
-  rowsPerPage = 2;
   page = 0;
+  rowsPerPageValuesArray = [2, 4, 6];
+  rowsPerPage = this.rowsPerPageValuesArray[0];
+
   pages = Math.ceil(exampleData.length / this.rowsPerPage);
   tableData = exampleData.slice(this.page, this.page + this.rowsPerPage);
 
   handlePagination(event: any) {
-    const { paginationValue } = event.detail;
+    const { tableID, paginationValue, rowsPerPage } = event.detail;
     this.page = paginationValue;
+    this.rowsPerPage = rowsPerPage;
 
+    this.updateTable();
+  }
+
+  updateTable() {
+    this.pages = Math.ceil(exampleData.length / this.rowsPerPage);
     const startIndex = (this.page - 1) * this.rowsPerPage;
     const endIndex = startIndex + this.rowsPerPage;
     this.tableData = exampleData.slice(startIndex, endIndex);
