@@ -10,7 +10,6 @@ import { TegelModule } from "@scania/tegel-angular-17";
     <tds-table
       vertical-dividers="false"
       compact-design="false"
-      responsive
       no-min-width
       zebra-mode="rows-odd"
     >
