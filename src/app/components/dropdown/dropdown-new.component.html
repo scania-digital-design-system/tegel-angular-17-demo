@@ -1,0 +1,21 @@
+<div class="tds-headline-02 tds-u-pb1">Dropdown (New API)</div>
+
+<tds-dropdown
+	[(ngModel)]="selectedValue"
+	(tdsChange)="handleChange($event)"
+	name="dropdown"
+	label="Label text"
+	label-position="outside"
+	placeholder="Placeholder"
+	helper="Helper text"
+	size="lg"
+	multiselect
+	open-direction="auto"
+>
+	<tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
+	<tds-dropdown-option value="option-2">Option 2</tds-dropdown-option>
+	<tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
+</tds-dropdown>
+
+<tds-button text="Reset Dropdown" (click)="resetDropdown()"></tds-button>
+<tds-button text="Remove Option 2" (click)="removeOption2()"></tds-button>
