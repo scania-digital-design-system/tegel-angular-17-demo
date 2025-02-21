@@ -22,7 +22,8 @@ import MessageComponent from "src/app/components/message/message.component";
 import { ToggleComponent } from "@components/toggle/toggle.component";
 import { BreadcrumbsComponent } from "@components/breadcrumbs/breadcrumbs.component";
 import ChipsComponent from "@components/chips/chips.component";
-import { DropdownComponent } from "@components/dropdown/dropdown.component";
+import { DropdownOldComponent } from "@components/dropdown/dropdown-old.component";
+import { DropdownNewComponent } from "@components/dropdown/dropdown-new.component";
 import { LinkComponent } from "@components/link/link.component";
 import StepperComponent from "@components/stepper/stepper.component";
 import { StepperExampleComponent } from "@components/stepper-example/stepper-example.component";
@@ -58,7 +59,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
     ToggleComponent,
     BreadcrumbsComponent,
     ChipsComponent,
-    DropdownComponent,
+    DropdownOldComponent,
+    DropdownNewComponent,
     LinkComponent,
     StepperComponent,
     StepperExampleComponent,
