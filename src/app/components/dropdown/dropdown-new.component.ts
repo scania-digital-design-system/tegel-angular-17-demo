@@ -10,22 +10,27 @@ import { FormsModule } from '@angular/forms';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DropdownNewComponent {
-  selectedValue: string | null = null;
+  selectedValue: string = 'option-1'; // Match the exact value from dropdown options
 
   handleChange(event: CustomEvent<{ name: string; value: string }>) {
-    this.selectedValue = event.detail?.value || null;
+    this.selectedValue = event.detail?.value || '';
   }
 
   resetDropdown() {
-    this.selectedValue = null;
-    this.handleChange({ detail: { name: 'dropdown', value: null } } as CustomEvent);
+    this.selectedValue = '';
+    this.handleChange({ detail: { name: 'dropdown', value: '' } } as CustomEvent);
   }
 
   removeOption2() {
     if (this.selectedValue) {
       const values = this.selectedValue.split(',').filter(value => value !== 'option-2');
-      this.selectedValue = values.length ? values.join(',') : null;
-      this.handleChange({ detail: { name: 'dropdown', value: this.selectedValue } } as CustomEvent);
+      this.selectedValue = values.join(',') || ''; // Ensure we don't set undefined/null
+      this.handleChange({ 
+        detail: { 
+          name: 'dropdown', 
+          value: this.selectedValue 
+        } 
+      } as CustomEvent);
     }
   }
 }
