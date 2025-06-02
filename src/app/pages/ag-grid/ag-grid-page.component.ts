@@ -10,41 +10,36 @@ import { TegelModule } from "@scania/tegel-angular-17";
     <div class="tds-u-pb3">
       <tds-toggle
         (tdsToggle)="toggleMode()"
-        headline="Toggle compact mode"
+        headline="Toggle compact mode (currently not working)"
         size="sm"
       >
         <div slot="label">{{ labelText }}</div>
       </tds-toggle>
     </div>
-    <div class="tds-headline-02 tds-u-pb1">AG-Grid Column Search</div>
-    <p>This is an implementation of AG-Grid with column search.</p>
+
     <div
-      class="ag-theme-quartz"
+      class="ag-theme-quartz tds-mode-variant-primary"
       [class.compact]="classCompact"
       style="height: 500px; width: 100%;"
     >
+      <h4>Primary mode variant</h4>
       <app-ag-grid-column-search></app-ag-grid-column-search>
     </div>
-    <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">
-      AG-Grid Editable Cells
-    </div>
-    <p>This is an implementation of AG-Grid with editable cells.</p>
+
     <div
-      class="ag-theme-quartz"
+      class="ag-theme-quartz tds-mode-variant-secondary"
       [class.compact]="classCompact"
       style="height: 500px; width: 100%;"
     >
+      <h4 style="margin-top: 100px">Secondary mode variant</h4>
       <app-ag-grid-editable-cells></app-ag-grid-editable-cells>
     </div>
+
+    <div style="margin-top: 100px"></div>
   `,
   styles: [``],
   standalone: true,
-  imports: [
-    AgGridColumnSearch,
-    AgGridEditableCells,
-    AsyncPipe,
-    TegelModule,
-  ],
+  imports: [AgGridColumnSearch, AgGridEditableCells, AsyncPipe, TegelModule],
 })
 export default class AgGridPageComponent {
   classCompact = false;
