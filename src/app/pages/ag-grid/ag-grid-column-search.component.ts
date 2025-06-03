@@ -2,8 +2,20 @@ import { Component, ViewEncapsulation } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 import { HttpClient } from "@angular/common/http";
 import { AgGridAngular } from "ag-grid-angular"; // Angular Data Grid Component
-import { ColDef, GridApi, GridReadyEvent } from "ag-grid-community";
+import {
+  ColDef,
+  GridApi,
+  GridReadyEvent,
+  AllCommunityModule,
+  ModuleRegistry,
+  provideGlobalGridOptions,
+} from "ag-grid-community";
 import { AgGridModule } from "ag-grid-angular";
+
+ModuleRegistry.registerModules([AllCommunityModule]);
+provideGlobalGridOptions({
+  theme: "legacy",
+});
 
 @Component({
   selector: "app-ag-grid-column-search",
