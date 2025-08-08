@@ -1,5 +1,18 @@
-<h3>About this page</h3>
-<p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
-</p>
+<tds-dropdown
+  label="Status"
+  placeholder="Status"
+  label-position="outside"
+  [value]="'Completed'"
+>
+  <tds-dropdown-option tds-aria-label="dropdown-option" value="All">
+    All
+  </tds-dropdown-option>
+
+  <tds-dropdown-option
+    tds-aria-label="dropdown-option"
+    *ngFor="let option of testEnum | keyvalue"
+    [value]="option.key"
+  >
+    {{ option.value }}
+  </tds-dropdown-option>
+</tds-dropdown>
