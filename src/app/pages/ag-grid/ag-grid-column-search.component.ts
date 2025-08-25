@@ -2,15 +2,22 @@ import { Component, ViewEncapsulation } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 import { HttpClient } from "@angular/common/http";
 import { AgGridAngular } from "ag-grid-angular"; // Angular Data Grid Component
-import { ColDef, GridApi, GridReadyEvent } from "ag-grid-community";
+import {
+  ColDef,
+  GridApi,
+  GridReadyEvent,
+  AllCommunityModule,
+  ModuleRegistry,
+} from "ag-grid-community";
 import { AgGridModule } from "ag-grid-angular";
+
+ModuleRegistry.registerModules([AllCommunityModule]);
 
 @Component({
   selector: "app-ag-grid-column-search",
   standalone: true,
   encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
   templateUrl: "./ag-grid-column-search.component.html",
-  styleUrls: ["ag-styles-loader.css"],
   imports: [TegelModule, AgGridModule, AgGridAngular],
 })
 export default class AgGridColumnSearchComponent {
