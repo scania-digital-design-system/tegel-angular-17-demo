@@ -21,7 +21,7 @@
     "@angular/router": "^18.1.0",
     "@faker-js/faker": "^8.4.1",
     "@scania/tegel-angular-17": "^1.31.2",
-    "@scania/tegel-styles": "1.0.0-ag-grid-v33-beta.1",
+    "@scania/tegel-styles": "^1.0.0-ag-grid-v33-beta.2",
     "@tanstack/angular-table": "^8.19.2",
     "ag-grid-angular": "^33.3.1",
     "ag-grid-community": "^33.3.1",
