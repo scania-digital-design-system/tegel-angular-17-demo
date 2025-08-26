@@ -1,0 +1,13 @@
+version: 1.0
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Using Node.js 20 LTS"
+        - nvm install 20
+        - nvm use 20
+        - node -v
+        - npm ci --force --cache .npm --prefer-offline
+    build:
+      commands:
+        - npm run build
