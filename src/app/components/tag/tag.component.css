@@ -1,0 +1,10 @@
+.tag-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tag-section h3 {
+  margin: 0;
+  color: var(--tds-color-text-01);
+}

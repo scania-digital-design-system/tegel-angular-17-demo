@@ -1,0 +1,88 @@
+<div class="tds-headline-02 tds-u-pb1">Tag</div>
+<div class="tds-u-flex tds-u-flex-dir-col tds-u-gap3">
+
+  <!-- Large Tags Section -->
+  <div class="tag-section">
+    <h3 class="tds-headline-03 tds-u-pb1">Large Tags</h3>
+    <div class="tds-u-flex tds-u-flex-wrap tds-u-gap2">
+      <tds-tag
+        *ngFor="let variant of variants"
+        [text]="tagTexts[variant]"
+        size="Large"
+        [variant]="variant">
+      </tds-tag>
+    </div>
+  </div>
+
+  <!-- Small Tags Section -->
+  <div class="tag-section">
+    <h3 class="tds-headline-03 tds-u-pb1">Small Tags</h3>
+    <div class="tds-u-flex tds-u-flex-wrap tds-u-gap2">
+      <tds-tag
+        *ngFor="let variant of variants"
+        [text]="tagTexts[variant]"
+        size="Small"
+        [variant]="variant">
+      </tds-tag>
+    </div>
+  </div>
+
+  <!-- Large Tags with Icons Section -->
+  <div class="tag-section">
+    <h3 class="tds-headline-03 tds-u-pb1">Large Tags with Icons</h3>
+    <div class="tds-u-flex tds-u-flex-wrap tds-u-gap2">
+      <tds-tag
+        *ngFor="let variant of variants"
+        [text]="tagTexts[variant]"
+        size="Large"
+        [variant]="variant">
+        <tds-icon 
+          slot="icon" 
+          [name]="variantIcons[variant]" 
+          size="16px">
+        </tds-icon>
+      </tds-tag>
+    </div>
+  </div>
+
+  <!-- Small Tags with Icons Section -->
+  <div class="tag-section">
+    <h3 class="tds-headline-03 tds-u-pb1">Small Tags with Icons</h3>
+    <div class="tds-u-flex tds-u-flex-wrap tds-u-gap2">
+      <tds-tag
+        *ngFor="let variant of variants"
+        [text]="tagTexts[variant]"
+        size="Small"
+        [variant]="variant">
+        <tds-icon 
+          slot="icon" 
+          [name]="variantIcons[variant]" 
+          size="14px">
+        </tds-icon>
+      </tds-tag>
+    </div>
+  </div>
+
+  <!-- Custom Examples Section -->
+  <div class="tag-section">
+    <h3 class="tds-headline-03 tds-u-pb1">Custom Examples</h3>
+    <div class="tds-u-flex tds-u-flex-wrap tds-u-gap2">
+      <tds-tag text="Processing" size="Large" variant="Information">
+        <tds-icon slot="icon" name="loading" size="16px"></tds-icon>
+      </tds-tag>
+      <tds-tag text="Completed" size="Large" variant="Success">
+        <tds-icon slot="icon" name="check" size="16px"></tds-icon>
+      </tds-tag>
+      <tds-tag text="Failed" size="Large" variant="Error">
+        <tds-icon slot="icon" name="error" size="16px"></tds-icon>
+      </tds-tag>
+      <tds-tag text="Beta" size="Small" variant="New">
+        <tds-icon slot="icon" name="star" size="14px"></tds-icon>
+      </tds-tag>
+      <tds-tag text="Draft" size="Small" variant="Warning">
+        <tds-icon slot="icon" name="edit" size="14px"></tds-icon>
+      </tds-tag>
+    </div>
+  </div>
+
+</div>
