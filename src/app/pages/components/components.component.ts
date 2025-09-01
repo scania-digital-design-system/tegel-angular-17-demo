@@ -27,7 +27,6 @@ import { LinkComponent } from "@components/link/link.component";
 import StepperComponent from "@components/stepper/stepper.component";
 import { StepperExampleComponent } from "@components/stepper-example/stepper-example.component";
 import { TabsComponent } from "@components/tabs/tabs.component";
-import { TagComponent } from "src/app/components/tag/tag.component";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
@@ -64,7 +63,6 @@ import { TegelModule } from "@scania/tegel-angular-17";
     StepperComponent,
     StepperExampleComponent,
     TabsComponent,
-    TagComponent,
     TegelModule,
   ],
 })

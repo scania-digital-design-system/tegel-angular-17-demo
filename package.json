@@ -20,7 +20,6 @@
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
     "@faker-js/faker": "^8.4.1",
-    "@scania/tegel": "^1.36.0-tag-component-beta.1",
     "@scania/tegel-angular-17": "1.36.0",
     "@scania/tegel-styles": "1.0.0",
     "@tanstack/angular-table": "^8.19.2",
