@@ -1,0 +1,8 @@
+/* Tag component specific styles */
+.tds-u-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.tds-u-align-items-center {
+  align-items: center;
+}
