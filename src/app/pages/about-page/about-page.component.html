@@ -2,15 +2,14 @@
   label="Status"
   placeholder="Status"
   label-position="outside"
-  [value]="'Completed'"
+  [value]="testEnum.Completed"
 >
   <tds-dropdown-option tds-aria-label="dropdown-option" value="All">
     All
   </tds-dropdown-option>
 
   <tds-dropdown-option
-    tds-aria-label="dropdown-option"
-    *ngFor="let option of testEnum | keyvalue"
+    *ngFor="let option of options$ | async | keyvalue"
     [value]="option.key"
   >
     {{ option.value }}
