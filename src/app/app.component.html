@@ -1,4 +1,4 @@
-<div class="mode-wrapper {{ mode }}">
+<div class="mode-wrapper {{ mode }} {{ inlineBrand }}">
   <div class="mode-variant-wrapper {{ modeVariant }}">
     <tds-banner variant="information" icon="info" header="Angular demo">
       <div slot="subheader">
@@ -206,6 +206,13 @@
         <div class="tds-u-h-100">
           <div class="switcher-container" *ngIf="!is404page">
             <app-brand-switcher></app-brand-switcher>
+            <tds-toggle
+              (tdsToggle)="handleInlineBrandToggle()"
+              headline="Brand (inline)"
+              size="sm"
+            >
+              <div slot="label">{{ inlineBrand === '' ? 'Scania' : 'Traton' }}</div>
+            </tds-toggle>
             <app-mode-switcher
               (modeToggle)="handleModeToggle()"
             ></app-mode-switcher>

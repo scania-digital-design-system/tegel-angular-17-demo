@@ -65,6 +65,7 @@ export class AppComponent implements OnInit, OnDestroy {
   mode: "tds-mode-light" | "tds-mode-dark" = "tds-mode-light";
   modeVariant: "tds-mode-variant-primary" | "tds-mode-variant-secondary" =
     "tds-mode-variant-primary";
+  inlineBrand: "" | "traton" = "";
   userName = "";
   placeOfWork = "";
   notifications: Notification[];
@@ -92,6 +93,10 @@ export class AppComponent implements OnInit, OnDestroy {
   handleModeToggle() {
     this.mode =
       this.mode === "tds-mode-light" ? "tds-mode-dark" : "tds-mode-light";
+  }
+
+  handleInlineBrandToggle() {
+    this.inlineBrand = this.inlineBrand === "" ? "traton" : "";
   }
 
   ngOnInit() {
