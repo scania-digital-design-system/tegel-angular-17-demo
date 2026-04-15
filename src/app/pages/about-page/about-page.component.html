@@ -1,5 +1,255 @@
 <h3>About this page</h3>
 <p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
+  This page is a testing ground for the variable migration in
+  <b>&#64;scania/tegel-angular-17&#64;1.51.0-var-work-beta.3</b>. It showcases
+  the affected components (Button, Tooltip, Tag) in multiple states so every
+  edge case is testable. Use the Brand toggle in the top-right corner to
+  switch between the Scania and Traton brands.
 </p>
+
+<!-- BUTTONS -->
+<section class="tds-u-pt3">
+  <h4 class="tds-headline-03">Button</h4>
+
+  <!-- Variant x size matrix (enabled) -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">All variants — size lg</p>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-button variant="primary" size="lg" text="Primary"></tds-button>
+      <tds-button variant="secondary" size="lg" text="Secondary"></tds-button>
+      <tds-button variant="ghost" size="lg" text="Ghost"></tds-button>
+      <tds-button variant="danger" size="lg" text="Danger"></tds-button>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">All variants — size md</p>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-button variant="primary" size="md" text="Primary"></tds-button>
+      <tds-button variant="secondary" size="md" text="Secondary"></tds-button>
+      <tds-button variant="ghost" size="md" text="Ghost"></tds-button>
+      <tds-button variant="danger" size="md" text="Danger"></tds-button>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">All variants — size sm</p>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-button variant="primary" size="sm" text="Primary"></tds-button>
+      <tds-button variant="secondary" size="sm" text="Secondary"></tds-button>
+      <tds-button variant="ghost" size="sm" text="Ghost"></tds-button>
+      <tds-button variant="danger" size="sm" text="Danger"></tds-button>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">All variants — size xs</p>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-button variant="primary" size="xs" text="Primary"></tds-button>
+      <tds-button variant="secondary" size="xs" text="Secondary"></tds-button>
+      <tds-button variant="ghost" size="xs" text="Ghost"></tds-button>
+      <tds-button variant="danger" size="xs" text="Danger"></tds-button>
+    </div>
+  </div>
+
+  <!-- Disabled -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Disabled — all variants, size md</p>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-button variant="primary" size="md" text="Primary" disabled></tds-button>
+      <tds-button variant="secondary" size="md" text="Secondary" disabled></tds-button>
+      <tds-button variant="ghost" size="md" text="Ghost" disabled></tds-button>
+      <tds-button variant="danger" size="md" text="Danger" disabled></tds-button>
+    </div>
+  </div>
+
+  <!-- With icons -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">With leading icon</p>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-button variant="primary" size="md" text="Download">
+        <tds-icon slot="icon" size="16px" name="download"></tds-icon>
+      </tds-button>
+      <tds-button variant="secondary" size="md" text="Upload">
+        <tds-icon slot="icon" size="16px" name="upload"></tds-icon>
+      </tds-button>
+      <tds-button variant="ghost" size="md" text="Edit">
+        <tds-icon slot="icon" size="16px" name="edit"></tds-icon>
+      </tds-button>
+      <tds-button variant="danger" size="md" text="Delete">
+        <tds-icon slot="icon" size="16px" name="error"></tds-icon>
+      </tds-button>
+    </div>
+  </div>
+
+  <!-- Icon only -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Icon only</p>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-button variant="primary" size="md">
+        <tds-icon slot="icon" size="16px" name="truck"></tds-icon>
+      </tds-button>
+      <tds-button variant="secondary" size="md">
+        <tds-icon slot="icon" size="16px" name="settings"></tds-icon>
+      </tds-button>
+      <tds-button variant="ghost" size="md">
+        <tds-icon slot="icon" size="16px" name="info"></tds-icon>
+      </tds-button>
+      <tds-button variant="danger" size="md">
+        <tds-icon slot="icon" size="16px" name="error"></tds-icon>
+      </tds-button>
+    </div>
+  </div>
+
+  <!-- Fullbleed -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Fullbleed — all variants</p>
+    <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap1">
+      <tds-button variant="primary" size="lg" fullbleed text="Primary fullbleed"></tds-button>
+      <tds-button variant="secondary" size="lg" fullbleed text="Secondary fullbleed"></tds-button>
+      <tds-button variant="ghost" size="lg" fullbleed text="Ghost fullbleed"></tds-button>
+      <tds-button variant="danger" size="lg" fullbleed text="Danger fullbleed"></tds-button>
+      <tds-button variant="primary" size="lg" fullbleed text="Primary fullbleed (disabled)" disabled></tds-button>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLTIP -->
+<section class="tds-u-pt3">
+  <h4 class="tds-headline-03">Tooltip</h4>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Placements</p>
+    <div class="tds-u-flex tds-u-gap3 tds-u-flex-wrap" style="padding: 48px 0;">
+      <tds-button size="sm" id="tooltip-top" text="Top"></tds-button>
+      <tds-tooltip
+        placement="top"
+        selector="#tooltip-top"
+        text="Top tooltip"
+        mouse-over-tooltip="true"
+      ></tds-tooltip>
+
+      <tds-button size="sm" id="tooltip-right" text="Right"></tds-button>
+      <tds-tooltip
+        placement="right"
+        selector="#tooltip-right"
+        text="Right tooltip"
+        mouse-over-tooltip="true"
+      ></tds-tooltip>
+
+      <tds-button size="sm" id="tooltip-bottom" text="Bottom"></tds-button>
+      <tds-tooltip
+        placement="bottom"
+        selector="#tooltip-bottom"
+        text="Bottom tooltip"
+        mouse-over-tooltip="true"
+      ></tds-tooltip>
+
+      <tds-button size="sm" id="tooltip-left" text="Left"></tds-button>
+      <tds-tooltip
+        placement="left"
+        selector="#tooltip-left"
+        text="Left tooltip"
+        mouse-over-tooltip="true"
+      ></tds-tooltip>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Tooltip with rich content (paragraph, bold, italic)</p>
+    <div class="tds-u-flex tds-u-align-center tds-u-justify-center" style="padding: 32px 0;">
+      <tds-button size="sm" id="tooltip-rich" text="Hover me"></tds-button>
+      <tds-tooltip
+        placement="bottom"
+        selector="#tooltip-rich"
+        mouse-over-tooltip="true"
+      >
+        <p class="tds-detail-05 tds-u-m0">
+          Rich content with <b>bold</b> and <i>italic</i> tags inside.
+        </p>
+      </tds-tooltip>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Tooltip with long text (tests wrapping)</p>
+    <div class="tds-u-flex tds-u-align-center tds-u-justify-center" style="padding: 32px 0;">
+      <tds-button size="sm" id="tooltip-long" text="Long tooltip"></tds-button>
+      <tds-tooltip
+        placement="bottom"
+        selector="#tooltip-long"
+        text="This is a tooltip with a long description that should wrap across multiple lines so the background, padding and text variables can be verified."
+        mouse-over-tooltip="true"
+      ></tds-tooltip>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Tooltip on a tag</p>
+    <div class="tds-u-flex tds-u-align-center tds-u-justify-center" style="padding: 32px 0;">
+      <tds-tag id="tooltip-tag" text="Hover tag" variant="Information" size="lg"></tds-tag>
+      <tds-tooltip
+        placement="top"
+        selector="#tooltip-tag"
+        text="Tooltip anchored on a tag"
+        mouse-over-tooltip="true"
+      ></tds-tooltip>
+    </div>
+  </div>
+</section>
+
+<!-- TAG -->
+<section class="tds-u-pt3">
+  <h4 class="tds-headline-03">Tag</h4>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">All variants — size lg</p>
+    <div class="tds-u-flex tds-u-gap2 tds-u-flex-wrap">
+      <tds-tag text="Neutral" variant="Neutral" size="lg"></tds-tag>
+      <tds-tag text="Success" variant="Success" size="lg"></tds-tag>
+      <tds-tag text="Warning" variant="Warning" size="lg"></tds-tag>
+      <tds-tag text="Error" variant="Error" size="lg"></tds-tag>
+      <tds-tag text="Information" variant="Information" size="lg"></tds-tag>
+      <tds-tag text="New" variant="New" size="lg"></tds-tag>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">All variants — size sm</p>
+    <div class="tds-u-flex tds-u-gap2 tds-u-flex-wrap">
+      <tds-tag text="Neutral" variant="Neutral" size="sm"></tds-tag>
+      <tds-tag text="Success" variant="Success" size="sm"></tds-tag>
+      <tds-tag text="Warning" variant="Warning" size="sm"></tds-tag>
+      <tds-tag text="Error" variant="Error" size="sm"></tds-tag>
+      <tds-tag text="Information" variant="Information" size="sm"></tds-tag>
+      <tds-tag text="New" variant="New" size="sm"></tds-tag>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Tags with prefix icons</p>
+    <div class="tds-u-flex tds-u-gap2 tds-u-flex-wrap">
+      <tds-tag text="With Icon" variant="Success" size="lg">
+        <tds-icon name="check" size="16px" slot="prefix"></tds-icon>
+      </tds-tag>
+      <tds-tag text="Warning" variant="Warning" size="lg">
+        <tds-icon name="warning" size="16px" slot="prefix"></tds-icon>
+      </tds-tag>
+      <tds-tag text="Error" variant="Error" size="lg">
+        <tds-icon name="error" size="16px" slot="prefix"></tds-icon>
+      </tds-tag>
+      <tds-tag text="Info" variant="Information" size="lg">
+        <tds-icon name="info" size="16px" slot="prefix"></tds-icon>
+      </tds-tag>
+    </div>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Tags with long text (tests wrapping / truncation)</p>
+    <div class="tds-u-flex tds-u-gap2 tds-u-flex-wrap">
+      <tds-tag text="A very long neutral tag label" variant="Neutral" size="lg"></tds-tag>
+      <tds-tag text="Another long informational label" variant="Information" size="lg"></tds-tag>
+      <tds-tag text="Small but still long label" variant="Success" size="sm"></tds-tag>
+    </div>
+  </div>
+</section>

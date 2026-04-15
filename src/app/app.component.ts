@@ -9,6 +9,7 @@ import {
 } from "@angular/router";
 import { ModeSwitcherComponent } from "./mode-switcher/mode-switcher.component";
 import { ModeVariantSwitcherComponent } from "./mode-variant-switcher/mode-variant-switcher.component";
+import { BrandSwitcherComponent } from "./brand-switcher/brand-switcher.component";
 import BreadcrumbsComponent from "./navigation/breadcrumbs/breadcrumbs.component";
 import { BannerComponent } from "@components/banner/banner.component";
 import { UserStoreService } from "./services/user-store.service";
@@ -30,6 +31,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
     BreadcrumbsComponent,
     ModeSwitcherComponent,
     ModeVariantSwitcherComponent,
+    BrandSwitcherComponent,
     CommonModule,
     TegelModule,
   ],
