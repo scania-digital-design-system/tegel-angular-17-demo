@@ -123,34 +123,50 @@
 <section class="tds-u-pt3">
   <h4 class="tds-headline-03">Divider</h4>
 
+  <!-- Horizontal — all variants -->
   <div class="tds-u-pt1">
-    <p class="tds-detail-02 tds-u-pb1">Default horizontal divider</p>
+    <p class="tds-detail-02 tds-u-pb1">Horizontal — subtle (default)</p>
     <tds-divider></tds-divider>
   </div>
 
   <div class="tds-u-pt2">
-    <p class="tds-detail-02 tds-u-pb1">Light horizontal divider</p>
-    <tds-divider type="light"></tds-divider>
+    <p class="tds-detail-02 tds-u-pb1">Horizontal — discrete</p>
+    <tds-divider variant="discrete"></tds-divider>
   </div>
 
   <div class="tds-u-pt2">
-    <p class="tds-detail-02 tds-u-pb1">Strong horizontal divider</p>
-    <tds-divider type="strong"></tds-divider>
+    <p class="tds-detail-02 tds-u-pb1">Horizontal — soft</p>
+    <tds-divider variant="soft"></tds-divider>
   </div>
 
   <div class="tds-u-pt2">
-    <p class="tds-detail-02 tds-u-pb1">Vertical divider (default / light / strong)</p>
+    <p class="tds-detail-02 tds-u-pb1">Horizontal — defined</p>
+    <tds-divider variant="defined"></tds-divider>
+  </div>
+
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Horizontal — dark-blue</p>
+    <tds-divider variant="dark-blue"></tds-divider>
+  </div>
+
+  <!-- Vertical — all variants -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1">Vertical — all variants</p>
     <div class="tds-u-flex tds-u-gap2" style="height: 48px; align-items: center;">
-      <span>Left</span>
+      <span>subtle</span>
       <tds-divider orientation="vertical"></tds-divider>
-      <span>Middle</span>
-      <tds-divider orientation="vertical" type="light"></tds-divider>
-      <span>After light</span>
-      <tds-divider orientation="vertical" type="strong"></tds-divider>
-      <span>Right</span>
+      <span>discrete</span>
+      <tds-divider orientation="vertical" variant="discrete"></tds-divider>
+      <span>soft</span>
+      <tds-divider orientation="vertical" variant="soft"></tds-divider>
+      <span>defined</span>
+      <tds-divider orientation="vertical" variant="defined"></tds-divider>
+      <span>dark-blue</span>
+      <tds-divider orientation="vertical" variant="dark-blue"></tds-divider>
     </div>
   </div>
 
+  <!-- Divider in context -->
   <div class="tds-u-pt2">
     <p class="tds-detail-02 tds-u-pb1">Divider separating content blocks</p>
     <p>First block of content above the divider.</p>
