@@ -1,5 +1,475 @@
 <h3>About this page</h3>
 <p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
+  This page is a testing ground for the variable migration in
+  <b>&#64;scania/tegel-angular-17&#64;1.52.0-var-batch-4-beta.0</b> and
+  <b>&#64;scania/tegel-lite&#64;0.1.0-var-batch-4-beta.0</b>. Each section
+  shows the Stencil web components (<code>tds-*</code>) first, then the
+  Tegel-Lite CSS-only equivalent (<code>tl-*</code>). Use the Brand toggle
+  in the top-right to switch between Scania and Traton.
 </p>
+
+<!-- ========== LINK ========== -->
+<section class="tds-u-pt3">
+  <h4 class="tds-headline-03">Link</h4>
+
+  <!-- tds-link -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1"><b>tds-link — Stencil web component</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Inside paragraph (default)</p>
+      <p>
+        Read the
+        <tds-link>
+          <a href="https://tegel.scania.com/home" target="_blank">Tegel documentation</a>
+        </tds-link>
+        for more information.
+      </p>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Standalone</p>
+      <tds-link standalone>
+        <a href="https://tegel.scania.com/home" target="_blank">Standalone link</a>
+      </tds-link>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Standalone with underline</p>
+      <tds-link standalone underline>
+        <a href="https://tegel.scania.com/home" target="_blank">Standalone with underline</a>
+      </tds-link>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Disabled</p>
+      <tds-link disabled>
+        <a href="https://tegel.scania.com/home" target="_blank">Disabled link</a>
+      </tds-link>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Long link that wraps</p>
+      <tds-link>
+        <a href="https://tegel.scania.com/home" target="_blank">
+          This is a long link that should wrap to a new line so underline and
+          hover colors can be checked across line breaks.
+        </a>
+      </tds-link>
+    </div>
+  </div>
+
+  <!-- tl-link -->
+  <div class="tds-u-pt3">
+    <p class="tds-detail-02 tds-u-pb1"><b>tl-link — Tegel-Lite (CSS only)</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Inline (inside paragraph)</p>
+      <p>
+        Read the
+        <a class="tl-link" href="https://tegel.scania.com/home" target="_blank">Tegel documentation</a>
+        for more information.
+      </p>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Standalone</p>
+      <a class="tl-link tl-link--standalone" href="https://tegel.scania.com/home" target="_blank">Standalone link</a>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Standalone + underline</p>
+      <a class="tl-link tl-link--standalone tl-link--underline" href="https://tegel.scania.com/home" target="_blank">Standalone with underline</a>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Disabled</p>
+      <a class="tl-link tl-link--standalone tl-link--disabled" href="https://tegel.scania.com/home" target="_blank" aria-disabled="true">Disabled link</a>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Long link that wraps</p>
+      <a class="tl-link" href="https://tegel.scania.com/home" target="_blank">
+        This is a long link that should wrap to a new line so underline and
+        hover colors can be checked across line breaks.
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BREADCRUMBS ========== -->
+<section class="tds-u-pt3">
+  <h4 class="tds-headline-03">Breadcrumbs</h4>
+
+  <!-- tds-breadcrumbs -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1"><b>tds-breadcrumbs — Stencil web component</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Single (current)</p>
+      <tds-breadcrumbs>
+        <tds-breadcrumb [current]="true">
+          <a href="#">Current page</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Two levels</p>
+      <tds-breadcrumbs>
+        <tds-breadcrumb>
+          <a href="#">Home</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb [current]="true">
+          <a href="#">About</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Multi-level (standard)</p>
+      <tds-breadcrumbs>
+        <tds-breadcrumb>
+          <a href="#">Home</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Components</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Navigation</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb [current]="true">
+          <a href="#">Breadcrumbs</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Long labels (wraps)</p>
+      <tds-breadcrumbs>
+        <tds-breadcrumb>
+          <a href="#">A very long root page title</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Another long section name</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Sub-category with many words</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Deep nested item</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb [current]="true">
+          <a href="#">Current deeply nested page</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+  </div>
+
+  <!-- tl-breadcrumbs -->
+  <div class="tds-u-pt3">
+    <p class="tds-detail-02 tds-u-pb1"><b>tl-breadcrumbs — Tegel-Lite (CSS only)</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Single (current)</p>
+      <nav class="tl-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="#" aria-current="page">Current page</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Two levels</p>
+      <nav class="tl-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#" aria-current="page">About</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Multi-level (standard)</p>
+      <nav class="tl-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Components</a></li>
+          <li><a href="#">Navigation</a></li>
+          <li><a href="#" aria-current="page">Breadcrumbs</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Long labels (wraps)</p>
+      <nav class="tl-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="#">A very long root page title</a></li>
+          <li><a href="#">Another long section name</a></li>
+          <li><a href="#">Sub-category with many words</a></li>
+          <li><a href="#">Deep nested item</a></li>
+          <li><a href="#" aria-current="page">Current deeply nested page</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIVIDER ========== -->
+<section class="tds-u-pt3">
+  <h4 class="tds-headline-03">Divider</h4>
+
+  <!-- tds-divider -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1"><b>tds-divider — Stencil web component</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — subtle (default)</p>
+      <tds-divider></tds-divider>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — discrete</p>
+      <tds-divider variant="discrete"></tds-divider>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — soft</p>
+      <tds-divider variant="soft"></tds-divider>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — defined</p>
+      <tds-divider variant="defined"></tds-divider>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — dark-blue</p>
+      <tds-divider variant="dark-blue"></tds-divider>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Vertical — all variants</p>
+      <div class="tds-u-flex tds-u-gap2" style="height: 48px; align-items: center;">
+        <span>subtle</span>
+        <tds-divider orientation="vertical"></tds-divider>
+        <span>discrete</span>
+        <tds-divider orientation="vertical" variant="discrete"></tds-divider>
+        <span>soft</span>
+        <tds-divider orientation="vertical" variant="soft"></tds-divider>
+        <span>defined</span>
+        <tds-divider orientation="vertical" variant="defined"></tds-divider>
+        <span>dark-blue</span>
+        <tds-divider orientation="vertical" variant="dark-blue"></tds-divider>
+      </div>
+    </div>
+  </div>
+
+  <!-- tl-divider -->
+  <div class="tds-u-pt3">
+    <p class="tds-detail-02 tds-u-pb1"><b>tl-divider — Tegel-Lite (CSS only)</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — default</p>
+      <div class="tl-divider tl-divider--horizontal"></div>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — discrete</p>
+      <div class="tl-divider tl-divider--horizontal tl-divider--discrete"></div>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Horizontal — expressive</p>
+      <div class="tl-divider tl-divider--horizontal tl-divider--expressive"></div>
+    </div>
+
+    <div class="tds-u-pt2">
+      <p class="tds-detail-02 tds-u-pb1">Vertical — all variants</p>
+      <div class="tds-u-flex tds-u-gap2" style="height: 48px; align-items: center;">
+        <span>default</span>
+        <div class="tl-divider tl-divider--vertical"></div>
+        <span>discrete</span>
+        <div class="tl-divider tl-divider--vertical tl-divider--discrete"></div>
+        <span>expressive</span>
+        <div class="tl-divider tl-divider--vertical tl-divider--expressive"></div>
+        <span>end</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<section class="tds-u-pt3">
+  <h4 class="tds-headline-03">Footer</h4>
+
+  <!-- tds-footer -->
+  <div class="tds-u-pt2">
+    <p class="tds-detail-02 tds-u-pb1"><b>tds-footer — Stencil web component</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Full footer (top + start + end + copyright)</p>
+      <tds-footer copyright-text="© Scania CV AB 2024">
+        <div slot="top">
+          <tds-footer-group title-text="Pages">
+            <tds-footer-item><a href="#">Home</a></tds-footer-item>
+            <tds-footer-item><a href="#">Form</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group title-text="Legals">
+            <tds-footer-item><a href="#">Terms &amp; Conditions</a></tds-footer-item>
+            <tds-footer-item><a href="#">Privacy policy</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group title-text="Design">
+            <tds-footer-item><a href="#">Grid system</a></tds-footer-item>
+            <tds-footer-item><a href="#">Icons</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group title-text="Support">
+            <tds-footer-item><a href="#">Contact</a></tds-footer-item>
+            <tds-footer-item><a href="#">FAQ</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+        <div slot="start">
+          <tds-footer-group>
+            <tds-footer-item><a href="#">Link text</a></tds-footer-item>
+            <tds-footer-item><a href="#">Link text</a></tds-footer-item>
+            <tds-footer-item><a href="#">Link text</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+        <div slot="end">
+          <tds-footer-group>
+            <tds-footer-item><a href="#"><tds-icon name="truck"></tds-icon></a></tds-footer-item>
+            <tds-footer-item><a href="#"><tds-icon name="truck"></tds-icon></a></tds-footer-item>
+            <tds-footer-item><a href="#"><tds-icon name="truck"></tds-icon></a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="tds-u-pt3">
+      <p class="tds-detail-02 tds-u-pb1">Secondary mode variant</p>
+      <tds-footer mode-variant="secondary" copyright-text="© Scania CV AB 2024">
+        <div slot="top">
+          <tds-footer-group title-text="Resources">
+            <tds-footer-item><a href="#">Docs</a></tds-footer-item>
+            <tds-footer-item><a href="#">GitHub</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group title-text="Community">
+            <tds-footer-item><a href="#">Slack</a></tds-footer-item>
+            <tds-footer-item><a href="#">Forum</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="tds-u-pt3">
+      <p class="tds-detail-02 tds-u-pb1">Minimal (start only)</p>
+      <tds-footer copyright-text="© Scania">
+        <div slot="start">
+          <tds-footer-group>
+            <tds-footer-item><a href="#">Link text</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="tds-u-pt3">
+      <p class="tds-detail-02 tds-u-pb1">End slot only (social icons)</p>
+      <tds-footer>
+        <div slot="end">
+          <tds-footer-group>
+            <tds-footer-item><a href="#"><tds-icon name="truck"></tds-icon></a></tds-footer-item>
+            <tds-footer-item><a href="#"><tds-icon name="truck"></tds-icon></a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+  </div>
+
+  <!-- tl-footer -->
+  <div class="tds-u-pt3">
+    <p class="tds-detail-02 tds-u-pb1"><b>tl-footer — Tegel-Lite (CSS only)</b></p>
+
+    <div class="tds-u-pt1">
+      <p class="tds-detail-02 tds-u-pb1">Full footer — primary</p>
+      <footer class="tl-footer tl-footer--primary">
+        <div class="tl-footer__top">
+          <div class="tl-footer__group">
+            <h2 class="tl-footer__top-title">Pages</h2>
+            <a class="tl-footer__link" href="#">Home</a>
+            <a class="tl-footer__link" href="#">Form</a>
+          </div>
+          <div class="tl-footer__group">
+            <h2 class="tl-footer__top-title">Legals</h2>
+            <a class="tl-footer__link" href="#">Terms &amp; Conditions</a>
+            <a class="tl-footer__link" href="#">Privacy policy</a>
+          </div>
+          <div class="tl-footer__group">
+            <h2 class="tl-footer__top-title">Design</h2>
+            <a class="tl-footer__link" href="#">Grid system</a>
+            <a class="tl-footer__link" href="#">Icons</a>
+          </div>
+          <div class="tl-footer__group">
+            <h2 class="tl-footer__top-title">Support</h2>
+            <a class="tl-footer__link" href="#">Contact</a>
+            <a class="tl-footer__link" href="#">FAQ</a>
+          </div>
+        </div>
+        <div class="tl-footer__main">
+          <div class="tl-footer__main-top">
+            <div class="tl-footer__group tl-footer__main-top--start">
+              <a class="tl-footer__link" href="#">Link text</a>
+              <a class="tl-footer__link" href="#">Link text</a>
+              <a class="tl-footer__link" href="#">Link text</a>
+            </div>
+            <div class="tl-footer__group tl-footer__main-top--end">
+              <a class="tl-footer__link" href="#">Social 1</a>
+              <a class="tl-footer__link" href="#">Social 2</a>
+              <a class="tl-footer__link" href="#">Social 3</a>
+            </div>
+          </div>
+          <div class="tl-footer__main-bottom">
+            <p class="tl-footer__copyright">© Scania CV AB 2024</p>
+            <div class="tl-footer__brand" aria-label="Brand logo">Brand</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="tds-u-pt3">
+      <p class="tds-detail-02 tds-u-pb1">Secondary variant</p>
+      <footer class="tl-footer tl-footer--secondary">
+        <div class="tl-footer__top">
+          <div class="tl-footer__group">
+            <h2 class="tl-footer__top-title">Resources</h2>
+            <a class="tl-footer__link" href="#">Docs</a>
+            <a class="tl-footer__link" href="#">GitHub</a>
+          </div>
+          <div class="tl-footer__group">
+            <h2 class="tl-footer__top-title">Community</h2>
+            <a class="tl-footer__link" href="#">Slack</a>
+            <a class="tl-footer__link" href="#">Forum</a>
+          </div>
+        </div>
+        <div class="tl-footer__main">
+          <div class="tl-footer__main-bottom">
+            <p class="tl-footer__copyright">© Scania CV AB 2024</p>
+            <div class="tl-footer__brand" aria-label="Brand logo">Brand</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="tds-u-pt3">
+      <p class="tds-detail-02 tds-u-pb1">Minimal (copyright + brand only)</p>
+      <footer class="tl-footer tl-footer--primary">
+        <div class="tl-footer__main">
+          <div class="tl-footer__main-bottom">
+            <p class="tl-footer__copyright">© Scania</p>
+            <div class="tl-footer__brand" aria-label="Brand logo">Brand</div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
