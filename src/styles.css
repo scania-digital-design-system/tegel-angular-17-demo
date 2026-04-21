@@ -1,6 +1,12 @@
 @import "reset.css";
 @import url("@scania/tegel/dist/tegel/tegel.css");
 
+/* Tegel-Lite (styles-only, BEM classes under .tl-*) */
+@import url("@scania/tegel-lite/scania-variables.css");
+@import url("@scania/tegel-lite/traton-variables.css");
+@import url("@scania/tegel-lite/global.css");
+@import url("@scania/tegel-lite/components.css");
+
 /* Core Data Grid CSS */
 @import url("ag-grid-community/styles/ag-grid.css");
 /* Quartz Theme Specific CSS */
