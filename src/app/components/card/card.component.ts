@@ -5,7 +5,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
 @Component({
   selector: "app-card",
   templateUrl: "./card.component.html",
-  styleUrls: ["./card.component.css"],
+  styleUrls: ["./card.component.scss"],
   standalone: true,
   imports: [CommonModule, TegelModule],
 })

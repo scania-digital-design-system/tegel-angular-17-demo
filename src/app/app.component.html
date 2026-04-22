@@ -1,4 +1,5 @@
-<div class="mode-wrapper {{ mode }}">
+<div class="{{ brand }}">
+  <div class="mode-wrapper {{ mode }}">
   <div class="mode-variant-wrapper {{ modeVariant }}">
     <tds-banner variant="information" icon="info" header="Angular demo">
       <div slot="subheader">
@@ -211,6 +212,9 @@
             <app-mode-variant-switcher
               (modeVariantToggle)="handleModeVariantToggle()"
             ></app-mode-variant-switcher>
+            <app-brand-switcher
+              (brandToggle)="handleBrandToggle()"
+            ></app-brand-switcher>
           </div>
           <div class="tds-u-h-100 tds-u-flex tds-u-flex-dir-col">
             <nav-breadcrumbs *ngIf="!is404page"></nav-breadcrumbs>
@@ -229,5 +233,6 @@
         </div>
       </main>
     </div>
+  </div>
   </div>
 </div>
