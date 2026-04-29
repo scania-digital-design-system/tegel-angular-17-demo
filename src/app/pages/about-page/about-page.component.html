@@ -1,5 +1,528 @@
-<h3>About this page</h3>
-<p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
-</p>
+<div class="beta-page">
+  <header>
+    <h3>About this page</h3>
+    <p>
+      Testing ground for the
+      <strong>1.52.0-var-develop-beta.1</strong> beta of
+      &#64;scania/tegel-angular-17. The sections below cover the components
+      affected by the variable-migration work: Link, Breadcrumbs, Divider,
+      Footer, Button, Tooltip and Tag, across multiple states and both brands.
+    </p>
+  </header>
+
+  <section class="brand-toggle" aria-label="Brand toggle">
+    <strong>Brand:</strong>
+    <tds-radio-button
+      name="brand"
+      value="scania"
+      radio-id="brand-scania"
+      [checked]="brand === 'scania'"
+      (tdsChange)="setBrand('scania')"
+    >
+      <div slot="label">Scania (.scania)</div>
+    </tds-radio-button>
+    <tds-radio-button
+      name="brand"
+      value="traton"
+      radio-id="brand-traton"
+      [checked]="brand === 'traton'"
+      (tdsChange)="setBrand('traton')"
+    >
+      <div slot="label">Traton (.traton)</div>
+    </tds-radio-button>
+    <span class="state-label">
+      Active body class: <code>.{{ brand }}</code>
+    </span>
+  </section>
+
+  <!-- LINK -->
+  <section class="section" aria-labelledby="section-link">
+    <h4 id="section-link" class="tds-headline-03">Link</h4>
+
+    <div class="state-row">
+      <span class="state-label">Default (inline)</span>
+      <p class="inline-links">
+        Lorem ipsum dolor sit amet, consectetur
+        <tds-link>
+          <a href="https://tegel.scania.com" target="_blank">default link</a>
+        </tds-link>
+        adipiscing elit.
+      </p>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Underline</span>
+      <p class="inline-links">
+        Lorem ipsum
+        <tds-link underline="true">
+          <a href="https://tegel.scania.com" target="_blank">underlined link</a>
+        </tds-link>
+        dolor sit amet.
+      </p>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Standalone</span>
+      <tds-link standalone="true">
+        <a href="https://tegel.scania.com" target="_blank">Standalone link</a>
+      </tds-link>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Standalone + underline</span>
+      <tds-link standalone="true" underline="true">
+        <a href="https://tegel.scania.com" target="_blank">
+          Standalone underlined link
+        </a>
+      </tds-link>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Disabled</span>
+      <tds-link disabled="true">
+        <a href="https://tegel.scania.com" target="_blank">Disabled link</a>
+      </tds-link>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Disabled + standalone</span>
+      <tds-link disabled="true" standalone="true">
+        <a href="https://tegel.scania.com" target="_blank">
+          Disabled standalone link
+        </a>
+      </tds-link>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Long text (wrapping)</span>
+      <p class="inline-links">
+        <tds-link>
+          <a href="https://tegel.scania.com" target="_blank">
+            This is a very long link label that should gracefully wrap across
+            multiple lines so that wrap behavior can be visually inspected
+          </a>
+        </tds-link>
+      </p>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">With icon</span>
+      <tds-link standalone="true">
+        <a href="https://tegel.scania.com" target="_blank">
+          Link with trailing icon
+          <tds-icon name="arrow_right" size="16"></tds-icon>
+        </a>
+      </tds-link>
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS -->
+  <section class="section" aria-labelledby="section-breadcrumbs">
+    <h4 id="section-breadcrumbs" class="tds-headline-03">Breadcrumbs</h4>
+
+    <div class="state-row">
+      <span class="state-label">Single item (current only)</span>
+      <tds-breadcrumbs tdsAriaLabel="Single breadcrumb">
+        <tds-breadcrumb [current]="true">
+          <a href="#">Only page</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Two levels</span>
+      <tds-breadcrumbs tdsAriaLabel="Two level breadcrumb">
+        <tds-breadcrumb>
+          <a href="#">Home</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb [current]="true">
+          <a href="#">Current</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Default (three levels)</span>
+      <tds-breadcrumbs tdsAriaLabel="Three level breadcrumb">
+        <tds-breadcrumb>
+          <a href="#">Home</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Section</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb [current]="true">
+          <a href="#">Current page</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Many levels (overflow / wrapping)</span>
+      <tds-breadcrumbs tdsAriaLabel="Deep breadcrumb">
+        <tds-breadcrumb>
+          <a href="#">Home</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Vehicles</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Heavy trucks</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Long haul</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Configuration</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb [current]="true">
+          <a href="#">Summary with a very long label for wrap testing</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Without current flag</span>
+      <tds-breadcrumbs tdsAriaLabel="No current breadcrumb">
+        <tds-breadcrumb>
+          <a href="#">Home</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Section</a>
+        </tds-breadcrumb>
+        <tds-breadcrumb>
+          <a href="#">Last (no current)</a>
+        </tds-breadcrumb>
+      </tds-breadcrumbs>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <section class="section" aria-labelledby="section-divider">
+    <h4 id="section-divider" class="tds-headline-03">Divider</h4>
+
+    <div class="divider-grid">
+      <div class="state-row" *ngFor="let variant of dividerVariants">
+        <span class="state-label">Horizontal · {{ variant }}</span>
+        <tds-divider orientation="horizontal" [variant]="variant"></tds-divider>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Vertical · all variants</span>
+      <div class="divider-vertical-row">
+        <ng-container *ngFor="let variant of dividerVariants">
+          <span>{{ variant }}</span>
+          <tds-divider orientation="vertical" [variant]="variant"></tds-divider>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Defaults (no props)</span>
+      <tds-divider></tds-divider>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="section" aria-labelledby="section-footer">
+    <h4 id="section-footer" class="tds-headline-03">Footer</h4>
+
+    <div class="state-row">
+      <span class="state-label">Full footer · mode-variant primary</span>
+      <tds-footer modeVariant="primary">
+        <div slot="top">
+          <tds-footer-group titleText="Pages">
+            <tds-footer-item><a href="/">Home</a></tds-footer-item>
+            <tds-footer-item><a href="/form">Form</a></tds-footer-item>
+            <tds-footer-item><a href="/table">Table</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group titleText="Legal">
+            <tds-footer-item><a href="/">Terms & Conditions</a></tds-footer-item>
+            <tds-footer-item><a href="/">Privacy policy</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group titleText="Design">
+            <tds-footer-item><a href="/">Grid</a></tds-footer-item>
+            <tds-footer-item><a href="/">Icons</a></tds-footer-item>
+            <tds-footer-item><a href="/">Tokens</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+        <div slot="start">
+          <tds-footer-group>
+            <tds-footer-item><a href="/">Link text</a></tds-footer-item>
+            <tds-footer-item><a href="/">Another link</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+        <div slot="end">
+          <tds-footer-group>
+            <tds-footer-item>
+              <a href="/"><tds-icon name="truck"></tds-icon></a>
+            </tds-footer-item>
+            <tds-footer-item>
+              <a href="/"><tds-icon name="truck"></tds-icon></a>
+            </tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Full footer · mode-variant secondary</span>
+      <tds-footer modeVariant="secondary">
+        <div slot="top">
+          <tds-footer-group titleText="Pages">
+            <tds-footer-item><a href="/">Home</a></tds-footer-item>
+            <tds-footer-item><a href="/form">Form</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group titleText="Legal">
+            <tds-footer-item><a href="/">Terms</a></tds-footer-item>
+            <tds-footer-item><a href="/">Privacy</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+        <div slot="start">
+          <tds-footer-group>
+            <tds-footer-item><a href="/">Link text</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Minimal · start slot only</span>
+      <tds-footer>
+        <div slot="start">
+          <tds-footer-group>
+            <tds-footer-item><a href="/">Single link</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Minimal · end slot only (icons)</span>
+      <tds-footer>
+        <div slot="end">
+          <tds-footer-group>
+            <tds-footer-item>
+              <a href="/"><tds-icon name="truck"></tds-icon></a>
+            </tds-footer-item>
+            <tds-footer-item>
+              <a href="/"><tds-icon name="truck"></tds-icon></a>
+            </tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Top slot only · many groups (wrap)</span>
+      <tds-footer>
+        <div slot="top">
+          <tds-footer-group titleText="Group A">
+            <tds-footer-item><a href="/">Item A1</a></tds-footer-item>
+            <tds-footer-item><a href="/">Item A2</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group titleText="Group B">
+            <tds-footer-item><a href="/">Item B1</a></tds-footer-item>
+            <tds-footer-item><a href="/">Item B2</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group titleText="Group C">
+            <tds-footer-item><a href="/">Item C1</a></tds-footer-item>
+            <tds-footer-item><a href="/">Item C2</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group titleText="Group D">
+            <tds-footer-item><a href="/">Item D1</a></tds-footer-item>
+            <tds-footer-item><a href="/">Item D2</a></tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group titleText="Group E">
+            <tds-footer-item><a href="/">Item E1</a></tds-footer-item>
+            <tds-footer-item><a href="/">Item E2</a></tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Empty footer (no slots)</span>
+      <tds-footer></tds-footer>
+    </div>
+  </section>
+
+  <!-- BUTTON -->
+  <section class="section" aria-labelledby="section-button">
+    <h4 id="section-button" class="tds-headline-03">Button</h4>
+
+    <div class="state-row">
+      <span class="state-label">Variants · size lg</span>
+      <div class="button-row">
+        <tds-button
+          *ngFor="let variant of buttonVariants"
+          [text]="variant"
+          [variant]="variant"
+        ></tds-button>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Sizes · primary variant</span>
+      <div class="button-row">
+        <tds-button
+          *ngFor="let size of buttonSizes"
+          [text]="size"
+          variant="primary"
+          [size]="size"
+        ></tds-button>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Disabled · every variant</span>
+      <div class="button-row">
+        <tds-button
+          *ngFor="let variant of buttonVariants"
+          [text]="variant"
+          [variant]="variant"
+          [disabled]="true"
+        ></tds-button>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">With leading icon</span>
+      <div class="button-row">
+        <tds-button text="Save" variant="primary">
+          <tds-icon slot="icon" name="save" size="16"></tds-icon>
+        </tds-button>
+        <tds-button text="Delete" variant="danger">
+          <tds-icon slot="icon" name="trash" size="16"></tds-icon>
+        </tds-button>
+        <tds-button text="Open" variant="secondary">
+          <tds-icon slot="icon" name="export" size="16"></tds-icon>
+        </tds-button>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Mode variant · secondary surface</span>
+      <div class="button-row button-row--on-secondary">
+        <tds-button
+          *ngFor="let variant of buttonVariants"
+          [text]="variant"
+          [variant]="variant"
+          modeVariant="secondary"
+        ></tds-button>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Full bleed</span>
+      <div style="max-width: 320px">
+        <tds-button text="Full bleed" variant="primary" [fullbleed]="true"></tds-button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLTIP -->
+  <section class="section" aria-labelledby="section-tooltip">
+    <h4 id="section-tooltip" class="tds-headline-03">Tooltip</h4>
+
+    <div class="state-row">
+      <span class="state-label">Hover trigger · every placement</span>
+      <div class="tooltip-grid">
+        <ng-container *ngFor="let placement of tooltipPlacements">
+          <div class="tooltip-grid__cell">
+            <tds-button
+              [id]="'tooltip-' + placement"
+              [text]="placement"
+              variant="secondary"
+              size="sm"
+            ></tds-button>
+            <tds-tooltip
+              [placement]="placement"
+              [selector]="'#tooltip-' + placement"
+              [text]="'Tooltip on ' + placement"
+            ></tds-tooltip>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Click trigger</span>
+      <tds-button id="tooltip-click" text="Click me" variant="primary"></tds-button>
+      <tds-tooltip
+        selector="#tooltip-click"
+        trigger="click"
+        text="Click-triggered tooltip — click again to dismiss"
+      ></tds-tooltip>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Long content (wrapping)</span>
+      <tds-button id="tooltip-long" text="Long tooltip" variant="ghost"></tds-button>
+      <tds-tooltip
+        selector="#tooltip-long"
+        placement="bottom"
+        text="This tooltip has a much longer label so we can verify how the bubble wraps and how the arrow stays anchored to the trigger across breakpoints."
+      ></tds-tooltip>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Default-shown</span>
+      <tds-button id="tooltip-default" text="Always on" variant="secondary"></tds-button>
+      <tds-tooltip
+        selector="#tooltip-default"
+        placement="right"
+        [defaultShow]="true"
+        text="Visible by default"
+      ></tds-tooltip>
+    </div>
+  </section>
+
+  <!-- TAG -->
+  <section class="section" aria-labelledby="section-tag">
+    <h4 id="section-tag" class="tds-headline-03">Tag</h4>
+
+    <div class="state-row">
+      <span class="state-label">Variants · large (default)</span>
+      <div class="tag-row">
+        <tds-tag
+          *ngFor="let variant of tagVariants"
+          [text]="variant"
+          [variant]="variant"
+        ></tds-tag>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Variants · small</span>
+      <div class="tag-row">
+        <tds-tag
+          *ngFor="let variant of tagVariants"
+          [text]="variant"
+          [variant]="variant"
+          size="sm"
+        ></tds-tag>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Long label</span>
+      <div style="max-width: 240px">
+        <tds-tag
+          text="A very long tag label that should still render correctly"
+          variant="information"
+        ></tds-tag>
+      </div>
+    </div>
+
+    <div class="state-row">
+      <span class="state-label">Inline with body text</span>
+      <p>
+        This release ships <tds-tag text="new" variant="new" size="sm"></tds-tag>
+        a bunch of features and one
+        <tds-tag text="warning" variant="warning" size="sm"></tds-tag>
+        behaviour change.
+      </p>
+    </div>
+  </section>
+</div>
