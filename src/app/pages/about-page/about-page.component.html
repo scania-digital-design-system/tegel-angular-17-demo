@@ -1,5 +1,45 @@
-<h3>About this page</h3>
-<p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
-</p>
+<div class="beta-page">
+  <header>
+    <h3>Icons (1.53.0-icons-beta.0)</h3>
+    <p>
+      Every icon name from
+      <strong>&#64;scania/tegel-angular-17 1.53.0-icons-beta.0</strong>
+      ({{ iconNames.length }} total).
+    </p>
+  </header>
+
+  <section class="brand-toggle" aria-label="Brand toggle">
+    <strong>Brand:</strong>
+    <tds-radio-button
+      name="brand"
+      value="scania"
+      radio-id="brand-scania"
+      [checked]="brand === 'scania'"
+      (tdsChange)="setBrand('scania')"
+    >
+      <div slot="label">Scania (.scania)</div>
+    </tds-radio-button>
+    <tds-radio-button
+      name="brand"
+      value="traton"
+      radio-id="brand-traton"
+      [checked]="brand === 'traton'"
+      (tdsChange)="setBrand('traton')"
+    >
+      <div slot="label">Traton (.traton)</div>
+    </tds-radio-button>
+    <span class="state-label">
+      Active body class: <code>.{{ brand }}</code>
+    </span>
+  </section>
+
+  <section class="section" aria-labelledby="section-icons">
+    <h4 id="section-icons" class="tds-headline-03">Icons</h4>
+    <div class="icon-grid">
+      <div class="icon-grid__cell" *ngFor="let iconName of iconNames">
+        <tds-icon [name]="iconName" size="24"></tds-icon>
+        <span class="icon-grid__label">{{ iconName }}</span>
+      </div>
+    </div>
+  </section>
+</div>
