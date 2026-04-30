@@ -8,6 +8,31 @@
     </p>
   </header>
 
+  <section class="brand-toggle" aria-label="Brand toggle">
+    <strong>Brand:</strong>
+    <tds-radio-button
+      name="brand"
+      value="scania"
+      radio-id="brand-scania"
+      [checked]="brand === 'scania'"
+      (tdsChange)="setBrand('scania')"
+    >
+      <div slot="label">Scania (.scania)</div>
+    </tds-radio-button>
+    <tds-radio-button
+      name="brand"
+      value="traton"
+      radio-id="brand-traton"
+      [checked]="brand === 'traton'"
+      (tdsChange)="setBrand('traton')"
+    >
+      <div slot="label">Traton (.traton)</div>
+    </tds-radio-button>
+    <span class="state-label">
+      Active body class: <code>.{{ brand }}</code>
+    </span>
+  </section>
+
   <section class="section" aria-labelledby="section-icons">
     <h4 id="section-icons" class="tds-headline-03">Icons</h4>
     <div class="icon-grid">

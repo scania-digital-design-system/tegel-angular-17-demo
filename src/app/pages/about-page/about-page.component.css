@@ -4,6 +4,26 @@
   gap: 32px;
 }
 
+.brand-toggle {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--tds-grey-50, #f9fafb);
+  border: 1px solid var(--tds-grey-200, #e4e7eb);
+  border-radius: 4px;
+}
+
+.state-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
 .section {
   display: flex;
   flex-direction: column;

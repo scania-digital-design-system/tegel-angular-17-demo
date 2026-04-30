@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
+type Brand = "scania" | "traton";
+
 @Component({
   selector: "app-about-page",
   standalone: true,
@@ -10,6 +12,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
   imports: [TegelModule, CommonModule],
 })
 export default class AboutPageComponent implements OnInit, OnDestroy {
+  brand: Brand = "scania";
+
   iconNames: string[] = [
     "24v_battery_inactive",
     "24v_battery",
@@ -266,10 +270,20 @@ export default class AboutPageComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit(): void {
-    document.body.classList.add("scania");
+    this.applyBrand(this.brand);
   }
 
   ngOnDestroy(): void {
     document.body.classList.remove("scania", "traton");
+  }
+
+  setBrand(brand: Brand): void {
+    this.brand = brand;
+    this.applyBrand(brand);
+  }
+
+  private applyBrand(brand: Brand): void {
+    document.body.classList.remove("scania", "traton");
+    document.body.classList.add(brand);
   }
 }
