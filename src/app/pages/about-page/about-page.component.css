@@ -90,3 +90,28 @@
   gap: 8px;
   align-items: center;
 }
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.icon-grid__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 8px 4px;
+  border: 1px solid var(--tds-grey-200, #e4e7eb);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.icon-grid__label {
+  font-size: 11px;
+  line-height: 1.3;
+  word-break: break-word;
+  opacity: 0.8;
+}

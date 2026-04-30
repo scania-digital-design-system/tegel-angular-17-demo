@@ -3,10 +3,13 @@
     <h3>About this page</h3>
     <p>
       Testing ground for the
-      <strong>1.52.0-var-develop-beta.1</strong> beta of
+      <strong>1.53.0-icons-beta.0</strong> beta of
       &#64;scania/tegel-angular-17. The sections below cover the components
       affected by the variable-migration work: Link, Breadcrumbs, Divider,
       Footer, Button, Tooltip and Tag, across multiple states and both brands.
+      A final section renders every icon name from the union of
+      ScaniaIcons and TratonIcons so the rendered glyph for each can be
+      visually verified.
     </p>
   </header>
 
@@ -523,6 +526,24 @@
         <tds-tag text="warning" variant="warning" size="sm"></tds-tag>
         behaviour change.
       </p>
+    </div>
+  </section>
+
+  <!-- ICONS -->
+  <section class="section" aria-labelledby="section-icons">
+    <h4 id="section-icons" class="tds-headline-03">Icons (all)</h4>
+
+    <div class="state-row">
+      <span class="state-label">
+        Every icon name (union of ScaniaIcons and TratonIcons,
+        {{ iconNames.length }} total)
+      </span>
+      <div class="icon-grid">
+        <div class="icon-grid__cell" *ngFor="let iconName of iconNames">
+          <tds-icon [name]="iconName" size="24"></tds-icon>
+          <span class="icon-grid__label">{{ iconName }}</span>
+        </div>
+      </div>
     </div>
   </section>
 </div>
