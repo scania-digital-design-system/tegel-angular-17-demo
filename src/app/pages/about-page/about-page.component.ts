@@ -1,8 +1,15 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 type Brand = "scania" | "traton";
+
+interface FocusRingTableRow {
+  truck: string;
+  driver: string;
+  country: string;
+  mileage: number;
+}
 
 @Component({
   selector: "app-about-page",
@@ -13,6 +20,23 @@ type Brand = "scania" | "traton";
 })
 export default class AboutPageComponent implements OnInit, OnDestroy {
   brand: Brand = "scania";
+
+  bannerVisible = true;
+  toastsVisible = false;
+
+  @ViewChild("focusRingBanner")
+  focusRingBannerRef?: ElementRef<HTMLTdsBannerElement>;
+
+  @ViewChild("focusRingModal", { static: true })
+  focusRingModalRef!: HTMLTdsModalElement;
+
+  tableData: FocusRingTableRow[] = [
+    { truck: "L-series", driver: "Sonya Bruce", country: "Brazil", mileage: 123987 },
+    { truck: "P-series", driver: "Guerra Bowman", country: "Sweden", mileage: 2000852 },
+    { truck: "G-series", driver: "Ferrell Wallace", country: "Germany", mileage: 564 },
+    { truck: "R-series", driver: "Cox Burris", country: "Spain", mileage: 87412 },
+    { truck: "S-series", driver: "Lottie Hester", country: "Norway", mileage: 45120 },
+  ];
 
   iconNames: string[] = [
     "24v_battery_inactive",
@@ -285,5 +309,42 @@ export default class AboutPageComponent implements OnInit, OnDestroy {
   private applyBrand(brand: Brand): void {
     document.body.classList.remove("scania", "traton");
     document.body.classList.add(brand);
+  }
+
+  toggleBanner(): void {
+    const bannerEl = this.focusRingBannerRef?.nativeElement;
+    if (!bannerEl) {
+      return;
+    }
+    if (this.bannerVisible) {
+      bannerEl.hideBanner();
+    } else {
+      bannerEl.showBanner();
+    }
+    this.bannerVisible = !this.bannerVisible;
+  }
+
+  toggleToasts(): void {
+    this.toastsVisible = !this.toastsVisible;
+  }
+
+  sortTable(event: Event): void {
+    const detail = (event as CustomEvent).detail as {
+      columnKey: keyof FocusRingTableRow;
+      sortingDirection: "asc" | "desc";
+    };
+    const key = detail.columnKey;
+    const direction = detail.sortingDirection;
+    const sorted = this.tableData.slice().sort((a, b) => {
+      let comparison = 0;
+      if (a[key] < b[key]) {
+        comparison = -1;
+      }
+      if (a[key] > b[key]) {
+        comparison = 1;
+      }
+      return direction === "desc" ? comparison * -1 : comparison;
+    });
+    this.tableData = sorted;
   }
 }

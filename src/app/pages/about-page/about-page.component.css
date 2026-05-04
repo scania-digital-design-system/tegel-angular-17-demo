@@ -33,6 +33,26 @@
   border-radius: 4px;
 }
 
+.inline-header,
+.inline-footer {
+  position: relative;
+  border: 1px dashed var(--tds-grey-300, #cdd1d6);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.inline-side-menu {
+  position: relative;
+  height: 320px;
+  border: 1px dashed var(--tds-grey-300, #cdd1d6);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.toast-container {
+  margin-top: 12px;
+}
+
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));

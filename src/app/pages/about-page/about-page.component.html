@@ -1,10 +1,10 @@
 <div class="beta-page">
   <header>
-    <h3>Icons (1.53.0-icons-beta.0)</h3>
+    <h3>Focus rings (1.53.0-focus-ring-beta.1)</h3>
     <p>
-      Every icon name from
-      <strong>&#64;scania/tegel-angular-17 1.53.0-icons-beta.0</strong>
-      ({{ iconNames.length }} total).
+      Tab through each component below to verify focus ring rendering with
+      <strong>&#64;scania/tegel-angular-17 1.53.0-focus-ring-beta.1</strong>.
+      Switch the brand toggle to compare focus rings across Scania and Traton.
     </p>
   </header>
 
@@ -33,8 +33,346 @@
     </span>
   </section>
 
+  <section class="section" aria-labelledby="section-accordion">
+    <h4 id="section-accordion" class="tds-headline-03">Accordion</h4>
+    <tds-accordion>
+      <tds-accordion-item header="Item 1" expanded="true">
+        Panel content for the first accordion item.
+      </tds-accordion-item>
+      <tds-accordion-item header="Item 2">
+        Panel content for the second accordion item.
+      </tds-accordion-item>
+      <tds-accordion-item header="Item 3 (disabled)" disabled>
+        Disabled accordion item.
+      </tds-accordion-item>
+    </tds-accordion>
+  </section>
+
+  <section class="section" aria-labelledby="section-banner">
+    <h4 id="section-banner" class="tds-headline-03">Banner</h4>
+    <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap1">
+      <tds-banner
+        #focusRingBanner
+        icon="info"
+        header="Information banner"
+        variant="information"
+      >
+        <div slot="subheader">Banner subheader text for focus testing.</div>
+      </tds-banner>
+      <tds-banner icon="error" header="Error banner" variant="error">
+        <div slot="subheader">Has a close button to focus.</div>
+      </tds-banner>
+    </div>
+    <tds-button
+      type="button"
+      variant="secondary"
+      size="sm"
+      [text]="bannerVisible ? 'Hide info banner' : 'Show info banner'"
+      (click)="toggleBanner()"
+    ></tds-button>
+  </section>
+
+  <section class="section" aria-labelledby="section-breadcrumb">
+    <h4 id="section-breadcrumb" class="tds-headline-03">Breadcrumb</h4>
+    <tds-breadcrumbs>
+      <tds-breadcrumb>
+        <a href="#">Page 1</a>
+      </tds-breadcrumb>
+      <tds-breadcrumb>
+        <a href="#">Page 2</a>
+      </tds-breadcrumb>
+      <tds-breadcrumb [current]="true">
+        <a href="#">Page 3</a>
+      </tds-breadcrumb>
+    </tds-breadcrumbs>
+  </section>
+
+  <section class="section" aria-labelledby="section-chip">
+    <h4 id="section-chip" class="tds-headline-03">Chip</h4>
+    <div class="tds-u-flex tds-u-gap1 tds-u-flex-wrap">
+      <tds-chip size="lg">
+        <tds-icon slot="prefix" name="lock_inactive" size="16px"></tds-icon>
+        <span slot="label">Button chip</span>
+      </tds-chip>
+      <tds-chip type="checkbox" name="chip-cb" value="cb-1">
+        <span slot="label">Checkbox chip</span>
+      </tds-chip>
+      <tds-chip type="checkbox" name="chip-cb" value="cb-2" checked>
+        <span slot="label">Checkbox chip (checked)</span>
+      </tds-chip>
+      <tds-chip type="radio" name="chip-radio" value="r-1">
+        <span slot="label">Radio chip</span>
+      </tds-chip>
+      <tds-chip type="radio" name="chip-radio" value="r-2" checked>
+        <span slot="label">Radio chip (selected)</span>
+      </tds-chip>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="section-datetime">
+    <h4 id="section-datetime" class="tds-headline-03">Datetime</h4>
+    <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
+      <tds-datetime label="Datetime" label-position="outside"></tds-datetime>
+      <tds-datetime type="date" label="Date" label-position="outside"></tds-datetime>
+      <tds-datetime type="time" label="Time" label-position="outside"></tds-datetime>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="section-dropdown">
+    <h4 id="section-dropdown" class="tds-headline-03">Dropdown</h4>
+    <tds-dropdown
+      name="focus-dropdown"
+      label="Dropdown"
+      label-position="outside"
+      placeholder="Choose an option"
+      size="md"
+      open-direction="auto"
+    >
+      <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
+      <tds-dropdown-option value="option-2">Option 2</tds-dropdown-option>
+      <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
+      <tds-dropdown-option disabled value="option-4">Option 4 (disabled)</tds-dropdown-option>
+    </tds-dropdown>
+  </section>
+
+  <section class="section" aria-labelledby="section-footer">
+    <h4 id="section-footer" class="tds-headline-03">Footer</h4>
+    <div class="inline-footer">
+      <tds-footer>
+        <div slot="top">
+          <tds-footer-group title-text="Pages">
+            <tds-footer-item>
+              <a href="#">Home</a>
+            </tds-footer-item>
+            <tds-footer-item>
+              <a href="#">About</a>
+            </tds-footer-item>
+          </tds-footer-group>
+          <tds-footer-group title-text="Legal">
+            <tds-footer-item>
+              <a href="#">Terms</a>
+            </tds-footer-item>
+            <tds-footer-item>
+              <a href="#">Privacy</a>
+            </tds-footer-item>
+          </tds-footer-group>
+        </div>
+        <div slot="end">
+          <tds-footer-group>
+            <tds-footer-item>
+              <a href="#" aria-label="Truck link">
+                <tds-icon name="truck"></tds-icon>
+              </a>
+            </tds-footer-item>
+          </tds-footer-group>
+        </div>
+      </tds-footer>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="section-header">
+    <h4 id="section-header" class="tds-headline-03">Header</h4>
+    <div class="inline-header">
+      <tds-header>
+        <tds-header-hamburger aria-label="Open menu"></tds-header-hamburger>
+        <tds-header-title>Focus ring demo</tds-header-title>
+        <tds-header-item slot="end">
+          <a href="#">
+            <tds-icon name="settings"></tds-icon>
+          </a>
+        </tds-header-item>
+        <tds-header-item slot="end">
+          <a href="#">
+            <tds-icon name="notification"></tds-icon>
+          </a>
+        </tds-header-item>
+        <tds-header-brand-symbol slot="end">
+          <a href="#" aria-label="Brand"></a>
+        </tds-header-brand-symbol>
+      </tds-header>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="section-modal">
+    <h4 id="section-modal" class="tds-headline-03">Modal</h4>
+    <tds-button
+      id="focus-ring-modal-trigger"
+      text="Open modal"
+      size="md"
+    ></tds-button>
+    <tds-modal
+      #focusRingModal
+      header="Focus ring modal"
+      selector="#focus-ring-modal-trigger"
+      id="focus-ring-modal"
+      size="md"
+      actions-position="static"
+    >
+      <span slot="body">
+        <p>Tab through the close button, the body link below, and the actions to test focus rings inside the modal.</p>
+        <p>
+          Here is a focusable
+          <tds-link>
+            <a href="#">link inside the modal body</a>
+          </tds-link>
+          for testing.
+        </p>
+      </span>
+      <div slot="actions">
+        <tds-button data-dismiss-modal size="md" text="Cancel" variant="secondary"></tds-button>
+        <tds-button data-dismiss-modal size="md" text="Confirm"></tds-button>
+      </div>
+    </tds-modal>
+  </section>
+
+  <section class="section" aria-labelledby="section-side-menu">
+    <h4 id="section-side-menu" class="tds-headline-03">Side menu</h4>
+    <div class="inline-side-menu">
+      <tds-side-menu aria-label="Side menu" persistent open="true">
+        <tds-side-menu-item selected>
+          <a href="#">
+            <tds-icon name="info" size="24"></tds-icon>
+            About
+          </a>
+        </tds-side-menu-item>
+        <tds-side-menu-item>
+          <a href="#">
+            <tds-icon name="report" size="24"></tds-icon>
+            Reports
+          </a>
+        </tds-side-menu-item>
+        <tds-side-menu-dropdown>
+          <tds-icon slot="icon" name="folder" size="24"></tds-icon>
+          <span slot="label">More</span>
+          <tds-side-menu-dropdown-list>
+            <tds-side-menu-dropdown-list-item>
+              <a href="#">Sub item 1</a>
+            </tds-side-menu-dropdown-list-item>
+            <tds-side-menu-dropdown-list-item>
+              <a href="#">Sub item 2</a>
+            </tds-side-menu-dropdown-list-item>
+          </tds-side-menu-dropdown-list>
+        </tds-side-menu-dropdown>
+      </tds-side-menu>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="section-table">
+    <h4 id="section-table" class="tds-headline-03">Table</h4>
+    <tds-table
+      vertical-dividers="false"
+      compact-design="false"
+      responsive
+      no-min-width
+      (tdsSort)="sortTable($event)"
+    >
+      <tds-table-toolbar table-title="Sortable focus-ring table"></tds-table-toolbar>
+      <tds-table-header>
+        <tds-header-cell
+          cell-key="truck"
+          cell-value="Truck type"
+          sortable="true"
+        ></tds-header-cell>
+        <tds-header-cell
+          cell-key="driver"
+          cell-value="Driver name"
+        ></tds-header-cell>
+        <tds-header-cell
+          cell-key="country"
+          cell-value="Country"
+          sortable="true"
+        ></tds-header-cell>
+        <tds-header-cell
+          cell-key="mileage"
+          cell-value="Mileage"
+          sortable="true"
+          text-align="right"
+        ></tds-header-cell>
+      </tds-table-header>
+      <tds-table-body>
+        <tds-table-body-row *ngFor="let row of tableData">
+          <tds-body-cell cell-key="truck">{{ row.truck }}</tds-body-cell>
+          <tds-body-cell cell-key="driver">
+            <a href="#">{{ row.driver }}</a>
+          </tds-body-cell>
+          <tds-body-cell cell-key="country">{{ row.country }}</tds-body-cell>
+          <tds-body-cell cell-key="mileage" text-align="right">{{ row.mileage }}</tds-body-cell>
+        </tds-table-body-row>
+      </tds-table-body>
+    </tds-table>
+  </section>
+
+  <section class="section" aria-labelledby="section-folder-tabs">
+    <h4 id="section-folder-tabs" class="tds-headline-03">Folder tabs</h4>
+    <tds-folder-tabs>
+      <tds-folder-tab>
+        <button type="button">First tab</button>
+      </tds-folder-tab>
+      <tds-folder-tab>
+        <button type="button">Second tab is much longer</button>
+      </tds-folder-tab>
+      <tds-folder-tab>
+        <button type="button">Third tab</button>
+      </tds-folder-tab>
+      <tds-folder-tab disabled>
+        <button type="button">Fourth tab</button>
+      </tds-folder-tab>
+    </tds-folder-tabs>
+  </section>
+
+  <section class="section" aria-labelledby="section-textarea">
+    <h4 id="section-textarea" class="tds-headline-03">Textarea</h4>
+    <div class="tds-u-flex tds-u-flex-dir-col tds-u-gap2">
+      <tds-textarea
+        rows="3"
+        label="Default textarea"
+        label-position="outside"
+        placeholder="Type something..."
+        helper="Helper text"
+      ></tds-textarea>
+      <tds-textarea
+        rows="3"
+        state="error"
+        label="Error textarea"
+        label-position="outside"
+        placeholder="Type something..."
+        helper="Required field"
+      ></tds-textarea>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="section-toast">
+    <h4 id="section-toast" class="tds-headline-03">Toast</h4>
+    <tds-button
+      type="button"
+      size="sm"
+      variant="secondary"
+      [text]="toastsVisible ? 'Hide toasts' : 'Show toasts'"
+      (click)="toggleToasts()"
+    ></tds-button>
+    <div
+      *ngIf="toastsVisible"
+      class="toast-container tds-u-flex tds-u-flex-dir-col tds-u-gap1"
+    >
+      <tds-toast variant="success" header="Success toast">
+        <div slot="subheader">This toast can be closed.</div>
+      </tds-toast>
+      <tds-toast variant="information" header="Information toast">
+        <div slot="subheader">Has a link to focus.</div>
+        <a slot="actions" href="#">Action link</a>
+      </tds-toast>
+      <tds-toast variant="error" header="Error toast">
+        <div slot="subheader">Close button is keyboard-focusable.</div>
+      </tds-toast>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="section-icons">
     <h4 id="section-icons" class="tds-headline-03">Icons</h4>
+    <p class="tds-body-02 tds-u-mb0">
+      Every icon name from <strong>&#64;scania/tegel-angular-17</strong>
+      ({{ iconNames.length }} total).
+    </p>
     <div class="icon-grid">
       <div class="icon-grid__cell" *ngFor="let iconName of iconNames">
         <tds-icon [name]="iconName" size="24"></tds-icon>
