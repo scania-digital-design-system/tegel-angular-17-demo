@@ -1,10 +1,350 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
+
+type Brand = "scania" | "traton";
+
+interface FocusRingTableRow {
+  truck: string;
+  driver: string;
+  country: string;
+  mileage: number;
+}
 
 @Component({
   selector: "app-about-page",
   standalone: true,
   templateUrl: "./about-page.component.html",
-  imports: [TegelModule],
+  styleUrls: ["./about-page.component.css"],
+  imports: [TegelModule, CommonModule],
 })
-export default class AboutPageComponent {}
+export default class AboutPageComponent implements OnInit, OnDestroy {
+  brand: Brand = "scania";
+
+  bannerVisible = true;
+  toastsVisible = false;
+
+  @ViewChild("focusRingBanner")
+  focusRingBannerRef?: ElementRef<HTMLTdsBannerElement>;
+
+  @ViewChild("focusRingModal", { static: true })
+  focusRingModalRef!: HTMLTdsModalElement;
+
+  tableData: FocusRingTableRow[] = [
+    { truck: "L-series", driver: "Sonya Bruce", country: "Brazil", mileage: 123987 },
+    { truck: "P-series", driver: "Guerra Bowman", country: "Sweden", mileage: 2000852 },
+    { truck: "G-series", driver: "Ferrell Wallace", country: "Germany", mileage: 564 },
+    { truck: "R-series", driver: "Cox Burris", country: "Spain", mileage: 87412 },
+    { truck: "S-series", driver: "Lottie Hester", country: "Norway", mileage: 45120 },
+  ];
+
+  iconNames: string[] = [
+    "24v_battery_inactive",
+    "24v_battery",
+    "acceleration_inactive",
+    "acceleration",
+    "adblue_inactive",
+    "adblue",
+    "arrow_diagonal",
+    "arrow_down",
+    "arrow_left",
+    "arrow_right",
+    "arrow_up",
+    "audio_inactive",
+    "audio",
+    "award",
+    "back",
+    "backward_inactive",
+    "backward",
+    "bento",
+    "bug_inactive",
+    "bug",
+    "burger",
+    "bus_inactive",
+    "bus",
+    "cab_door",
+    "calendar_inactive",
+    "calendar",
+    "camera_inactive",
+    "camera",
+    "card",
+    "cart",
+    "charging_complete",
+    "charging_failed",
+    "charging_speed_inactive",
+    "charging_speed",
+    "charging_stopped",
+    "chevron_down",
+    "chevron_left",
+    "chevron_right",
+    "chevron_up",
+    "clock_inactive",
+    "clock",
+    "configurator",
+    "contact_inactive",
+    "contact",
+    "cookie_inactive",
+    "cookie",
+    "coolant_level_inactive",
+    "coolant_level",
+    "copy",
+    "cross",
+    "cup_inactive",
+    "cup",
+    "dashboard",
+    "department_inactive",
+    "department",
+    "departure_scheduling_inactive",
+    "departure_scheduling",
+    "diamond_inactive",
+    "diamond",
+    "document_check",
+    "document_doc",
+    "document_eye",
+    "document_pdf",
+    "document_plus_inactive",
+    "document_plus",
+    "document_ppt",
+    "document_tool",
+    "document_wrong",
+    "document_xls",
+    "document",
+    "dollar",
+    "doner",
+    "double_kebab",
+    "download",
+    "driving_licence_inactive",
+    "driving_licence",
+    "drop_inactive",
+    "drop",
+    "edit_inactive",
+    "edit",
+    "email",
+    "engine_inactive",
+    "engine",
+    "environment_inactive",
+    "environment",
+    "error",
+    "exit",
+    "expand_inactive",
+    "expand",
+    "export_inactive",
+    "export",
+    "eye_inactive",
+    "eye",
+    "face_dissatisfied",
+    "face_neutral",
+    "face_satisfied",
+    "factory_inactive",
+    "factory",
+    "ferry_inactive",
+    "ferry",
+    "filters_inactive",
+    "filters",
+    "flash_inactive",
+    "flash",
+    "folder",
+    "forward_inactive",
+    "forward",
+    "fuel_gauge_inactive",
+    "fuel_gauge",
+    "fuel_inactive",
+    "fuel",
+    "gift_inactive",
+    "gift",
+    "global",
+    "guided_tour_inactive",
+    "guided_tour",
+    "hatch_open_1",
+    "hatch_open_2",
+    "hatch_open_inactive",
+    "hatch_open",
+    "heart_inactive",
+    "heart",
+    "heating_inactive_screen",
+    "history_inactive",
+    "history",
+    "home_inactive",
+    "home",
+    "idea_inactive",
+    "idea",
+    "image_add",
+    "image_inactive",
+    "image_set",
+    "image",
+    "info",
+    "insights",
+    "kebab",
+    "key_inactive",
+    "key",
+    "language",
+    "layer_inactive",
+    "layer",
+    "link_broken",
+    "link",
+    "list_inactive",
+    "list",
+    "lock_inactive",
+    "lock",
+    "map_cursor_inactive",
+    "map_cursor",
+    "maximize_fullscreen",
+    "meatballs",
+    "merge_inactive",
+    "merge",
+    "message_inactive",
+    "message",
+    "microphone_inactive",
+    "microphone",
+    "mileage_inactive",
+    "mileage",
+    "minimize_fullscreen",
+    "minus",
+    "navigate_inactive",
+    "navigate",
+    "notification_inactive",
+    "notification_snooze",
+    "notification",
+    "oil_level_inactive",
+    "oil_level",
+    "paperclip",
+    "pause_inactive",
+    "pause",
+    "phone_inactive",
+    "phone",
+    "pie_chart",
+    "pin_inactive",
+    "pin",
+    "placeholder",
+    "play_inactive",
+    "play",
+    "plus",
+    "powerplug_inactive",
+    "powerplug",
+    "print_inactive",
+    "print",
+    "privacy_inactive",
+    "privacy",
+    "profile_inactive",
+    "profile",
+    "prohibited",
+    "proportions_inactive",
+    "proportions",
+    "range_inactive",
+    "range",
+    "redirect",
+    "refresh_inactive",
+    "refresh",
+    "reload_inactive",
+    "reload",
+    "repeat",
+    "report_inactive",
+    "report",
+    "route_inactive",
+    "route",
+    "save_inactive",
+    "save",
+    "search",
+    "send_inactive",
+    "send",
+    "settings",
+    "share",
+    "shuffle",
+    "skip_backwards",
+    "skip_forward",
+    "smartphone_inactive",
+    "smartphone",
+    "sorting",
+    "speedometer_inactive",
+    "speedometer",
+    "star",
+    "support",
+    "target_inactive",
+    "target",
+    "temperature_inactive",
+    "temperature",
+    "text_inactive",
+    "text",
+    "thumbs_down",
+    "thumbs_up",
+    "tick",
+    "timer",
+    "tool_inactive",
+    "tool",
+    "trailer_inactive",
+    "trailer",
+    "trash_inactive",
+    "trash",
+    "truck_inactive",
+    "truck",
+    "undo_inactive",
+    "undo",
+    "unlock",
+    "upload",
+    "video_inactive",
+    "video",
+    "wallet",
+    "warning",
+    "weight_inactive",
+    "weight",
+    "wifi_inactive",
+    "wifi",
+    "windscreen_heating_inactive",
+    "windscreen_heating",
+  ];
+
+  ngOnInit(): void {
+    this.applyBrand(this.brand);
+  }
+
+  ngOnDestroy(): void {
+    document.body.classList.remove("scania", "traton");
+  }
+
+  setBrand(brand: Brand): void {
+    this.brand = brand;
+    this.applyBrand(brand);
+  }
+
+  private applyBrand(brand: Brand): void {
+    document.body.classList.remove("scania", "traton");
+    document.body.classList.add(brand);
+  }
+
+  toggleBanner(): void {
+    const bannerEl = this.focusRingBannerRef?.nativeElement;
+    if (!bannerEl) {
+      return;
+    }
+    if (this.bannerVisible) {
+      bannerEl.hideBanner();
+    } else {
+      bannerEl.showBanner();
+    }
+    this.bannerVisible = !this.bannerVisible;
+  }
+
+  toggleToasts(): void {
+    this.toastsVisible = !this.toastsVisible;
+  }
+
+  sortTable(event: Event): void {
+    const detail = (event as CustomEvent).detail as {
+      columnKey: keyof FocusRingTableRow;
+      sortingDirection: "asc" | "desc";
+    };
+    const key = detail.columnKey;
+    const direction = detail.sortingDirection;
+    const sorted = this.tableData.slice().sort((a, b) => {
+      let comparison = 0;
+      if (a[key] < b[key]) {
+        comparison = -1;
+      }
+      if (a[key] > b[key]) {
+        comparison = 1;
+      }
+      return direction === "desc" ? comparison * -1 : comparison;
+    });
+    this.tableData = sorted;
+  }
+}
