@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { ChangeDetectorRef, Component } from "@angular/core";
 import exampleData from "./exampleData.json";
 import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
@@ -54,6 +54,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
         [pages]="pages"
         (tdsPagination)="handlePagination($event)"
         [rowsPerPageValues]="rowsPerPageValuesArray"
+        [rowsPerPageValue]="rowsPerPage"
       ></tds-table-footer>
     </tds-table>
   `,
@@ -62,6 +63,10 @@ import { TegelModule } from "@scania/tegel-angular-17";
   imports: [CommonModule, TegelModule],
 })
 export class PaginationTableComponent {
+  // Should probably be changed to signals since using ChangeDetectorRef 
+  // is not the best practice.
+  constructor(private cdr: ChangeDetectorRef) {}
+
   page = 0;
   rowsPerPageValuesArray = [2, 4, 6];
   rowsPerPage = this.rowsPerPageValuesArray[0];
@@ -82,5 +87,6 @@ export class PaginationTableComponent {
     const startIndex = (this.page - 1) * this.rowsPerPage;
     const endIndex = startIndex + this.rowsPerPage;
     this.tableData = exampleData.slice(startIndex, endIndex);
+    this.cdr.detectChanges();
   }
 }
