@@ -1,5 +1,391 @@
-<h3>About this page</h3>
-<p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
-</p>
+<div class="beta-page">
+  <header>
+    <h3>Text field variants (1.53.0-field-var.0)</h3>
+    <p>
+      Test ground for <code>tds-text-field</code> and <code>tds-textarea</code>
+      shipped in
+      <strong>&#64;scania/tegel-angular-17 1.53.0-field-var.0</strong>. Switch
+      the brand toggle to compare variants across Scania and Traton.
+    </p>
+  </header>
+
+  <section class="brand-toggle" aria-label="Brand toggle">
+    <strong>Brand:</strong>
+    <tds-radio-button
+      name="brand"
+      value="scania"
+      radio-id="brand-scania"
+      [checked]="brand === 'scania'"
+      (tdsChange)="setBrand('scania')"
+    >
+      <div slot="label">Scania (.scania)</div>
+    </tds-radio-button>
+    <tds-radio-button
+      name="brand"
+      value="traton"
+      radio-id="brand-traton"
+      [checked]="brand === 'traton'"
+      (tdsChange)="setBrand('traton')"
+    >
+      <div slot="label">Traton (.traton)</div>
+    </tds-radio-button>
+    <span class="state-label">
+      Active body class: <code>.{{ brand }}</code>
+    </span>
+  </section>
+
+  <h3>tds-text-field</h3>
+
+  <section class="section" aria-labelledby="tf-label-position">
+    <h4 id="tf-label-position" class="tds-headline-03">Label position</h4>
+    <p>Three values: <code>no-label</code>, <code>inside</code>, <code>outside</code>.</p>
+    <div class="grid">
+      <tds-text-field
+        placeholder="No label"
+        helper="labelPosition=no-label"
+      ></tds-text-field>
+      <tds-text-field
+        label="Label inside"
+        label-position="inside"
+        placeholder="Placeholder"
+        helper="labelPosition=inside"
+      ></tds-text-field>
+      <tds-text-field
+        label="Label outside"
+        label-position="outside"
+        placeholder="Placeholder"
+        helper="labelPosition=outside"
+      ></tds-text-field>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tf-size">
+    <h4 id="tf-size" class="tds-headline-03">Size</h4>
+    <p><code>sm</code>, <code>md</code>, <code>lg</code> (default).</p>
+    <div class="grid">
+      <tds-text-field
+        size="sm"
+        label="Small"
+        label-position="outside"
+        placeholder="size=sm"
+      ></tds-text-field>
+      <tds-text-field
+        size="md"
+        label="Medium"
+        label-position="outside"
+        placeholder="size=md"
+      ></tds-text-field>
+      <tds-text-field
+        size="lg"
+        label="Large"
+        label-position="outside"
+        placeholder="size=lg"
+      ></tds-text-field>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tf-state">
+    <h4 id="tf-state" class="tds-headline-03">State</h4>
+    <p><code>default</code>, <code>success</code>, <code>error</code>.</p>
+    <div class="grid">
+      <tds-text-field
+        label="Default"
+        label-position="outside"
+        placeholder="state=default"
+        helper="Helper text"
+      ></tds-text-field>
+      <tds-text-field
+        label="Success"
+        label-position="outside"
+        state="success"
+        value="Valid input"
+        helper="Looks good"
+      ></tds-text-field>
+      <tds-text-field
+        label="Error"
+        label-position="outside"
+        state="error"
+        value="Invalid"
+        helper="Something went wrong"
+      ></tds-text-field>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tf-disabled-readonly">
+    <h4 id="tf-disabled-readonly" class="tds-headline-03">Disabled and read-only</h4>
+    <div class="grid">
+      <tds-text-field
+        label="Disabled"
+        label-position="outside"
+        value="Cannot edit"
+        disabled
+      ></tds-text-field>
+      <tds-text-field
+        label="Read-only"
+        label-position="outside"
+        value="Read-only value"
+        read-only
+      ></tds-text-field>
+      <tds-text-field
+        label="Read-only (no icon)"
+        label-position="outside"
+        value="Read-only value"
+        read-only
+        hide-read-only-icon
+      ></tds-text-field>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tf-mode-variant">
+    <h4 id="tf-mode-variant" class="tds-headline-03">Mode variant</h4>
+    <p>
+      <code>primary</code> and <code>secondary</code> swap the surface treatment
+      (visible against the page background).
+    </p>
+    <div class="grid">
+      <tds-text-field
+        label="Primary"
+        label-position="outside"
+        mode-variant="primary"
+        placeholder="modeVariant=primary"
+      ></tds-text-field>
+      <tds-text-field
+        label="Secondary"
+        label-position="outside"
+        mode-variant="secondary"
+        placeholder="modeVariant=secondary"
+      ></tds-text-field>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tf-slots">
+    <h4 id="tf-slots" class="tds-headline-03">Prefix and suffix slots</h4>
+    <div class="grid">
+      <tds-text-field
+        label="Prefix"
+        label-position="outside"
+        placeholder="With prefix"
+      >
+        <tds-icon slot="prefix" name="search" size="20px"></tds-icon>
+      </tds-text-field>
+      <tds-text-field
+        label="Suffix"
+        label-position="outside"
+        placeholder="With suffix"
+      >
+        <tds-icon slot="suffix" name="settings" size="20px"></tds-icon>
+      </tds-text-field>
+      <tds-text-field
+        label="Both"
+        label-position="outside"
+        placeholder="Prefix + suffix"
+      >
+        <tds-icon slot="prefix" name="email" size="20px"></tds-icon>
+        <tds-icon slot="suffix" name="tick" size="20px"></tds-icon>
+      </tds-text-field>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tf-type">
+    <h4 id="tf-type" class="tds-headline-03">Input type</h4>
+    <p>
+      <code>text</code> (default), <code>password</code>, <code>number</code>,
+      <code>email</code>, <code>tel</code>.
+    </p>
+    <div class="grid">
+      <tds-text-field
+        label="text"
+        label-position="outside"
+        type="text"
+        placeholder="text"
+      ></tds-text-field>
+      <tds-text-field
+        label="password"
+        label-position="outside"
+        type="password"
+        value="secret"
+      ></tds-text-field>
+      <tds-text-field
+        label="number"
+        label-position="outside"
+        type="number"
+        min="0"
+        max="100"
+        step="1"
+        placeholder="0-100"
+      ></tds-text-field>
+      <tds-text-field
+        label="number (no arrows)"
+        label-position="outside"
+        type="number"
+        hide-number-arrows
+        placeholder="hideNumberArrows"
+      ></tds-text-field>
+      <tds-text-field
+        label="email"
+        label-position="outside"
+        type="email"
+        placeholder="name@example.com"
+      ></tds-text-field>
+      <tds-text-field
+        label="tel"
+        label-position="outside"
+        type="tel"
+        placeholder="+46…"
+      ></tds-text-field>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tf-misc">
+    <h4 id="tf-misc" class="tds-headline-03">Required, maxLength, noMinWidth</h4>
+    <div class="grid">
+      <tds-text-field
+        label="Required"
+        label-position="outside"
+        required
+        placeholder="required"
+      ></tds-text-field>
+      <tds-text-field
+        label="maxLength=20"
+        label-position="outside"
+        [maxLength]="20"
+        helper="Counter under the field"
+      ></tds-text-field>
+      <tds-text-field
+        label="noMinWidth"
+        label-position="outside"
+        no-min-width
+        placeholder="Can shrink below 208px"
+      ></tds-text-field>
+    </div>
+  </section>
+
+  <h3>tds-textarea</h3>
+
+  <section class="section" aria-labelledby="ta-label-position">
+    <h4 id="ta-label-position" class="tds-headline-03">Label position</h4>
+    <div class="grid">
+      <tds-textarea
+        placeholder="No label"
+        helper="labelPosition=no-label"
+      ></tds-textarea>
+      <tds-textarea
+        label="Label inside"
+        label-position="inside"
+        placeholder="Placeholder"
+        helper="labelPosition=inside"
+      ></tds-textarea>
+      <tds-textarea
+        label="Label outside"
+        label-position="outside"
+        placeholder="Placeholder"
+        helper="labelPosition=outside"
+      ></tds-textarea>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ta-state">
+    <h4 id="ta-state" class="tds-headline-03">State</h4>
+    <div class="grid">
+      <tds-textarea
+        label="Default"
+        label-position="outside"
+        placeholder="state=default"
+        helper="Helper text"
+      ></tds-textarea>
+      <tds-textarea
+        label="Success"
+        label-position="outside"
+        state="success"
+        value="Looks good"
+        helper="Looks good"
+      ></tds-textarea>
+      <tds-textarea
+        label="Error"
+        label-position="outside"
+        state="error"
+        value="Bad input"
+        helper="Something went wrong"
+      ></tds-textarea>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ta-disabled-readonly">
+    <h4 id="ta-disabled-readonly" class="tds-headline-03">Disabled and read-only</h4>
+    <div class="grid">
+      <tds-textarea
+        label="Disabled"
+        label-position="outside"
+        value="Cannot edit"
+        disabled
+      ></tds-textarea>
+      <tds-textarea
+        label="Read-only"
+        label-position="outside"
+        value="Read-only value"
+        read-only
+      ></tds-textarea>
+      <tds-textarea
+        label="Read-only (no icon)"
+        label-position="outside"
+        value="Read-only value"
+        read-only
+        hide-read-only-icon
+      ></tds-textarea>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ta-mode-variant">
+    <h4 id="ta-mode-variant" class="tds-headline-03">Mode variant</h4>
+    <div class="grid">
+      <tds-textarea
+        label="Primary"
+        label-position="outside"
+        mode-variant="primary"
+        placeholder="modeVariant=primary"
+      ></tds-textarea>
+      <tds-textarea
+        label="Secondary"
+        label-position="outside"
+        mode-variant="secondary"
+        placeholder="modeVariant=secondary"
+      ></tds-textarea>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ta-misc">
+    <h4 id="ta-misc" class="tds-headline-03">Rows, cols, maxLength, noMinWidth</h4>
+    <div class="grid">
+      <tds-textarea
+        label="rows=2"
+        label-position="outside"
+        [rows]="2"
+        placeholder="Compact"
+      ></tds-textarea>
+      <tds-textarea
+        label="rows=6"
+        label-position="outside"
+        [rows]="6"
+        placeholder="Taller"
+      ></tds-textarea>
+      <tds-textarea
+        label="cols=20"
+        label-position="outside"
+        [cols]="20"
+        placeholder="cols=20"
+      ></tds-textarea>
+      <tds-textarea
+        label="maxLength=50"
+        label-position="outside"
+        [maxLength]="50"
+        helper="Counter under the field"
+      ></tds-textarea>
+      <tds-textarea
+        label="noMinWidth"
+        label-position="outside"
+        no-min-width
+        placeholder="Can shrink below 208px"
+      ></tds-textarea>
+    </div>
+  </section>
+</div>
