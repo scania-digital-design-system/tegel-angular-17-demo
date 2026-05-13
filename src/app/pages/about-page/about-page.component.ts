@@ -14,6 +14,35 @@ type Brand = "scania" | "traton";
 export default class AboutPageComponent implements OnInit, OnDestroy {
   brand: Brand = "scania";
 
+  modalOpen = false;
+  overlayOpen = false;
+  toastVisible = false;
+
+  icons: string[] = [
+    "truck",
+    "bus",
+    "engine",
+    "fuel",
+    "settings",
+    "info",
+    "warning",
+    "tick",
+    "cross",
+    "search",
+    "filters",
+    "calendar",
+    "clock",
+    "email",
+    "phone",
+    "profile",
+    "notification",
+    "download",
+    "upload",
+    "save",
+  ];
+
+  scrollRows: number[] = Array.from({ length: 30 }, (_, i) => i + 1);
+
   ngOnInit(): void {
     this.applyBrand(this.brand);
   }
@@ -25,6 +54,26 @@ export default class AboutPageComponent implements OnInit, OnDestroy {
   setBrand(brand: Brand): void {
     this.brand = brand;
     this.applyBrand(brand);
+  }
+
+  openModal(): void {
+    this.modalOpen = true;
+  }
+
+  closeModal(): void {
+    this.modalOpen = false;
+  }
+
+  openOverlay(): void {
+    this.overlayOpen = true;
+  }
+
+  closeOverlay(): void {
+    this.overlayOpen = false;
+  }
+
+  toggleToast(): void {
+    this.toastVisible = !this.toastVisible;
   }
 
   private applyBrand(brand: Brand): void {

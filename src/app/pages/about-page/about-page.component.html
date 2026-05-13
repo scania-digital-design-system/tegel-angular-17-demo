@@ -1,11 +1,11 @@
 <div class="beta-page">
   <header>
-    <h3>Text field variants (1.53.0-field-var.0)</h3>
+    <h3>Component test ground (1.53.0-var-pre-beta.0)</h3>
     <p>
-      Test ground for <code>tds-text-field</code> and <code>tds-textarea</code>
-      shipped in
-      <strong>&#64;scania/tegel-angular-17 1.53.0-field-var.0</strong>. Switch
-      the brand toggle to compare variants across Scania and Traton.
+      Visual test ground for component behavior in
+      <strong>&#64;scania/tegel-angular-17 1.53.0-var-pre-beta.0</strong>. Each
+      section below isolates one component so you can verify rendering,
+      interaction, and the brand-aware tokens.
     </p>
   </header>
 
@@ -34,358 +34,228 @@
     </span>
   </section>
 
-  <h3>tds-text-field</h3>
+  <h3>tds-card</h3>
 
-  <section class="section" aria-labelledby="tf-label-position">
-    <h4 id="tf-label-position" class="tds-headline-03">Label position</h4>
-    <p>Three values: <code>no-label</code>, <code>inside</code>, <code>outside</code>.</p>
+  <section class="section" aria-labelledby="card-variants">
+    <h4 id="card-variants" class="tds-headline-03">Variants</h4>
+    <p>Default, clickable, and with body image.</p>
     <div class="grid">
-      <tds-text-field
-        placeholder="No label"
-        helper="labelPosition=no-label"
-      ></tds-text-field>
-      <tds-text-field
-        label="Label inside"
-        label-position="inside"
-        placeholder="Placeholder"
-        helper="labelPosition=inside"
-      ></tds-text-field>
-      <tds-text-field
-        label="Label outside"
-        label-position="outside"
-        placeholder="Placeholder"
-        helper="labelPosition=outside"
-      ></tds-text-field>
+      <tds-card header="Default card" subheader="A standard card">
+        <p slot="body">
+          Cards group related content. Set the header and subheader, and put
+          body content in the default slot.
+        </p>
+      </tds-card>
+      <tds-card clickable header="Clickable card" subheader="Hover and click me">
+        <p slot="body">
+          <code>clickable</code> turns the entire card surface into an
+          interactive target.
+        </p>
+      </tds-card>
+      <tds-card
+        header="Card with image"
+        subheader="Image above header"
+        image-placement="above-header"
+        body-img="https://images.unsplash.com/photo-1493238792000-8113da705763?w=480&q=60"
+        body-img-alt="Truck on a mountain road"
+      >
+        <p slot="body">Body content sits below the image.</p>
+      </tds-card>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="tf-size">
-    <h4 id="tf-size" class="tds-headline-03">Size</h4>
-    <p><code>sm</code>, <code>md</code>, <code>lg</code> (default).</p>
+  <h3>tds-modal</h3>
+
+  <section class="section" aria-labelledby="modal-trigger">
+    <h4 id="modal-trigger" class="tds-headline-03">Trigger</h4>
+    <p>Click the button to open. The modal renders its own backdrop overlay.</p>
     <div class="grid">
-      <tds-text-field
-        size="sm"
-        label="Small"
-        label-position="outside"
-        placeholder="size=sm"
-      ></tds-text-field>
-      <tds-text-field
-        size="md"
-        label="Medium"
-        label-position="outside"
-        placeholder="size=md"
-      ></tds-text-field>
-      <tds-text-field
-        size="lg"
-        label="Large"
-        label-position="outside"
-        placeholder="size=lg"
-      ></tds-text-field>
+      <div>
+        <tds-button
+          #modalTrigger
+          text="Open modal"
+          size="md"
+          (click)="openModal()"
+        ></tds-button>
+        <tds-modal
+          header="Example modal"
+          size="md"
+          [show]="modalOpen"
+          [referenceEl]="modalTrigger"
+          (tdsClose)="closeModal()"
+        >
+          <p slot="body">
+            Modal body content. Modals render on top of an overlay that dims
+            the page behind them.
+          </p>
+          <div slot="actions">
+            <tds-button
+              size="md"
+              text="Close"
+              mode-variant="secondary"
+              (click)="closeModal()"
+            ></tds-button>
+          </div>
+        </tds-modal>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="tf-state">
-    <h4 id="tf-state" class="tds-headline-03">State</h4>
-    <p><code>default</code>, <code>success</code>, <code>error</code>.</p>
-    <div class="grid">
-      <tds-text-field
-        label="Default"
-        label-position="outside"
-        placeholder="state=default"
-        helper="Helper text"
-      ></tds-text-field>
-      <tds-text-field
-        label="Success"
-        label-position="outside"
-        state="success"
-        value="Valid input"
-        helper="Looks good"
-      ></tds-text-field>
-      <tds-text-field
-        label="Error"
-        label-position="outside"
-        state="error"
-        value="Invalid"
-        helper="Something went wrong"
-      ></tds-text-field>
-    </div>
-  </section>
+  <h3>overlay</h3>
 
-  <section class="section" aria-labelledby="tf-disabled-readonly">
-    <h4 id="tf-disabled-readonly" class="tds-headline-03">Disabled and read-only</h4>
-    <div class="grid">
-      <tds-text-field
-        label="Disabled"
-        label-position="outside"
-        value="Cannot edit"
-        disabled
-      ></tds-text-field>
-      <tds-text-field
-        label="Read-only"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-      ></tds-text-field>
-      <tds-text-field
-        label="Read-only (no icon)"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-        hide-read-only-icon
-      ></tds-text-field>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="tf-mode-variant">
-    <h4 id="tf-mode-variant" class="tds-headline-03">Mode variant</h4>
+  <section class="section" aria-labelledby="overlay-trigger">
+    <h4 id="overlay-trigger" class="tds-headline-03">Modal-as-overlay</h4>
     <p>
-      <code>primary</code> and <code>secondary</code> swap the surface treatment
-      (visible against the page background).
+      Tegel does not ship a standalone <code>tds-overlay</code>; the
+      overlay/backdrop is a built-in part of <code>tds-modal</code>. The button
+      below opens a minimal, header-less modal so the overlay treatment is easy
+      to inspect.
     </p>
     <div class="grid">
-      <tds-text-field
-        label="Primary"
-        label-position="outside"
-        mode-variant="primary"
-        placeholder="modeVariant=primary"
-      ></tds-text-field>
-      <tds-text-field
-        label="Secondary"
-        label-position="outside"
-        mode-variant="secondary"
-        placeholder="modeVariant=secondary"
-      ></tds-text-field>
+      <div>
+        <tds-button
+          #overlayTrigger
+          text="Show overlay"
+          size="md"
+          mode-variant="secondary"
+          (click)="openOverlay()"
+        ></tds-button>
+        <tds-modal
+          size="sm"
+          closable
+          [show]="overlayOpen"
+          [referenceEl]="overlayTrigger"
+          (tdsClose)="closeOverlay()"
+        >
+          <p slot="body">
+            Click outside this surface to dismiss — that's the overlay catching
+            the click.
+          </p>
+        </tds-modal>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="tf-slots">
-    <h4 id="tf-slots" class="tds-headline-03">Prefix and suffix slots</h4>
-    <div class="grid">
-      <tds-text-field
-        label="Prefix"
-        label-position="outside"
-        placeholder="With prefix"
-      >
-        <tds-icon slot="prefix" name="search" size="20px"></tds-icon>
-      </tds-text-field>
-      <tds-text-field
-        label="Suffix"
-        label-position="outside"
-        placeholder="With suffix"
-      >
-        <tds-icon slot="suffix" name="settings" size="20px"></tds-icon>
-      </tds-text-field>
-      <tds-text-field
-        label="Both"
-        label-position="outside"
-        placeholder="Prefix + suffix"
-      >
-        <tds-icon slot="prefix" name="email" size="20px"></tds-icon>
-        <tds-icon slot="suffix" name="tick" size="20px"></tds-icon>
-      </tds-text-field>
-    </div>
-  </section>
+  <h3>scrollbar</h3>
 
-  <section class="section" aria-labelledby="tf-type">
-    <h4 id="tf-type" class="tds-headline-03">Input type</h4>
+  <section class="section" aria-labelledby="scrollbar-area">
+    <h4 id="scrollbar-area" class="tds-headline-03">Scrollable container</h4>
     <p>
-      <code>text</code> (default), <code>password</code>, <code>number</code>,
-      <code>email</code>, <code>tel</code>.
+      Tegel does not ship a standalone <code>tds-scrollbar</code>; native
+      browser scrollbars appear on any container with overflow. The box below
+      has a fixed height and long content so the scrollbar appears.
     </p>
     <div class="grid">
-      <tds-text-field
-        label="text"
-        label-position="outside"
-        type="text"
-        placeholder="text"
-      ></tds-text-field>
-      <tds-text-field
-        label="password"
-        label-position="outside"
-        type="password"
-        value="secret"
-      ></tds-text-field>
-      <tds-text-field
-        label="number"
-        label-position="outside"
-        type="number"
-        min="0"
-        max="100"
-        step="1"
-        placeholder="0-100"
-      ></tds-text-field>
-      <tds-text-field
-        label="number (no arrows)"
-        label-position="outside"
-        type="number"
-        hide-number-arrows
-        placeholder="hideNumberArrows"
-      ></tds-text-field>
-      <tds-text-field
-        label="email"
-        label-position="outside"
-        type="email"
-        placeholder="name@example.com"
-      ></tds-text-field>
-      <tds-text-field
-        label="tel"
-        label-position="outside"
-        type="tel"
-        placeholder="+46…"
-      ></tds-text-field>
+      <div class="scrollable-box">
+        <p class="scrollable-box__row" *ngFor="let r of scrollRows">
+          Row {{ r }}: lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="tf-misc">
-    <h4 id="tf-misc" class="tds-headline-03">Required, maxLength, noMinWidth</h4>
-    <div class="grid">
-      <tds-text-field
-        label="Required"
-        label-position="outside"
-        required
-        placeholder="required"
-      ></tds-text-field>
-      <tds-text-field
-        label="maxLength=20"
-        label-position="outside"
-        [maxLength]="20"
-        helper="Counter under the field"
-      ></tds-text-field>
-      <tds-text-field
-        label="noMinWidth"
-        label-position="outside"
-        no-min-width
-        placeholder="Can shrink below 208px"
-      ></tds-text-field>
+  <h3>tds-banner</h3>
+
+  <section class="section" aria-labelledby="banner-variants">
+    <h4 id="banner-variants" class="tds-headline-03">Variants</h4>
+    <p><code>variant</code>: default, information, error.</p>
+    <div class="stack">
+      <tds-banner
+        variant="default"
+        header="Default banner"
+        subheader="Use for neutral page-level messaging."
+      ></tds-banner>
+      <tds-banner
+        variant="information"
+        header="Information banner"
+        subheader="Use for context the user should know about."
+      ></tds-banner>
+      <tds-banner
+        variant="error"
+        header="Error banner"
+        subheader="Use for blocking problems."
+      ></tds-banner>
     </div>
   </section>
 
-  <h3>tds-textarea</h3>
+  <h3>tds-message</h3>
 
-  <section class="section" aria-labelledby="ta-label-position">
-    <h4 id="ta-label-position" class="tds-headline-03">Label position</h4>
-    <div class="grid">
-      <tds-textarea
-        placeholder="No label"
-        helper="labelPosition=no-label"
-      ></tds-textarea>
-      <tds-textarea
-        label="Label inside"
-        label-position="inside"
-        placeholder="Placeholder"
-        helper="labelPosition=inside"
-      ></tds-textarea>
-      <tds-textarea
-        label="Label outside"
-        label-position="outside"
-        placeholder="Placeholder"
-        helper="labelPosition=outside"
-      ></tds-textarea>
+  <section class="section" aria-labelledby="message-variants">
+    <h4 id="message-variants" class="tds-headline-03">Variants</h4>
+    <p><code>variant</code>: information, success, warning, error.</p>
+    <div class="stack">
+      <tds-message variant="information" header="Information message">
+        Inline message variant — information.
+      </tds-message>
+      <tds-message variant="success" header="Success message">
+        Inline message variant — success.
+      </tds-message>
+      <tds-message variant="warning" header="Warning message">
+        Inline message variant — warning.
+      </tds-message>
+      <tds-message variant="error" header="Error message">
+        Inline message variant — error.
+      </tds-message>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="ta-state">
-    <h4 id="ta-state" class="tds-headline-03">State</h4>
-    <div class="grid">
-      <tds-textarea
-        label="Default"
-        label-position="outside"
-        placeholder="state=default"
-        helper="Helper text"
-      ></tds-textarea>
-      <tds-textarea
-        label="Success"
-        label-position="outside"
-        state="success"
-        value="Looks good"
-        helper="Looks good"
-      ></tds-textarea>
-      <tds-textarea
-        label="Error"
-        label-position="outside"
-        state="error"
-        value="Bad input"
-        helper="Something went wrong"
-      ></tds-textarea>
+  <h3>tds-toast</h3>
+
+  <section class="section" aria-labelledby="toast-variants">
+    <h4 id="toast-variants" class="tds-headline-03">Variants</h4>
+    <p>
+      Toasts render inline below; the dynamic toast below appears top-right.
+    </p>
+    <div class="stack">
+      <tds-toast
+        variant="information"
+        header="Information toast"
+        subheader="Use for general notifications."
+      ></tds-toast>
+      <tds-toast
+        variant="success"
+        header="Success toast"
+        subheader="Use to confirm completed actions."
+      ></tds-toast>
+      <tds-toast
+        variant="warning"
+        header="Warning toast"
+        subheader="Use for non-blocking warnings."
+      ></tds-toast>
+      <tds-toast
+        variant="error"
+        header="Error toast"
+        subheader="Use for failures that need attention."
+      ></tds-toast>
+    </div>
+    <div class="grid" style="margin-top: 16px">
+      <div>
+        <tds-button
+          [text]="toastVisible ? 'Hide toast' : 'Show toast'"
+          size="md"
+          (click)="toggleToast()"
+        ></tds-button>
+        <div class="toast-floater" *ngIf="toastVisible">
+          <tds-toast
+            variant="success"
+            header="Toast spawned"
+            subheader="Triggered from a button click."
+          ></tds-toast>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="ta-disabled-readonly">
-    <h4 id="ta-disabled-readonly" class="tds-headline-03">Disabled and read-only</h4>
-    <div class="grid">
-      <tds-textarea
-        label="Disabled"
-        label-position="outside"
-        value="Cannot edit"
-        disabled
-      ></tds-textarea>
-      <tds-textarea
-        label="Read-only"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-      ></tds-textarea>
-      <tds-textarea
-        label="Read-only (no icon)"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-        hide-read-only-icon
-      ></tds-textarea>
-    </div>
-  </section>
+  <h3>tds-icon</h3>
 
-  <section class="section" aria-labelledby="ta-mode-variant">
-    <h4 id="ta-mode-variant" class="tds-headline-03">Mode variant</h4>
-    <div class="grid">
-      <tds-textarea
-        label="Primary"
-        label-position="outside"
-        mode-variant="primary"
-        placeholder="modeVariant=primary"
-      ></tds-textarea>
-      <tds-textarea
-        label="Secondary"
-        label-position="outside"
-        mode-variant="secondary"
-        placeholder="modeVariant=secondary"
-      ></tds-textarea>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="ta-misc">
-    <h4 id="ta-misc" class="tds-headline-03">Rows, cols, maxLength, noMinWidth</h4>
-    <div class="grid">
-      <tds-textarea
-        label="rows=2"
-        label-position="outside"
-        [rows]="2"
-        placeholder="Compact"
-      ></tds-textarea>
-      <tds-textarea
-        label="rows=6"
-        label-position="outside"
-        [rows]="6"
-        placeholder="Taller"
-      ></tds-textarea>
-      <tds-textarea
-        label="cols=20"
-        label-position="outside"
-        [cols]="20"
-        placeholder="cols=20"
-      ></tds-textarea>
-      <tds-textarea
-        label="maxLength=50"
-        label-position="outside"
-        [maxLength]="50"
-        helper="Counter under the field"
-      ></tds-textarea>
-      <tds-textarea
-        label="noMinWidth"
-        label-position="outside"
-        no-min-width
-        placeholder="Can shrink below 208px"
-      ></tds-textarea>
+  <section class="section" aria-labelledby="icon-grid">
+    <h4 id="icon-grid" class="tds-headline-03">Icon grid</h4>
+    <p>Common icon names rendered at 24px.</p>
+    <div class="icon-grid">
+      <div class="icon-grid__cell" *ngFor="let icon of icons">
+        <tds-icon [name]="icon" size="24px"></tds-icon>
+        <span class="icon-grid__label">{{ icon }}</span>
+      </div>
     </div>
   </section>
 </div>
