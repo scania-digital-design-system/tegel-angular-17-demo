@@ -1,11 +1,11 @@
 <div class="beta-page">
   <header>
-    <h3>Text field variants (1.53.0-field-var.2)</h3>
+    <h3>Block &amp; Accordion (1.54.0-block-acc-beta.0)</h3>
     <p>
-      Test ground for <code>tds-text-field</code> and <code>tds-textarea</code>
+      Test ground for <code>tds-block</code> and <code>tds-accordion</code>
       shipped in
-      <strong>&#64;scania/tegel-angular-17 1.53.0-field-var.2</strong>. Switch
-      the brand toggle to compare variants across Scania and Traton.
+      <strong>&#64;scania/tegel-angular-17 1.54.0-block-acc-beta.0</strong>.
+      Switch the brand toggle to compare variants across Scania and Traton.
     </p>
   </header>
 
@@ -34,358 +34,208 @@
     </span>
   </section>
 
-  <h3>tds-text-field</h3>
+  <h3>tds-block</h3>
 
-  <section class="section" aria-labelledby="tf-label-position">
-    <h4 id="tf-label-position" class="tds-headline-03">Label position</h4>
-    <p>Three values: <code>no-label</code>, <code>inside</code>, <code>outside</code>.</p>
+  <section class="section" aria-labelledby="block-mode">
+    <h4 id="block-mode" class="tds-headline-03">Mode variant</h4>
+    <p><code>null</code> (default), <code>primary</code>, <code>secondary</code>.</p>
     <div class="grid">
-      <tds-text-field
-        placeholder="No label"
-        helper="labelPosition=no-label"
-      ></tds-text-field>
-      <tds-text-field
-        label="Label inside"
-        label-position="inside"
-        placeholder="Placeholder"
-        helper="labelPosition=inside"
-      ></tds-text-field>
-      <tds-text-field
-        label="Label outside"
-        label-position="outside"
-        placeholder="Placeholder"
-        helper="labelPosition=outside"
-      ></tds-text-field>
+      <tds-block>
+        <h5>null (default)</h5>
+        <p>Block content, modeVariant unset.</p>
+      </tds-block>
+      <tds-block mode-variant="primary">
+        <h5>primary</h5>
+        <p>Block content with modeVariant=primary.</p>
+      </tds-block>
+      <tds-block mode-variant="secondary">
+        <h5>secondary</h5>
+        <p>Block content with modeVariant=secondary.</p>
+      </tds-block>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="tf-size">
-    <h4 id="tf-size" class="tds-headline-03">Size</h4>
-    <p><code>sm</code>, <code>md</code>, <code>lg</code> (default).</p>
-    <div class="grid">
-      <tds-text-field
-        size="sm"
-        label="Small"
-        label-position="outside"
-        placeholder="size=sm"
-      ></tds-text-field>
-      <tds-text-field
-        size="md"
-        label="Medium"
-        label-position="outside"
-        placeholder="size=md"
-      ></tds-text-field>
-      <tds-text-field
-        size="lg"
-        label="Large"
-        label-position="outside"
-        placeholder="size=lg"
-      ></tds-text-field>
-    </div>
+  <section class="section" aria-labelledby="block-nested-primary">
+    <h4 id="block-nested-primary" class="tds-headline-03">Nesting (primary)</h4>
+    <p>Nested blocks alternate backgrounds automatically.</p>
+    <tds-block mode-variant="primary">
+      <h5>Outer block</h5>
+      <p>Top-level content.</p>
+      <tds-block>
+        <h6>Middle block</h6>
+        <p>First-level nesting.</p>
+        <tds-block>
+          <strong>Inner block</strong>
+          <p>Second-level nesting.</p>
+        </tds-block>
+      </tds-block>
+    </tds-block>
   </section>
 
-  <section class="section" aria-labelledby="tf-state">
-    <h4 id="tf-state" class="tds-headline-03">State</h4>
-    <p><code>default</code>, <code>success</code>, <code>error</code>.</p>
-    <div class="grid">
-      <tds-text-field
-        label="Default"
-        label-position="outside"
-        placeholder="state=default"
-        helper="Helper text"
-      ></tds-text-field>
-      <tds-text-field
-        label="Success"
-        label-position="outside"
-        state="success"
-        value="Valid input"
-        helper="Looks good"
-      ></tds-text-field>
-      <tds-text-field
-        label="Error"
-        label-position="outside"
-        state="error"
-        value="Invalid"
-        helper="Something went wrong"
-      ></tds-text-field>
-    </div>
+  <section class="section" aria-labelledby="block-nested-secondary">
+    <h4 id="block-nested-secondary" class="tds-headline-03">Nesting (secondary)</h4>
+    <tds-block mode-variant="secondary">
+      <h5>Outer block</h5>
+      <p>Top-level content.</p>
+      <tds-block>
+        <h6>Middle block</h6>
+        <p>First-level nesting.</p>
+        <tds-block>
+          <strong>Inner block</strong>
+          <p>Second-level nesting.</p>
+        </tds-block>
+      </tds-block>
+    </tds-block>
   </section>
 
-  <section class="section" aria-labelledby="tf-disabled-readonly">
-    <h4 id="tf-disabled-readonly" class="tds-headline-03">Disabled and read-only</h4>
-    <div class="grid">
-      <tds-text-field
-        label="Disabled"
-        label-position="outside"
-        value="Cannot edit"
-        disabled
-      ></tds-text-field>
-      <tds-text-field
-        label="Read-only"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-      ></tds-text-field>
-      <tds-text-field
-        label="Read-only (no icon)"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-        hide-read-only-icon
-      ></tds-text-field>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="tf-mode-variant">
-    <h4 id="tf-mode-variant" class="tds-headline-03">Mode variant</h4>
+  <section class="section" aria-labelledby="block-tags">
+    <h4 id="block-tags" class="tds-headline-03">Component tag</h4>
     <p>
-      <code>primary</code> and <code>secondary</code> swap the surface treatment
-      (visible against the page background).
+      <code>componentTag</code> swaps the rendered host element. Useful for
+      landmarks and semantic structure.
     </p>
     <div class="grid">
-      <tds-text-field
-        label="Primary"
-        label-position="outside"
-        mode-variant="primary"
-        placeholder="modeVariant=primary"
-      ></tds-text-field>
-      <tds-text-field
-        label="Secondary"
-        label-position="outside"
-        mode-variant="secondary"
-        placeholder="modeVariant=secondary"
-      ></tds-text-field>
+      <tds-block component-tag="section"><p>Rendered as &lt;section&gt;.</p></tds-block>
+      <tds-block component-tag="article"><p>Rendered as &lt;article&gt;.</p></tds-block>
+      <tds-block component-tag="aside"><p>Rendered as &lt;aside&gt;.</p></tds-block>
+      <tds-block component-tag="header"><p>Rendered as &lt;header&gt;.</p></tds-block>
+      <tds-block component-tag="footer"><p>Rendered as &lt;footer&gt;.</p></tds-block>
+      <tds-block component-tag="nav"><p>Rendered as &lt;nav&gt;.</p></tds-block>
+      <tds-block component-tag="main"><p>Rendered as &lt;main&gt;.</p></tds-block>
+      <tds-block component-tag="div"><p>Rendered as &lt;div&gt;.</p></tds-block>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="tf-slots">
-    <h4 id="tf-slots" class="tds-headline-03">Prefix and suffix slots</h4>
+  <h3>tds-accordion</h3>
+
+  <section class="section" aria-labelledby="acc-mode">
+    <h4 id="acc-mode" class="tds-headline-03">Mode variant</h4>
+    <p><code>null</code> (default), <code>primary</code>, <code>secondary</code>.</p>
     <div class="grid">
-      <tds-text-field
-        label="Prefix"
-        label-position="outside"
-        placeholder="With prefix"
-      >
-        <tds-icon slot="prefix" name="search" size="20px"></tds-icon>
-      </tds-text-field>
-      <tds-text-field
-        label="Suffix"
-        label-position="outside"
-        placeholder="With suffix"
-      >
-        <tds-icon slot="suffix" name="settings" size="20px"></tds-icon>
-      </tds-text-field>
-      <tds-text-field
-        label="Both"
-        label-position="outside"
-        placeholder="Prefix + suffix"
-      >
-        <tds-icon slot="prefix" name="email" size="20px"></tds-icon>
-        <tds-icon slot="suffix" name="tick" size="20px"></tds-icon>
-      </tds-text-field>
+      <tds-accordion>
+        <tds-accordion-item header="Section 1">
+          <p>Content for section 1.</p>
+        </tds-accordion-item>
+        <tds-accordion-item header="Section 2">
+          <p>Content for section 2.</p>
+        </tds-accordion-item>
+        <tds-accordion-item header="Section 3" disabled>
+          <p>This item is disabled.</p>
+        </tds-accordion-item>
+      </tds-accordion>
+      <tds-accordion mode-variant="primary">
+        <tds-accordion-item header="Section 1">
+          <p>Content for section 1.</p>
+        </tds-accordion-item>
+        <tds-accordion-item header="Section 2">
+          <p>Content for section 2.</p>
+        </tds-accordion-item>
+        <tds-accordion-item header="Section 3" disabled>
+          <p>This item is disabled.</p>
+        </tds-accordion-item>
+      </tds-accordion>
+      <tds-accordion mode-variant="secondary">
+        <tds-accordion-item header="Section 1">
+          <p>Content for section 1.</p>
+        </tds-accordion-item>
+        <tds-accordion-item header="Section 2">
+          <p>Content for section 2.</p>
+        </tds-accordion-item>
+        <tds-accordion-item header="Section 3" disabled>
+          <p>This item is disabled.</p>
+        </tds-accordion-item>
+      </tds-accordion>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="tf-type">
-    <h4 id="tf-type" class="tds-headline-03">Input type</h4>
+  <section class="section" aria-labelledby="acc-expanded">
+    <h4 id="acc-expanded" class="tds-headline-03">Expanded by default</h4>
+    <p><code>expanded</code> on an item opens it on mount.</p>
+    <tds-accordion>
+      <tds-accordion-item header="Pre-expanded" expanded>
+        <p>This item is open on mount.</p>
+      </tds-accordion-item>
+      <tds-accordion-item header="Collapsed">
+        <p>This item starts collapsed.</p>
+      </tds-accordion-item>
+    </tds-accordion>
+  </section>
+
+  <section class="section" aria-labelledby="acc-icon-pos">
+    <h4 id="acc-icon-pos" class="tds-headline-03">Expand-icon position</h4>
+    <p><code>expandIconPosition</code>: end (default), start.</p>
+    <tds-accordion>
+      <tds-accordion-item header="Icon end (default)" expand-icon-position="end">
+        <p>Chevron icon on the right.</p>
+      </tds-accordion-item>
+      <tds-accordion-item header="Icon start" expand-icon-position="start">
+        <p>Chevron icon on the left.</p>
+      </tds-accordion-item>
+    </tds-accordion>
+  </section>
+
+  <section class="section" aria-labelledby="acc-padding">
+    <h4 id="acc-padding" class="tds-headline-03">Padding reset</h4>
     <p>
-      <code>text</code> (default), <code>password</code>, <code>number</code>,
-      <code>email</code>, <code>tel</code>.
+      <code>paddingReset</code> drops the right padding from 64px to 16px,
+      useful for wide content.
     </p>
-    <div class="grid">
-      <tds-text-field
-        label="text"
-        label-position="outside"
-        type="text"
-        placeholder="text"
-      ></tds-text-field>
-      <tds-text-field
-        label="password"
-        label-position="outside"
-        type="password"
-        value="secret"
-      ></tds-text-field>
-      <tds-text-field
-        label="number"
-        label-position="outside"
-        type="number"
-        min="0"
-        max="100"
-        step="1"
-        placeholder="0-100"
-      ></tds-text-field>
-      <tds-text-field
-        label="number (no arrows)"
-        label-position="outside"
-        type="number"
-        hide-number-arrows
-        placeholder="hideNumberArrows"
-      ></tds-text-field>
-      <tds-text-field
-        label="email"
-        label-position="outside"
-        type="email"
-        placeholder="name@example.com"
-      ></tds-text-field>
-      <tds-text-field
-        label="tel"
-        label-position="outside"
-        type="tel"
-        placeholder="+46…"
-      ></tds-text-field>
-    </div>
+    <tds-accordion>
+      <tds-accordion-item header="Default padding">
+        <p>Default 64px right padding.</p>
+      </tds-accordion-item>
+      <tds-accordion-item header="Padding reset" padding-reset>
+        <p>Reduced 16px right padding.</p>
+      </tds-accordion-item>
+    </tds-accordion>
   </section>
 
-  <section class="section" aria-labelledby="tf-misc">
-    <h4 id="tf-misc" class="tds-headline-03">Required, maxLength, noMinWidth</h4>
-    <div class="grid">
-      <tds-text-field
-        label="Required"
-        label-position="outside"
-        required
-        placeholder="required"
-      ></tds-text-field>
-      <tds-text-field
-        label="maxLength=20"
-        label-position="outside"
-        [maxLength]="20"
-        helper="Counter under the field"
-      ></tds-text-field>
-      <tds-text-field
-        label="noMinWidth"
-        label-position="outside"
-        no-min-width
-        placeholder="Can shrink below 208px"
-      ></tds-text-field>
-    </div>
+  <section class="section" aria-labelledby="acc-hide-last">
+    <h4 id="acc-hide-last" class="tds-headline-03">Hide last border</h4>
+    <p>
+      <code>hideLastBorder</code> on the parent removes the divider after the
+      last item.
+    </p>
+    <tds-accordion hide-last-border>
+      <tds-accordion-item header="Section 1">
+        <p>No border after the last item.</p>
+      </tds-accordion-item>
+      <tds-accordion-item header="Section 2">
+        <p>No border after the last item.</p>
+      </tds-accordion-item>
+    </tds-accordion>
   </section>
 
-  <h3>tds-textarea</h3>
-
-  <section class="section" aria-labelledby="ta-label-position">
-    <h4 id="ta-label-position" class="tds-headline-03">Label position</h4>
-    <div class="grid">
-      <tds-textarea
-        placeholder="No label"
-        helper="labelPosition=no-label"
-      ></tds-textarea>
-      <tds-textarea
-        label="Label inside"
-        label-position="inside"
-        placeholder="Placeholder"
-        helper="labelPosition=inside"
-      ></tds-textarea>
-      <tds-textarea
-        label="Label outside"
-        label-position="outside"
-        placeholder="Placeholder"
-        helper="labelPosition=outside"
-      ></tds-textarea>
-    </div>
+  <section class="section" aria-labelledby="acc-aria">
+    <h4 id="acc-aria" class="tds-headline-03">Heading level (aria-level)</h4>
+    <p>
+      <code>ariaLevelValue</code>: 1–6 — sets the heading semantics for
+      assistive tech.
+    </p>
+    <tds-accordion>
+      <tds-accordion-item header="Level 2" aria-level-value="2">
+        <p>Header is announced as h2.</p>
+      </tds-accordion-item>
+      <tds-accordion-item header="Level 4" aria-level-value="4">
+        <p>Header is announced as h4.</p>
+      </tds-accordion-item>
+    </tds-accordion>
   </section>
 
-  <section class="section" aria-labelledby="ta-state">
-    <h4 id="ta-state" class="tds-headline-03">State</h4>
-    <div class="grid">
-      <tds-textarea
-        label="Default"
-        label-position="outside"
-        placeholder="state=default"
-        helper="Helper text"
-      ></tds-textarea>
-      <tds-textarea
-        label="Success"
-        label-position="outside"
-        state="success"
-        value="Looks good"
-        helper="Looks good"
-      ></tds-textarea>
-      <tds-textarea
-        label="Error"
-        label-position="outside"
-        state="error"
-        value="Bad input"
-        helper="Something went wrong"
-      ></tds-textarea>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="ta-disabled-readonly">
-    <h4 id="ta-disabled-readonly" class="tds-headline-03">Disabled and read-only</h4>
-    <div class="grid">
-      <tds-textarea
-        label="Disabled"
-        label-position="outside"
-        value="Cannot edit"
-        disabled
-      ></tds-textarea>
-      <tds-textarea
-        label="Read-only"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-      ></tds-textarea>
-      <tds-textarea
-        label="Read-only (no icon)"
-        label-position="outside"
-        value="Read-only value"
-        read-only
-        hide-read-only-icon
-      ></tds-textarea>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="ta-mode-variant">
-    <h4 id="ta-mode-variant" class="tds-headline-03">Mode variant</h4>
-    <div class="grid">
-      <tds-textarea
-        label="Primary"
-        label-position="outside"
-        mode-variant="primary"
-        placeholder="modeVariant=primary"
-      ></tds-textarea>
-      <tds-textarea
-        label="Secondary"
-        label-position="outside"
-        mode-variant="secondary"
-        placeholder="modeVariant=secondary"
-      ></tds-textarea>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="ta-misc">
-    <h4 id="ta-misc" class="tds-headline-03">Rows, cols, maxLength, noMinWidth</h4>
-    <div class="grid">
-      <tds-textarea
-        label="rows=2"
-        label-position="outside"
-        [rows]="2"
-        placeholder="Compact"
-      ></tds-textarea>
-      <tds-textarea
-        label="rows=6"
-        label-position="outside"
-        [rows]="6"
-        placeholder="Taller"
-      ></tds-textarea>
-      <tds-textarea
-        label="cols=20"
-        label-position="outside"
-        [cols]="20"
-        placeholder="cols=20"
-      ></tds-textarea>
-      <tds-textarea
-        label="maxLength=50"
-        label-position="outside"
-        [maxLength]="50"
-        helper="Counter under the field"
-      ></tds-textarea>
-      <tds-textarea
-        label="noMinWidth"
-        label-position="outside"
-        no-min-width
-        placeholder="Can shrink below 208px"
-      ></tds-textarea>
-    </div>
+  <section class="section" aria-labelledby="acc-in-block">
+    <h4 id="acc-in-block" class="tds-headline-03">Accordion inside Block</h4>
+    <p>The two components combine cleanly.</p>
+    <tds-block mode-variant="primary">
+      <h5>Section group</h5>
+      <p>Accordion content rendered on a primary block.</p>
+      <tds-accordion>
+        <tds-accordion-item header="Details" expanded>
+          <p>Open by default.</p>
+        </tds-accordion-item>
+        <tds-accordion-item header="More details">
+          <p>Click to expand.</p>
+        </tds-accordion-item>
+      </tds-accordion>
+    </tds-block>
   </section>
 </div>
