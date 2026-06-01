@@ -1,5 +1,65 @@
-<h3>About this page</h3>
-<p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
-</p>
+<article class="about" [class.scania]="brand === 'scania'" [class.traton]="brand === 'traton'">
+  <header class="about__header">
+    <h3 class="tds-headline-02">Component test ground</h3>
+    <p class="tds-detail-02">
+      Testing <strong>&#64;scania/tegel-angular-17&#64;1.55.0-var-batch-8-beta</strong>:
+      checkbox, radio button and toggle. Flip the brand to confirm each component themes
+      correctly in Scania and Traton.
+    </p>
+  </header>
+
+  <section class="component-section about__brand">
+    <h4 class="tds-headline-06">Brand</h4>
+    <p class="about__note tds-detail-05">
+      Toggles the <code>.scania</code> / <code>.traton</code> theme class on the demo area below.
+    </p>
+    <tds-toggle [checked]="brand === 'traton'" (tdsToggle)="setBrand($event)">
+      <div slot="label">Brand: {{ brand === 'traton' ? 'Traton' : 'Scania' }}</div>
+    </tds-toggle>
+  </section>
+
+  <section class="component-section">
+    <h4 class="tds-headline-06">Checkbox</h4>
+    <p class="about__note tds-detail-05"><code>tds-checkbox</code> in its core states.</p>
+    <div class="demo-column">
+      <tds-checkbox><span slot="label">Default</span></tds-checkbox>
+      <tds-checkbox checked><span slot="label">Checked</span></tds-checkbox>
+      <tds-checkbox indeterminate><span slot="label">Indeterminate</span></tds-checkbox>
+      <tds-checkbox disabled><span slot="label">Disabled</span></tds-checkbox>
+      <tds-checkbox disabled checked><span slot="label">Disabled & checked</span></tds-checkbox>
+    </div>
+  </section>
+
+  <section class="component-section">
+    <h4 class="tds-headline-06">Radio button</h4>
+    <p class="about__note tds-detail-05"><code>tds-radio-button</code> as a single-select group.</p>
+    <fieldset class="demo-column about__fieldset">
+      <legend class="tds-detail-05">Choose a meal</legend>
+      @for (meal of meals; track meal.value) {
+        <tds-radio-button
+          name="meal"
+          [value]="meal.value"
+          [radioId]="'meal-' + meal.value"
+          [checked]="selectedMeal === meal.value"
+          (tdsChange)="selectedMeal = meal.value"
+        >
+          <span slot="label">{{ meal.label }}</span>
+        </tds-radio-button>
+      }
+      <tds-radio-button name="meal" value="soldout" radioId="meal-soldout" disabled>
+        <span slot="label">Sold out (disabled)</span>
+      </tds-radio-button>
+    </fieldset>
+  </section>
+
+  <section class="component-section">
+    <h4 class="tds-headline-06">Toggle</h4>
+    <p class="about__note tds-detail-05"><code>tds-toggle</code> in both sizes and states.</p>
+    <div class="demo-column">
+      <tds-toggle headline="Large"><div slot="label">Off by default</div></tds-toggle>
+      <tds-toggle headline="Large" checked><div slot="label">On by default</div></tds-toggle>
+      <tds-toggle size="sm" headline="Small"><div slot="label">Small size</div></tds-toggle>
+      <tds-toggle headline="Disabled" disabled><div slot="label">Disabled</div></tds-toggle>
+    </div>
+  </section>
+</article>
