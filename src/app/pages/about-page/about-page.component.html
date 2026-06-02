@@ -1,5 +1,37 @@
-<h3>About this page</h3>
-<p>
-  This page is a testing ground and demo for using &#64;scania/tegel-angular in
-  an Angular application.
-</p>
+<article class="about" [class.scania]="brand === 'scania'" [class.traton]="brand === 'traton'">
+  <header class="about__header">
+    <h3 class="tds-headline-02">Icon test ground</h3>
+    <p class="tds-detail-02">
+      Testing <strong>&#64;scania/tegel-angular-17&#64;1.55.0-traton-icons</strong>. All
+      {{ allIcons.length }} icon names are rendered below. Flip the brand to confirm each
+      <code>tds-icon</code> resolves to the correct Scania/Traton asset — icons without an
+      asset in the active brand render empty.
+    </p>
+  </header>
+
+  <section class="component-section about__controls">
+    <div class="about__brand">
+      <tds-toggle [checked]="brand === 'traton'" (tdsToggle)="setBrand($event)">
+        <div slot="label">Brand: {{ brand === 'traton' ? 'Traton' : 'Scania' }}</div>
+      </tds-toggle>
+    </div>
+    <input
+      type="search"
+      class="about__search"
+      placeholder="Filter icons by name…"
+      [value]="query"
+      (input)="onSearch($event)"
+      aria-label="Filter icons by name"
+    />
+    <span class="about__count tds-detail-05">{{ filteredIcons.length }} / {{ allIcons.length }}</span>
+  </section>
+
+  <section class="icon-grid">
+    @for (name of filteredIcons; track name) {
+      <figure class="icon-cell" [title]="name">
+        <tds-icon [name]="$any(name)" size="32px"></tds-icon>
+        <figcaption class="icon-cell__name">{{ name }}</figcaption>
+      </figure>
+    }
+  </section>
+</article>
