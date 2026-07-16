@@ -16,6 +16,7 @@ import { Subject, takeUntil } from "rxjs";
 import { CommonModule } from "@angular/common";
 import { Notification } from "src/types";
 import { TegelModule } from "@scania/tegel-angular-17";
+import { BrandSwitcherComponent } from "./brand-switcher/brand-switcher.component";
 
 @Component({
   selector: "app-root",
@@ -28,6 +29,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
     FooterComponent,
     BannerComponent,
     BreadcrumbsComponent,
+    BrandSwitcherComponent,
     ModeSwitcherComponent,
     ModeVariantSwitcherComponent,
     CommonModule,
@@ -60,6 +62,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   title = "Angular Demo";
   mobileNavOpen = false;
+  brand: "scania" | "traton" = "scania";
   mode: "tds-mode-light" | "tds-mode-dark" = "tds-mode-light";
   modeVariant: "tds-mode-variant-primary" | "tds-mode-variant-secondary" =
     "tds-mode-variant-primary";
@@ -79,6 +82,12 @@ export class AppComponent implements OnInit, OnDestroy {
   toggleMobileSideMenu() {
     this.mobileNavOpen = !this.mobileNavOpen;
   }
+
+  handleBrandToggle() {
+    this.brand =
+      this.brand === "scania" ? "traton" : "scania";
+  }
+
 
   handleModeVariantToggle() {
     this.modeVariant =
