@@ -28,12 +28,17 @@
 
         <tds-header-dropdown slot="end" no-dropdown-icon class="user-dropdown">
           <div slot="icon">
-            <img src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg" alt="User menu." />
+            <img
+              src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+              alt="User menu."
+            />
             <tds-badge size="sm"></tds-badge>
           </div>
           <tds-header-dropdown-list size="lg">
-            <tds-header-dropdown-list-user header="{{ userName }}"
-              subheader="{{ placeOfWork }}"></tds-header-dropdown-list-user>
+            <tds-header-dropdown-list-user
+              header="{{ userName }}"
+              subheader="{{ placeOfWork }}"
+            ></tds-header-dropdown-list-user>
             <tds-header-dropdown-list-item>
               <a routerLink="settings">
                 <tds-icon name="settings"></tds-icon>
@@ -42,7 +47,10 @@
             </tds-header-dropdown-list-item>
             <tds-header-dropdown-list-item>
               <a routerLink="notifications">
-                <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
+                <tds-badge
+                  *ngIf="notifications.length"
+                  [value]="notifications.length"
+                ></tds-badge>
                 <div class="tds-u-pl1">Notifications</div>
               </a>
             </tds-header-dropdown-list-item>
@@ -50,14 +58,27 @@
         </tds-header-dropdown>
 
         <tds-header-brand-symbol slot="end">
-          <a routerLink="/" aria-label="Scania - red gryphon on blue shield"></a>
+          <a
+            routerLink="/"
+            aria-label="Scania - red gryphon on blue shield"
+          ></a>
         </tds-header-brand-symbol>
       </tds-header>
       <div class="side-menu-and-main">
-        <tds-side-menu aria-label="Side menu" persistent open="{{ mobileNavOpen }}">
-          <tds-side-menu-overlay (click)="toggleMobileSideMenu()" slot="overlay"></tds-side-menu-overlay>
+        <tds-side-menu
+          aria-label="Side menu"
+          persistent
+          open="{{ mobileNavOpen }}"
+        >
+          <tds-side-menu-overlay
+            (click)="toggleMobileSideMenu()"
+            slot="overlay"
+          ></tds-side-menu-overlay>
 
-          <tds-side-menu-close-button slot="close-button" (click)="toggleMobileSideMenu()"></tds-side-menu-close-button>
+          <tds-side-menu-close-button
+            slot="close-button"
+            (click)="toggleMobileSideMenu()"
+          ></tds-side-menu-close-button>
 
           <tds-side-menu-item [selected]="isActive('/about')">
             <a routerLink="/about" (click)="toggleMobileSideMenu()">
@@ -73,11 +94,13 @@
             </a>
           </tds-side-menu-item>
 
-          <tds-side-menu-dropdown [selected]="
-            isActive('/table') ||
-            onSubRoute('/tanstack') ||
-            onSubRoute('/ag-grid')
-          ">
+          <tds-side-menu-dropdown
+            [selected]="
+              isActive('/table') ||
+              onSubRoute('/tanstack') ||
+              onSubRoute('/ag-grid')
+            "
+          >
             <tds-icon slot="icon" name="document_tool" size="24"></tds-icon>
             <span slot="label">Tables</span>
             <tds-side-menu-dropdown-list>
@@ -85,11 +108,15 @@
                 <a routerLink="/table">Tegel Table</a>
               </tds-side-menu-dropdown-list-item>
 
-              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/ag-grid')">
+              <tds-side-menu-dropdown-list-item
+                [selected]="onSubRoute('/ag-grid')"
+              >
                 <a routerLink="ag-grid">Tegel + AG-Grid</a>
               </tds-side-menu-dropdown-list-item>
 
-              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tanstack')">
+              <tds-side-menu-dropdown-list-item
+                [selected]="onSubRoute('/tanstack')"
+              >
                 <a routerLink="tanstack">Tegel + Tanstack</a>
               </tds-side-menu-dropdown-list-item>
             </tds-side-menu-dropdown-list>
@@ -109,14 +136,20 @@
             </a>
           </tds-side-menu-item>
 
-          <tds-side-menu-dropdown [selected]="isActive('/tabs-buttons') || onSubRoute('/tabs-links')">
+          <tds-side-menu-dropdown
+            [selected]="isActive('/tabs-buttons') || onSubRoute('/tabs-links')"
+          >
             <tds-icon slot="icon" name="folder" size="24"></tds-icon>
             <span slot="label">Tabs</span>
             <tds-side-menu-dropdown-list>
-              <tds-side-menu-dropdown-list-item [selected]="isActive('/tabs-buttons')">
+              <tds-side-menu-dropdown-list-item
+                [selected]="isActive('/tabs-buttons')"
+              >
                 <a routerLink="/tabs-buttons">Button</a>
               </tds-side-menu-dropdown-list-item>
-              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tabs-links')">
+              <tds-side-menu-dropdown-list-item
+                [selected]="onSubRoute('/tabs-links')"
+              >
                 <a routerLink="tabs-links">Link</a>
               </tds-side-menu-dropdown-list-item>
             </tds-side-menu-dropdown-list>
@@ -129,27 +162,32 @@
             </a>
           </tds-side-menu-item>
 
-          <div slot="end">
-            <tds-side-menu-dropdown>
-              <tds-side-menu-user slot="label" heading="{{ userName }}" subheading="{{ placeOfWork }}"
-                img-src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
-                img-alt=""></tds-side-menu-user>
-              <tds-side-menu-dropdown-list>
-                <tds-side-menu-dropdown-list-item>
-                  <a routerLink="settings">
-                    <tds-icon name="settings"></tds-icon>
-                    <div class="tds-u-pl1">Settings</div>
-                  </a>
-                </tds-side-menu-dropdown-list-item>
-                <tds-side-menu-dropdown-list-item>
-                  <a routerLink="notifications">
+          <tds-side-menu-dropdown slot="end">
+            <tds-side-menu-user-image
+              slot="icon"
+              src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
+              alt="cenas"
+            ></tds-side-menu-user-image>
+            <tds-side-menu-user-label
+              slot="label"
+              heading="{{ userName }}"
+              subheading="{{ placeOfWork }}"
+            ></tds-side-menu-user-label>
+            <tds-side-menu-dropdown-list>
+              <tds-side-menu-dropdown-list-item>
+                <a routerLink="settings">
+                  <tds-icon name="settings"></tds-icon>
+                  <div class="tds-u-pl1">Settings</div>
+                </a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item>
+                <a routerLink="notifications">
                     <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
-                    <div class="tds-u-pl1">Notifications</div>
-                  </a>
-                </tds-side-menu-dropdown-list-item>
-              </tds-side-menu-dropdown-list>
-            </tds-side-menu-dropdown>
-          </div>
+                  <div class="tds-u-pl1">Notifications</div>
+                </a>
+              </tds-side-menu-dropdown-list-item>
+            </tds-side-menu-dropdown-list>
+          </tds-side-menu-dropdown>
 
           <tds-side-menu-collapse-button slot="sticky-end"></tds-side-menu-collapse-button>
         </tds-side-menu>
@@ -164,9 +202,9 @@
               <nav-breadcrumbs *ngIf="!is404page"></nav-breadcrumbs>
 
               <div [ngClass]="
-                is404page
-                  ? 'tds-u-h-100'
-                  : 'main-container tds-u-pl3 tds-u-pr3 tds-u-pb3 tds-u-relative'
+                  is404page
+                    ? 'tds-u-h-100'
+                    : 'main-container tds-u-pl3 tds-u-pr3 tds-u-pb3 tds-u-relative'
               ">
                 <router-outlet></router-outlet>
               </div>
