@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChipsComponent } from './chips.component';
+import { ChipsComponent } from './chip.component';
 
 describe('ChipsPageComponent', () => {
   let component: ChipsPageComponent;

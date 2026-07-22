@@ -7,7 +7,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
   templateUrl: "./dropdown.component.html", // Update this line
   imports: [TegelModule],
 })
-export class DropdownComponent {
+export default class DropdownComponent {
   @ViewChild("dropdownRef", { static: true })
   dropdownRef: HTMLTdsDropdownElement;
 

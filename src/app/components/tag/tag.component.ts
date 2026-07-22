@@ -8,4 +8,4 @@ import { TegelModule } from "@scania/tegel-angular-17";
   standalone: true,
   imports: [TegelModule],
 })
-export class TagComponent {}
+export default class TagComponent {}

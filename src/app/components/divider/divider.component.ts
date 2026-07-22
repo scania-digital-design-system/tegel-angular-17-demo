@@ -7,4 +7,4 @@ import { TegelModule } from "@scania/tegel-angular-17";
   templateUrl: "./divider.component.html",
   imports: [TegelModule],
 })
-export class DividerComponent {}
+export default class DividerComponent { }

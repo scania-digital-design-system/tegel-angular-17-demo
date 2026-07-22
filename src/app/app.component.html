@@ -66,13 +66,6 @@
             </a>
           </tds-side-menu-item>
 
-          <tds-side-menu-item [selected]="isActive('/stepper')">
-            <a routerLink="/stepper" (click)="toggleMobileSideMenu()">
-              <tds-icon name="report" size="24"></tds-icon>
-              Stepper
-            </a>
-          </tds-side-menu-item>
-
           <tds-side-menu-dropdown [selected]="
               isActive('/table') ||
               onSubRoute('/tanstack') ||
@@ -95,12 +88,104 @@
             </tds-side-menu-dropdown-list>
           </tds-side-menu-dropdown>
 
-          <tds-side-menu-item [selected]="isActive('/web-components')">
-            <a routerLink="/web-components" (click)="toggleMobileSideMenu()">
-              <tds-icon name="tool" size="24"></tds-icon>
-              Components
-            </a>
-          </tds-side-menu-item>
+          <tds-side-menu-dropdown [selected]="onSubRoute('/web-components')">
+            <tds-icon slot="icon" name="tool" size="24"></tds-icon>
+            <span slot="label">Components</span>
+            <tds-side-menu-dropdown-list>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/accordion')">
+                <a routerLink="web-components/accordion">Accordion</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/badge')">
+                <a routerLink="web-components/badge">Badge</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/banner')">
+                <a routerLink="web-components/banner">Banner</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/block')">
+                <a routerLink="web-components/block">Block</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/breadcrumbs')">
+                <a routerLink="web-components/breadcrumbs">Breadcrumbs</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/button')">
+                <a routerLink="web-components/button">Button</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/card')">
+                <a routerLink="web-components/card">Card</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/checkbox')">
+                <a routerLink="web-components/checkbox">Checkbox</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/chip')">
+                <a routerLink="web-components/chip">Chip</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/datetime')">
+                <a routerLink="web-components/datetime">Datetime</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/divider')">
+                <a routerLink="web-components/divider">Divider</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/dropdown')">
+                <a routerLink="web-components/dropdown">Dropdown</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/link')">
+                <a routerLink="web-components/link">Link</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/message')">
+                <a routerLink="web-components/message">Message</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/modal')">
+                <a routerLink="web-components/modal">Modal</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/popover-canvas')">
+                <a routerLink="web-components/popover-canvas">Popover canvas</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/popover-menu')">
+                <a routerLink="web-components/popover-menu">Popover menu</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/radio-button')">
+                <a routerLink="web-components/radio-button">Radio button</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/spinner')">
+                <a routerLink="web-components/spinner">Spinner</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/stepper')">
+                <a routerLink="web-components/stepper">Stepper</a>
+              </tds-side-menu-dropdown-list-item>
+
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tabs')">
+                <a routerLink="web-components/tabs">Tabs</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tag')">
+                <a routerLink="web-components/tag">Tag</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/text-field')">
+                <a routerLink="web-components/text-field">Text field</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/textarea')">
+                <a routerLink="web-components/textarea">Textarea</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/toast')">
+                <a routerLink="web-components/toast">Toast</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/toggle')">
+                <a routerLink="web-components/toggle">Toggle</a>
+              </tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="onSubRoute('/tooltip')">
+                <a routerLink="web-components/tooltip">Tooltip</a>
+              </tds-side-menu-dropdown-list-item>
+
+
+            </tds-side-menu-dropdown-list>
+          </tds-side-menu-dropdown>
 
           <tds-side-menu-item [selected]="isActive('/form')">
             <a routerLink="/form" (click)="toggleMobileSideMenu()">

@@ -1,22 +1,11 @@
-<div class="tds-headline-02 tds-u-pb1">Card</div>
+<h1 class="tds-headline-02">Card</h1>
 <div class="card-container">
-  <tds-card
-    header="Card"
-    subheader="Simple Card"
-  >
+  <tds-card header="Card" subheader="Simple Card">
     <div slot="body">This is a simple Card example</div>
   </tds-card>
   <div class="split-cards">
-    <tds-card
-      header="Card"
-      subheader="Card with image"
-    >
-      <img
-        class="tds-u-w-100"
-        slot="body-image"
-        alt="Scania graphical lettering sign"
-        src="{{ cardImagePath }}"
-      />
+    <tds-card header="Card" subheader="Card with image">
+      <img class="tds-u-w-100" slot="body-image" alt="Scania graphical lettering sign" src="{{ cardImagePath }}" />
       <div slot="actions">
         <p class="tds-text-grey-958">
           The actions section can have a
@@ -27,13 +16,8 @@
         </p>
       </div>
     </tds-card>
-    <tds-card
-      image-placement="above-header"
-      header="Card"
-      subheader="Card with image"
-      [bodyImg]="cardImagePath"
-      body-image-alt="Alt"
-    >
+    <tds-card image-placement="above-header" header="Card" subheader="Card with image" [bodyImg]="cardImagePath"
+      body-image-alt="Alt">
       <div slot="actions">
         <p class="tds-text-grey-958">
           This is the actions section, this Card has its image-placement above-header below.
@@ -43,13 +27,8 @@
   </div>
   <div class="card-carousel">
     <ng-container *ngFor="let _ of [0, 1, 2, 3]; let idx = index">
-      <tds-card
-        [header]="'Card'"
-        [clickable]="true"
-        [subheader]="'Simple Card'"
-        [bodyDivider]="true"
-        (tdsClick)="handleCardClick($event)"
-      >
+      <tds-card [header]="'Card'" [clickable]="true" [subheader]="'Simple Card'" [bodyDivider]="true"
+        (tdsClick)="handleCardClick($event)">
         <div slot="body">
           These Cards are part of a carousel, and can be scrolled. They are also using the body slot
           in the Card.

@@ -1,12 +1,14 @@
 section.vertical-stepper {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
 }
 
 section.vertical-stepper form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  flex-grow: 1;
 }
 
 section.horizontal-stepper {
@@ -19,4 +21,8 @@ section.horizontal-stepper form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+section.example-stepper {
+  margin-top: 32px;
 }

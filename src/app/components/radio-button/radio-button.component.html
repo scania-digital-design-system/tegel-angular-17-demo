@@ -1,25 +1,12 @@
 <div>
-  <div class="tds-headline-02 tds-u-pb2">Radio Button</div>
-  <form
-    (submit)="onSubmit($event)"
-    #formRef
-    class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap2"
-  >
+  <h1 class="tds-headline-02">Radio Button</h1>
+  <form (submit)="onSubmit($event)" #formRef class="tds-u-flex tds-u-flex-dir-col tds-u-flex-gap2">
     <ng-container *ngFor="let fieldset of processedData">
-      <fieldset
-        [attr.key]="fieldset.name"
-        class="tds-u-pb2"
-      >
+      <fieldset [attr.key]="fieldset.name" class="tds-u-pb2">
         <legend class="tds-headline-05 tds-u-pb1">{{ fieldset.title }}</legend>
         <ng-container *ngFor="let field of fieldset.fields">
-          <tds-radio-button
-            [name]="fieldset.name"
-            [value]="field.name"
-            [radioId]="field.id"
-            [required]="fieldset.required"
-            [disabled]="isFieldDisabled(field)"
-            [checked]="isFieldPreselected(field)"
-          >
+          <tds-radio-button [name]="fieldset.name" [value]="field.name" [radioId]="field.id"
+            [required]="fieldset.required" [disabled]="isFieldDisabled(field)" [checked]="isFieldPreselected(field)">
             <span slot="label">
               {{ field.name }}
               <ng-container *ngIf="isFieldDisabled(field)"> (out of stock!)</ng-container>
@@ -28,10 +15,7 @@
         </ng-container>
       </fieldset>
     </ng-container>
-    <tds-button
-      text="Place order"
-      type="submit"
-    ></tds-button>
+    <tds-button text="Place order" type="submit"></tds-button>
     <ng-container *ngIf="submittedData">
       <p class="tds-headline-03">Thank you for your order.</p>
       <pre>
