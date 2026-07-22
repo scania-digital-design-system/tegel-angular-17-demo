@@ -18,6 +18,7 @@ import { Notification } from "src/types";
 import { TegelModule } from "@scania/tegel-angular-17";
 import { BrandSwitcherComponent } from "./brand-switcher/brand-switcher.component";
 
+type Brand = 'scania' | 'traton';
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -62,7 +63,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   title = "Angular Demo";
   mobileNavOpen = false;
-  brand: "scania" | "traton" = "scania";
+  brand: Brand = "scania";
   mode: "tds-mode-light" | "tds-mode-dark" = "tds-mode-light";
   modeVariant: "tds-mode-variant-primary" | "tds-mode-variant-secondary" =
     "tds-mode-variant-primary";
@@ -83,9 +84,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.mobileNavOpen = !this.mobileNavOpen;
   }
 
-  handleBrandToggle() {
-    this.brand =
-      this.brand === "scania" ? "traton" : "scania";
+  selectBrand(newBrand: Brand) {
+    this.brand = newBrand;
   }
 
 
