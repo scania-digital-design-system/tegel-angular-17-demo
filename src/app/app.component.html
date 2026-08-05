@@ -187,8 +187,8 @@
             </tds-side-menu-dropdown-list>
           </tds-side-menu-dropdown>
 
-          <tds-side-menu-item [selected]="isActive('/form')">
-            <a routerLink="/form" (click)="toggleMobileSideMenu()">
+          <tds-side-menu-item [selected]="onSubRoute('/form')">
+            <a routerLink="/form/simple-form" (click)="toggleMobileSideMenu()">
               <tds-icon name="edit" size="24"></tds-icon>
               Form
             </a>

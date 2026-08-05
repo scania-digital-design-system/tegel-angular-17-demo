@@ -5,9 +5,9 @@ const formRoutes = [
     path: '',
     loadComponent: () => import('@pages/form/form.component'),
     children: [
-      { path: '', redirectTo: 'simpleform', pathMatch: 'full' },
+      { path: '', redirectTo: 'simple-form', pathMatch: 'full' },
       {
-        path: 'simpleform',
+        path: 'simple-form',
         loadComponent: () => import('@pages/form/simple-form/simple-form.component'),
       },
       {
