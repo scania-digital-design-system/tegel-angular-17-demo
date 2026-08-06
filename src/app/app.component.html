@@ -214,20 +214,20 @@
             </a>
           </tds-side-menu-item>
 
-          <tds-side-menu-dropdown slot="end">
+          <tds-side-menu-dropdown slot="end" [selected]="isActive('/settings') || isActive('/notifications')">
             <tds-side-menu-user-image slot="icon"
               src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
               alt="cenas"></tds-side-menu-user-image>
             <tds-side-menu-user-label slot="label" heading="{{ userName }}"
               subheading="{{ placeOfWork }}"></tds-side-menu-user-label>
             <tds-side-menu-dropdown-list>
-              <tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="isActive('/settings')">
                 <a routerLink="settings">
                   <tds-icon name="settings"></tds-icon>
                   <div class="tds-u-pl1">Settings</div>
                 </a>
               </tds-side-menu-dropdown-list-item>
-              <tds-side-menu-dropdown-list-item>
+              <tds-side-menu-dropdown-list-item [selected]="isActive('/notifications')">
                 <a routerLink="notifications">
                   <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
                   <div class="tds-u-pl1">Notifications</div>
