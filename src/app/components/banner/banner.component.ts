@@ -7,7 +7,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
   standalone: true,
   imports: [TegelModule],
 })
-export class BannerComponent {
+export default class BannerComponent {
   bannerVisibility: boolean = true;
 
   @ViewChild("defaultBanner", { static: true })

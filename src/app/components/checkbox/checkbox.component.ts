@@ -7,4 +7,4 @@ import { TegelModule } from "@scania/tegel-angular-17";
   standalone: true,
   imports: [TegelModule],
 })
-export class CheckboxComponent {}
+export default class CheckboxComponent { }

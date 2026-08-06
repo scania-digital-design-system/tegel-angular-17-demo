@@ -6,4 +6,4 @@ import { TegelModule } from "@scania/tegel-angular-17";
   standalone: true,
   imports: [TegelModule],
 })
-export class BlockComponent {}
+export default class BlockComponent { }

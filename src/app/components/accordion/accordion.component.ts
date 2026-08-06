@@ -7,7 +7,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
   standalone: true,
   imports: [TegelModule],
 })
-export class AccordionComponent {
+export default class AccordionComponent {
   @Output() iconPositionChange = new EventEmitter<"end" | "start">();
 
   expandedItem = "";

@@ -5,8 +5,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
   selector: "app-tabs",
   standalone: true,
   template: `
-    <div class="tds-headline-02 tds-u-pb1">Tabs</div>
-    <div class="tds-headline-03 tds-u-pb3 tds-u-pt3">Folder</div>
+    <h1 class="tds-headline-02">Tabs</h1>
+    <h2 class="tds-headline-03 tds-u-pb3 tds-u-pt3">Folder</h2>
     <tds-folder-tabs>
       <tds-folder-tab>
         <button>First tab</button>
@@ -22,7 +22,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       </tds-folder-tab>
     </tds-folder-tabs>
 
-    <div class="tds-headline-03 tds-u-pb3 tds-u-pt3">Inline</div>
+    <h2 class="tds-headline-03 tds-u-pb3 tds-u-pt3">Inline</h2>
     <tds-inline-tabs>
       <tds-inline-tab>
         <button>First tab</button>
@@ -38,7 +38,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       </tds-inline-tab>
     </tds-inline-tabs>
 
-    <div class="tds-headline-03 tds-u-pb3 tds-u-pt3">Navigation</div>
+    <h2 class="tds-headline-03 tds-u-pb3 tds-u-pt3">Navigation</h2>
     <tds-navigation-tabs>
       <tds-navigation-tab>
         <a href="#">First tab</a>
@@ -56,4 +56,4 @@ import { TegelModule } from "@scania/tegel-angular-17";
   `,
   imports: [TegelModule],
 })
-export class TabsComponent {}
+export default class TabsComponent { }

@@ -1,3 +1,11 @@
-<tds-toggle (tdsToggle)="toggleBrand()" headline="Brand theme" size="sm" checked>
-  <div slot="label">{{ labelText }}</div>
-</tds-toggle>
+<fieldset>
+	<legend style="margin-bottom: calc(var(--dimension-space-small)/2 * 1px)"><b>Brand</b></legend>
+  <tds-radio-button name="brand" value="scania" [checked]="currentBrand === 'scania'"
+    (tdsChange)="brandSelector('scania')">
+    <div slot="label">Scania</div>
+  </tds-radio-button>
+  <tds-radio-button name="brand" value="traton" [checked]="currentBrand === 'traton'"
+    (tdsChange)="brandSelector('traton')">
+    <div slot="label">Traton</div>
+  </tds-radio-button>
+</fieldset>

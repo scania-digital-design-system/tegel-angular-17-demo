@@ -3,7 +3,8 @@ import { Routes } from "@angular/router";
 const routes = [
   {
     path: "",
-    loadComponent: () => import("@pages/components/components.component"),
+    redirectTo: "about",
+    pathMatch: "full"
   },
   {
     path: "form",
@@ -11,7 +12,116 @@ const routes = [
   },
   {
     path: "web-components",
-    loadComponent: () => import("@pages/components/components.component"),
+    redirectTo: "web-components/accordion",
+    pathMatch: "full"
+  },
+  {
+    path: "web-components/accordion",
+    loadComponent: () => import("@components/accordion/accordion.component"),
+  },
+  {
+    path: "web-components/badge",
+    loadComponent: () => import("@components/badge/badge.component"),
+  },
+  {
+    path: "web-components/banner",
+    loadComponent: () => import("@components/banner/banner.component"),
+  },
+  {
+    path: "web-components/block",
+    loadComponent: () => import("@components/block/block.component"),
+  },
+  {
+    path: "web-components/breadcrumbs",
+    loadComponent: () => import("@components/breadcrumbs/breadcrumbs.component"),
+  },
+  {
+    path: "web-components/button",
+    loadComponent: () => import("@components/button/button.component"),
+  },
+  {
+    path: "web-components/card",
+    loadComponent: () => import("@components/card/card.component"),
+  },
+  {
+    path: "web-components/checkbox",
+    loadComponent: () => import("@components/checkbox/checkbox.component"),
+  },
+  {
+    path: "web-components/chip",
+    loadComponent: () => import("@components/chip/chip.component"),
+  },
+  {
+    path: "web-components/datetime",
+    loadComponent: () => import("@components/datetime/datetime.component"),
+  },
+  {
+    path: "web-components/divider",
+    loadComponent: () => import("@components/divider/divider.component"),
+  },
+  {
+    path: "web-components/dropdown",
+    loadComponent: () => import("@components/dropdown/dropdown.component"),
+  },
+  {
+    path: "web-components/link",
+    loadComponent: () => import("@components/link/link.component"),
+  },
+  {
+    path: "web-components/message",
+    loadComponent: () => import("@components/message/message.component"),
+  },
+  {
+    path: "web-components/modal",
+    loadComponent: () => import("@components/modal/modal.component"),
+  },
+  {
+    path: "web-components/popover-canvas",
+    loadComponent: () => import("@components/popover-canvas/popover-canvas.component"),
+  },
+  {
+    path: "web-components/popover-menu",
+    loadComponent: () => import("@components/popover-menu/popover-menu.component"),
+  },
+  {
+    path: "web-components/radio-button",
+    loadComponent: () => import("@components/radio-button/radio-button.component"),
+  },
+  {
+    path: "web-components/spinner",
+    loadComponent: () => import("@components/spinner/spinner.component"),
+  },
+  {
+    path: "web-components/stepper",
+    loadComponent: () => import("@components/stepper/stepper.component"),
+  },
+  {
+    path: "web-components/tabs",
+    loadComponent: () => import("@components/tabs/tabs.component"),
+  },
+  {
+    path: "web-components/tag",
+    loadComponent: () => import("@components/tag/tag.component"),
+  },
+  {
+    path: "web-components/text-field",
+    loadComponent: () => import("@components/text-field/text-field.component"),
+  },
+  {
+    path: "web-components/textarea",
+    loadComponent: () => import("@components/textarea/textarea.component"),
+  },
+  {
+    path: "web-components/toast",
+    loadComponent: () => import("@components/toast/toast.component"),
+  },
+  {
+    path: "web-components/toggle",
+    loadComponent: () => import("@components/toggle/toggle.component"),
+  },
+  {
+    path: "web-components/tooltip",
+    loadComponent: () => import("@components/tooltip/tooltip.component"),
   },
   {
     path: "text",
@@ -52,10 +162,6 @@ const routes = [
   {
     path: "about",
     loadComponent: () => import("@pages/about-page/about-page.component"),
-  },
-  {
-    path: "stepper",
-    loadComponent: () => import("@pages/stepper-page/stepper-page.component"),
   },
   {
     path: "table",

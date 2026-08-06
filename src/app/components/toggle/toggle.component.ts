@@ -5,7 +5,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
   selector: "app-toggle",
   standalone: true,
   template: `
-    <div class="tds-headline-02 tds-u-pb1">Toggle</div>
+    <h1 class="tds-headline-02">Toggle</h1>
     <div class="tds-u-flex tds-u-gap2">
       <tds-toggle
         #toggle1
@@ -41,7 +41,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
   `,
   imports: [TegelModule],
 })
-export class ToggleComponent {
+export default class ToggleComponent {
   @ViewChild("toggle1", { static: true }) toggle1: HTMLTdsToggleElement;
   @ViewChild("toggle2", { static: true }) toggle2: HTMLTdsToggleElement;
   handleTdsToggle(event: CustomEvent) {

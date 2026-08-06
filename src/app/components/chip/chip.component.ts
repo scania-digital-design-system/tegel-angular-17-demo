@@ -1,15 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import BreadcrumbsComponent from "../../navigation/breadcrumbs/breadcrumbs.component";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
   selector: "app-chips",
-  templateUrl: "./chips.component.html",
+  templateUrl: "./chip.component.html",
   standalone: true,
   imports: [CommonModule, TegelModule],
 })
-export default class ChipsComponent {
+export default class ChipComponent {
   submittedData: string;
   data = {
     topic: {

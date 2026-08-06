@@ -8,7 +8,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
   standalone: true,
   imports: [TegelModule],
 })
-export class BadgeComponent {
+export default class BadgeComponent {
   emailCount = 100;
 
   updateEmailCount(event: any) {

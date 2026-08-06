@@ -1,25 +1,63 @@
-<div>
-  <h4>{{ orientation.charAt(0).toUpperCase() + orientation.slice(1) }} Stepper</h4>
-  <section [class]="orientation + '-stepper'">
-    <tds-stepper [labelPosition]="labelPosition" [size]="orientation === 'horizontal' ? 'sm' : 'lg'" [orientation]="orientation">
+<h1 class="tds-headline-02 tds-u-pb1">Stepper</h1>
+
+<section class="horizontal-stepper">
+  <h2 class="tds-headline-03 tds-u-pb1">Horizontal</h2>
+  <tds-stepper labelPosition="below" size='lg' orientation="horizontal">
+    <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+      <tds-step [state]="getState(index)" [index]="(index + 1).toString()">
+        <span slot="label">Step {{ index + 1 }}</span>
+      </tds-step>
+    </ng-container>
+  </tds-stepper>
+
+  <form>
+    <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+      <tds-text-field [disabled]="completedSteps < index" [placeholder]="'Step ' + (index + 1)"
+        [state]="errorStepIndex === index ? 'error' : 'default'"
+        [helper]="errorStepIndex === index ? 'Minimum 5 letters.' : undefined" (tdsInput)="onTdsInput(index, $event)"
+        (tdsChange)="onTdsChange(index, $event)">
+      </tds-text-field>
+    </ng-container>
+  </form>
+</section>
+
+<section class="vertical-stepper">
+  <h2 class="tds-headline-03 tds-u-pb1">Vertical</h2>
+  <div class="tds-u-flex">
+    <tds-stepper labelPosition="aside" size="lg" orientation="vertical">
       <ng-container *ngFor="let _ of [].constructor(4); let index = index">
         <tds-step [state]="getState(index)" [index]="(index + 1).toString()">
-          <div slot="label">Step {{ index + 1 }}</div>
+          <span slot="label">Step {{ index + 1 }}</span>
         </tds-step>
       </ng-container>
     </tds-stepper>
 
     <form>
       <ng-container *ngFor="let _ of [].constructor(4); let index = index">
-        <tds-text-field
-          [disabled]="completedSteps < index"
-          [placeholder]="'Step ' + (index + 1)"
+        <tds-text-field [disabled]="completedSteps < index" [placeholder]="'Step ' + (index + 1)"
           [state]="errorStepIndex === index ? 'error' : 'default'"
-          [helper]="errorStepIndex === index ? 'Minimum 5 letters.' : undefined"
-          (tdsInput)="onTdsInput(index, $event)"
+          [helper]="errorStepIndex === index ? 'Minimum 5 letters.' : undefined" (tdsInput)="onTdsInput(index, $event)"
           (tdsChange)="onTdsChange(index, $event)">
         </tds-text-field>
       </ng-container>
     </form>
-  </section>
-</div>
+  </div>
+</section>
+
+<section class="example-stepper">
+  <h2 class="tds-headline-03">Stepper Example</h2>
+  <tds-stepper size="lg" label-position="below" orientation="horizontal">
+    <tds-step state="success" index="1">
+      <div slot="label">Success step</div>
+    </tds-step>
+    <tds-step state="error" index="2">
+      <div slot="label">Error step</div>
+    </tds-step>
+    <tds-step state="current" index="3">
+      <div slot="label">Current step</div>
+    </tds-step>
+    <tds-step index="4">
+      <div slot="label">Upcoming step</div>
+    </tds-step>
+  </tds-stepper>
+</section>
