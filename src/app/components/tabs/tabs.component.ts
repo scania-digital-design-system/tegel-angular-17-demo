@@ -50,7 +50,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
         <a href="#" role="tab" aria-controls="third-navigation-tab">Third tab</a>
       </tds-navigation-tab>
       <tds-navigation-tab disabled>
-        <a href="javascript:void(0)" role="tab" aria-controls="fourth-navigation-tab">Fourth tab</a>
+        <span aria-controls="fourth-navigation-tab">Fourth tab</span>
       </tds-navigation-tab>
     </tds-navigation-tabs>
   `,
