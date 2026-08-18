@@ -14,7 +14,8 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
-              "base": "dist/tegel-angular-demo"
+              "base": "dist/tegel-angular-demo",
+              "browser": ""
             },
             "index": "src/index.html",
             "polyfills": ["zone.js"],
