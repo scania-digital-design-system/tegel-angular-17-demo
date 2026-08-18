@@ -12,10 +12,9 @@ import { Subscription } from "rxjs";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "nav-breadcrumbs",
-  templateUrl: "./breadcrumbs.component.html",
-  imports: [RouterLink, RouterOutlet, CommonModule, TegelModule],
-  standalone: true,
+    selector: "nav-breadcrumbs",
+    templateUrl: "./breadcrumbs.component.html",
+    imports: [RouterLink, CommonModule, TegelModule]
 })
 export default class BreadcrumbsNavComponent implements OnDestroy {
   segments: Array<{ title: string; path: string }> = []; // Initialize an empty array

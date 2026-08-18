@@ -7,9 +7,6 @@ describe('DatetimeComponent', () => {
   let fixture: ComponentFixture<DatetimeComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [DatetimeComponent]
-    });
     fixture = TestBed.createComponent(DatetimeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

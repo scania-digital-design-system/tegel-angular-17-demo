@@ -12,8 +12,8 @@ declare module "@tanstack/angular-table" {
 }
 
 @Component({
-  selector: "app-table-filter",
-  template: `
+    selector: "app-table-filter",
+    template: `
     @if (filterVariant() === 'select') {
     <select
       [value]="columnFilterValue()?.toString()"
@@ -43,8 +43,7 @@ declare module "@tanstack/angular-table" {
 
     }
   `,
-  standalone: true,
-  imports: [CommonModule, DebouncedInputDirective, TegelModule],
+    imports: [CommonModule, DebouncedInputDirective, TegelModule]
 })
 export class FilterComponent<T> {
   column = input.required<Column<any, any>>();

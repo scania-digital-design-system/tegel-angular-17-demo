@@ -12,10 +12,9 @@ import {
 import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 @Component({
-  selector: "app-editable-cell",
-  standalone: true,
-  imports: [CommonModule, TegelModule],
-  template: `
+    selector: "app-editable-cell",
+    imports: [CommonModule, TegelModule],
+    template: `
     <tds-table-body-input-wrapper>
       <input
         [value]="internalValue"
@@ -25,8 +24,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
       />
     </tds-table-body-input-wrapper>
   `,
-  styles: [
-    `
+    styles: [
+        `
       div {
         cursor: pointer;
       }
@@ -34,7 +33,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
         width: 100%;
       }
     `,
-  ],
+    ]
 })
 export class EditableCellComponent implements OnChanges, OnDestroy {
   @Input() value: any;

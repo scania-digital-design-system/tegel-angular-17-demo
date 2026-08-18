@@ -11,8 +11,8 @@ import { AsyncPipe } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-table-page",
-  template: `
+    selector: "app-table-page",
+    template: `
     <app-basic-table></app-basic-table>
     <app-batch-actions-table></app-batch-actions-table>
     <app-sortable-table></app-sortable-table>
@@ -21,20 +21,18 @@ import { TegelModule } from "@scania/tegel-angular-17";
     <app-expandable-table></app-expandable-table>
     <app-zebra-table></app-zebra-table>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [
-    BasicTableComponent,
-    BatchActionsTableComponent,
-    SortableTableComponent,
-    FilterTableComponent,
-    PaginationTableComponent,
-    ExpandableTableComponent,
-    ZebraTableComponent,
-    AsyncPipe,
-    TegelModule,
-  ],
-  providers: [TableService],
+    styles: [``],
+    imports: [
+        BasicTableComponent,
+        BatchActionsTableComponent,
+        SortableTableComponent,
+        FilterTableComponent,
+        PaginationTableComponent,
+        ExpandableTableComponent,
+        ZebraTableComponent,
+        TegelModule,
+    ],
+    providers: [TableService]
 })
 export default class TablePageComponent {
   tableService = inject(TableService);

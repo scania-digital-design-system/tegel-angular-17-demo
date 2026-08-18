@@ -4,8 +4,8 @@ import exampleData from "./exampleData.json";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-sortable-table",
-  template: `
+    selector: "app-sortable-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Sortable Table</div>
     <p>This Table is sortable.</p>
     <tds-table
@@ -57,9 +57,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
       </tds-table-body>
     </tds-table>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [CommonModule, TegelModule],
+    styles: [``],
+    imports: [CommonModule, TegelModule]
 })
 export class SortableTableComponent {
   tableData = exampleData;

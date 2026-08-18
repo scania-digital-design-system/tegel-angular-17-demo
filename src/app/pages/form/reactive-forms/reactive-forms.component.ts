@@ -19,23 +19,22 @@ import { ToggleComponent } from "@pages/form/toggle/toggle.component";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-reactive-forms",
-  standalone: true,
-  templateUrl: "./reactive-forms.component.html",
-  styleUrls: ["./reactive-forms.component.css"],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    TextInputComponent,
-    DropdownComponent,
-    CheckboxComponent,
-    RadioButtonComponent,
-    TextareaComponent,
-    SliderComponent,
-    TegelModule,
-    ChipComponent,
-    ToggleComponent,
-  ],
+    selector: "app-reactive-forms",
+    templateUrl: "./reactive-forms.component.html",
+    styleUrls: ["./reactive-forms.component.css"],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        TextInputComponent,
+        DropdownComponent,
+        CheckboxComponent,
+        RadioButtonComponent,
+        TextareaComponent,
+        SliderComponent,
+        TegelModule,
+        ChipComponent,
+        ToggleComponent,
+    ]
 })
 export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;

@@ -4,8 +4,8 @@ import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-pagination-table",
-  template: `
+    selector: "app-pagination-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Pagination Table</div>
     <p>This Table uses pagination.</p>
     <tds-table
@@ -58,9 +58,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
       ></tds-table-footer>
     </tds-table>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [CommonModule, TegelModule],
+    styles: [``],
+    imports: [CommonModule, TegelModule]
 })
 export class PaginationTableComponent {
   // Should probably be changed to signals since using ChangeDetectorRef 

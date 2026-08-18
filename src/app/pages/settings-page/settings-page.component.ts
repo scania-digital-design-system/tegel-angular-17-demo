@@ -11,10 +11,9 @@ import { Subject, takeUntil } from "rxjs";
 import { UserStoreService } from "src/app/services/user-store.service";
 
 @Component({
-  selector: "app-settings-page",
-  standalone: true,
-  templateUrl: "./settings-page.component.html",
-  imports: [ReactiveFormsModule, CommonModule, TegelModule],
+    selector: "app-settings-page",
+    templateUrl: "./settings-page.component.html",
+    imports: [ReactiveFormsModule, CommonModule, TegelModule]
 })
 export default class SettingsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}

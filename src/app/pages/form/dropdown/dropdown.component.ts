@@ -14,10 +14,9 @@ import { Subject, takeUntil } from "rxjs";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-dropdown",
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TegelModule],
-  templateUrl: "./dropdown.component.html",
+    selector: "app-dropdown",
+    imports: [CommonModule, ReactiveFormsModule, TegelModule],
+    templateUrl: "./dropdown.component.html"
 })
 export class DropdownComponent implements OnInit, OnDestroy {
   nowegianTowns = norwayData;

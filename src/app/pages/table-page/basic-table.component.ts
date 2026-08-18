@@ -3,8 +3,8 @@ import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-basic-table",
-  template: `
+    selector: "app-basic-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1">Basic Table</div>
     <p>This is a basic Table implementation.</p>
     <tds-table
@@ -84,8 +84,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       </tds-table-body>
     </tds-table>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [CommonModule, TegelModule],
+    styles: [``],
+    imports: [CommonModule, TegelModule]
 })
 export class BasicTableComponent {}

@@ -7,9 +7,6 @@ describe('SpinnerComponent', () => {
   let fixture: ComponentFixture<SpinnerComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [SpinnerComponent]
-    });
     fixture = TestBed.createComponent(SpinnerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

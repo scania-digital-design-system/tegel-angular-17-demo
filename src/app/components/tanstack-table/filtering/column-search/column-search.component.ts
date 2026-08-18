@@ -23,17 +23,16 @@ import { FormsModule } from "@angular/forms";
 import { NgClass } from "@angular/common";
 
 @Component({
-  selector: "app-column-search",
-  standalone: true,
-  imports: [
-    FilterComponent,
-    FlexRenderDirective,
-    FormsModule,
-    NgClass,
-    TegelModule,
-  ],
-  templateUrl: "./column-search.component.html",
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: "app-column-search",
+    imports: [
+        FilterComponent,
+        FlexRenderDirective,
+        FormsModule,
+        NgClass,
+        TegelModule,
+    ],
+    templateUrl: "./column-search.component.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ColumnSearchComponent {
   readonly columnFilters = signal<ColumnFiltersState>([]);

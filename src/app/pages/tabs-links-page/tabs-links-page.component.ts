@@ -7,17 +7,14 @@ import { TegelModule } from "@scania/tegel-angular-17";
 import TabsSubpageComponent from "@pages/tabs-links-page/tabs-subpage/tabs-subpage.component";
 
 @Component({
-  selector: "app-tabs-links-page",
-  templateUrl: "./tabs-links-page.component.html",
-  standalone: true,
-  imports: [
-    BreadcrumbsComponent,
-    RouterLink,
-    RouterOutlet,
-    CommonModule,
-    TegelModule,
-    TabsSubpageComponent,
-  ],
+    selector: "app-tabs-links-page",
+    templateUrl: "./tabs-links-page.component.html",
+    imports: [
+        RouterLink,
+        CommonModule,
+        TegelModule,
+        TabsSubpageComponent,
+    ]
 })
 export default class TabsLinksPageComponent {
   fullPath: string;

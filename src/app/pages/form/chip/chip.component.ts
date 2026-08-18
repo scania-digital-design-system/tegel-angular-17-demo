@@ -4,11 +4,10 @@ import { NgIf } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-chip",
-  standalone: true,
-  templateUrl: "./chip.component.html",
-  imports: [FormsModule, NgIf, ReactiveFormsModule, TegelModule],
-  styleUrls: ["./chip.component.css"],
+    selector: "app-chip",
+    templateUrl: "./chip.component.html",
+    imports: [FormsModule, ReactiveFormsModule, TegelModule],
+    styleUrls: ["./chip.component.css"]
 })
 export class ChipComponent {
   @Input() chipGroup: FormGroup;

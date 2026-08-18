@@ -39,17 +39,15 @@ const defaultColumns: ColumnDef<Person>[] = [
 ];
 
 @Component({
-  selector: "app-editable-data",
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    FlexRenderDirective,
-    TegelModule,
-    EditableCellComponent,
-    CommonModule,
-  ], // Add the new component to imports
-  templateUrl: "./editable-data.component.html",
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: "app-editable-data",
+    imports: [
+        FlexRenderDirective,
+        TegelModule,
+        EditableCellComponent,
+        CommonModule,
+    ], // Add the new component to imports
+    templateUrl: "./editable-data.component.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditableDataComponent {
   readonly data = signal(makeData(10));

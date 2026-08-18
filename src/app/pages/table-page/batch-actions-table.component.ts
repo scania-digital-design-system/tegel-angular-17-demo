@@ -5,8 +5,8 @@ import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-batch-actions-table",
-  template: `
+    selector: "app-batch-actions-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Batch Actions</div>
     <p>
       This Table uses the batch actions slot and multiselect in order to get
@@ -77,8 +77,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
     </tds-table>
     <ng-template modal-dr />
   `,
-  imports: [ModalDirective, CommonModule, TegelModule],
-  standalone: true,
+    imports: [ModalDirective, CommonModule, TegelModule]
 })
 export class BatchActionsTableComponent {
   @ViewChild(ModalDirective, { static: true }) modalDirective!: ModalDirective;

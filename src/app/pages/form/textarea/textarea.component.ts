@@ -8,10 +8,9 @@ import {
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-textarea",
-  standalone: true,
-  templateUrl: "./textarea.component.html",
-  imports: [ReactiveFormsModule, CommonModule, TegelModule],
+    selector: "app-textarea",
+    templateUrl: "./textarea.component.html",
+    imports: [ReactiveFormsModule, CommonModule, TegelModule]
 })
 export class TextareaComponent {
   public fb = inject(NonNullableFormBuilder);

@@ -5,16 +5,14 @@ import BreadcrumbsComponent from "../../navigation/breadcrumbs/breadcrumbs.compo
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-text-page",
-  templateUrl: "./text-page.component.html",
-  standalone: true,
-  imports: [
-    BreadcrumbsComponent,
-    RouterLink,
-    RouterOutlet,
-    CommonModule,
-    TegelModule,
-  ],
+    selector: "app-text-page",
+    templateUrl: "./text-page.component.html",
+    imports: [
+        RouterLink,
+        RouterOutlet,
+        CommonModule,
+        TegelModule,
+    ]
 })
 export default class TextPageComponent {
   constructor(private router: Router) {}

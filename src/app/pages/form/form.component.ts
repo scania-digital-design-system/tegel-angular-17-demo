@@ -9,19 +9,15 @@ import { TegelModule } from "@scania/tegel-angular-17";
 import { untilDestroyedRef } from "src/utils";
 
 @Component({
-  selector: "app-form",
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    ReactiveFormsComponent,
-    BreadcrumbsComponent,
-    SimpleFormComponent,
-    RouterModule,
-    TegelModule,
-  ],
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.css"],
+    selector: "app-form",
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        RouterModule,
+        TegelModule,
+    ],
+    templateUrl: "./form.component.html",
+    styleUrls: ["./form.component.css"]
 })
 export default class FormComponent {
   fullPath: string;

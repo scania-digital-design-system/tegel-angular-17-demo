@@ -17,7 +17,6 @@ bootstrapApplication(AppComponent, {
         scrollPositionRestoration: "enabled",
       }),
       BrowserModule,
-      HttpClientModule,
       AgGridModule,
       TegelModule
     ),

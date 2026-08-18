@@ -3,8 +3,8 @@ import { CommonModule } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-zebra-table",
-  template: `
+    selector: "app-zebra-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-mt3">Zebra Table</div>
     <div class="tds-headline-04 tds-u-pb1 tds-u-mt1">Zebra Mode: rows-odd</div>
     <tds-table
@@ -798,8 +798,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       </tds-table-body>
     </tds-table>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [CommonModule, TegelModule],
+    styles: [``],
+    imports: [CommonModule, TegelModule]
 })
 export class ZebraTableComponent {}
