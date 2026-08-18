@@ -1,4 +1,4 @@
-import { importProvidersFrom } from "@angular/core";
+import { importProvidersFrom, provideZoneChangeDetection } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app/app.component";
 import { BrowserModule, bootstrapApplication } from "@angular/platform-browser";
@@ -12,6 +12,7 @@ defineCustomElements(window);
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideZoneChangeDetection(),
     importProvidersFrom(
       RouterModule.forRoot(routes, {
         scrollPositionRestoration: "enabled",
