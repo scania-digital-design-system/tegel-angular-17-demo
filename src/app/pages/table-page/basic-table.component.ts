@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
@@ -85,6 +85,6 @@ import { TegelModule } from "@scania/tegel-angular-17";
     </tds-table>
   `,
     styles: [``],
-    imports: [CommonModule, TegelModule]
+    imports: [TegelModule]
 })
 export class BasicTableComponent {}

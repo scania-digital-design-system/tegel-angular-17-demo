@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component } from "@angular/core";
 import {
   AbstractControl,
@@ -23,18 +23,17 @@ import { TegelModule } from "@scania/tegel-angular-17";
     templateUrl: "./reactive-forms.component.html",
     styleUrls: ["./reactive-forms.component.css"],
     imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        TextInputComponent,
-        DropdownComponent,
-        CheckboxComponent,
-        RadioButtonComponent,
-        TextareaComponent,
-        SliderComponent,
-        TegelModule,
-        ChipComponent,
-        ToggleComponent,
-    ]
+    ReactiveFormsModule,
+    TextInputComponent,
+    DropdownComponent,
+    CheckboxComponent,
+    RadioButtonComponent,
+    TextareaComponent,
+    SliderComponent,
+    TegelModule,
+    ChipComponent,
+    ToggleComponent
+]
 })
 export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;

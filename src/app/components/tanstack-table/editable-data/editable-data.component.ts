@@ -11,7 +11,7 @@ import { makeData, type Person } from "../makeData";
 
 import { TegelModule } from "@scania/tegel-angular-17";
 import { EditableCellComponent } from "./editable-cell/editable-cell.component"; // Import the new component
-import { CommonModule } from "@angular/common";
+
 
 const defaultColumns: ColumnDef<Person>[] = [
   {
@@ -41,11 +41,10 @@ const defaultColumns: ColumnDef<Person>[] = [
 @Component({
     selector: "app-editable-data",
     imports: [
-        FlexRenderDirective,
-        TegelModule,
-        EditableCellComponent,
-        CommonModule,
-    ], // Add the new component to imports
+    FlexRenderDirective,
+    TegelModule,
+    EditableCellComponent
+], // Add the new component to imports
     templateUrl: "./editable-data.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, forwardRef, inject } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
     selector: "app-text-input",
-    imports: [CommonModule, ReactiveFormsModule, TegelModule],
+    imports: [ReactiveFormsModule, TegelModule],
     templateUrl: "./text-input.component.html",
     styleUrls: ["./text-input.component.css"]
 })

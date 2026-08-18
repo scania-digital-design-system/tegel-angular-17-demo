@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import {
   FormControl,
@@ -13,7 +13,7 @@ import { UserStoreService } from "src/app/services/user-store.service";
 @Component({
     selector: "app-settings-page",
     templateUrl: "./settings-page.component.html",
-    imports: [ReactiveFormsModule, CommonModule, TegelModule]
+    imports: [ReactiveFormsModule, TegelModule]
 })
 export default class SettingsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}

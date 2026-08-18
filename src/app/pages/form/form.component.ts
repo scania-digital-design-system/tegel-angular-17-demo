@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CommonModule, Location } from "@angular/common";
+import { Location } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 import ReactiveFormsComponent from "./reactive-forms/reactive-forms.component";
 import { Router, RouterModule } from "@angular/router";
@@ -11,11 +11,10 @@ import { untilDestroyedRef } from "src/utils";
 @Component({
     selector: "app-form",
     imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        RouterModule,
-        TegelModule,
-    ],
+    ReactiveFormsModule,
+    RouterModule,
+    TegelModule
+],
     templateUrl: "./form.component.html",
     styleUrls: ["./form.component.css"]
 })

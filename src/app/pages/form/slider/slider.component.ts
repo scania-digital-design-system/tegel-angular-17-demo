@@ -1,11 +1,11 @@
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
     selector: "app-slider",
-    imports: [CommonModule, ReactiveFormsModule, TegelModule],
+    imports: [ReactiveFormsModule, TegelModule],
     templateUrl: "./slider.component.html"
 })
 export class SliderComponent {

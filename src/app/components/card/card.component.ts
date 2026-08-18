@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
@@ -6,7 +6,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
     selector: "app-card",
     templateUrl: "./card.component.html",
     styleUrls: ["./card.component.css"],
-    imports: [CommonModule, TegelModule]
+    imports: [TegelModule]
 })
 export default class CardComponent {
   cardImagePath = "../../../assets/images/card-img.png";

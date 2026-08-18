@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import exampleData from "./exampleData.json";
 import { TegelModule } from "@scania/tegel-angular-17";
 
@@ -14,7 +14,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       responsive
       (tdsSort)="sort($event)"
       no-min-width
-    >
+      >
       <tds-table-toolbar table-title="Sorting"></tds-table-toolbar>
       <tds-table-header>
         <tds-header-cell
@@ -40,25 +40,27 @@ import { TegelModule } from "@scania/tegel-angular-17";
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        <tds-table-body-row *ngFor="let row of tableData">
-          <tds-body-cell cell-key="truck">
-            {{ row.truck }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="driver">
-            {{ row.driver }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="country">
-            {{ row.country }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="mileage" text-align="right">
-            {{ row.mileage }}
-          </tds-body-cell>
-        </tds-table-body-row>
+        @for (row of tableData; track row) {
+          <tds-table-body-row>
+            <tds-body-cell cell-key="truck">
+              {{ row.truck }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="driver">
+              {{ row.driver }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="country">
+              {{ row.country }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="mileage" text-align="right">
+              {{ row.mileage }}
+            </tds-body-cell>
+          </tds-table-body-row>
+        }
       </tds-table-body>
     </tds-table>
-  `,
+    `,
     styles: [``],
-    imports: [CommonModule, TegelModule]
+    imports: [TegelModule]
 })
 export class SortableTableComponent {
   tableData = exampleData;

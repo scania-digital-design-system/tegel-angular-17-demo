@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import {
   Component,
   ElementRef,
@@ -14,7 +14,7 @@ import { Notification } from "src/types";
 @Component({
     selector: "app-notifications-page",
     templateUrl: "./notifications-page.component.html",
-    imports: [CommonModule, TegelModule]
+    imports: [TegelModule]
 })
 export default class NotificationsPageComponent implements OnInit, OnDestroy {
   constructor(private userStoreService: UserStoreService) {}

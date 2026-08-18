@@ -9,11 +9,11 @@ import {
   Renderer2,
   OnDestroy,
 } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import { TegelModule } from "@scania/tegel-angular-17";
 @Component({
     selector: "app-editable-cell",
-    imports: [CommonModule, TegelModule],
+    imports: [TegelModule],
     template: `
     <tds-table-body-input-wrapper>
       <input

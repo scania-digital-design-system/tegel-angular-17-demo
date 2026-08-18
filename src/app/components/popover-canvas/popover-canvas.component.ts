@@ -1,10 +1,10 @@
 import { Component, ViewChild } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
     selector: "app-popover-canvas",
-    imports: [CommonModule, TegelModule],
+    imports: [TegelModule],
     templateUrl: "./popover-canvas.component.html"
 })
 export default class PopoverCanvasComponent {

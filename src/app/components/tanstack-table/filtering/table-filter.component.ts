@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component, computed, input } from "@angular/core";
 import type { Column, RowData, Table } from "@tanstack/angular-table";
 import { DebouncedInputDirective } from "./debounced-input.directive";
@@ -43,7 +43,7 @@ declare module "@tanstack/angular-table" {
 
     }
   `,
-    imports: [CommonModule, DebouncedInputDirective, TegelModule]
+    imports: [DebouncedInputDirective, TegelModule]
 })
 export class FilterComponent<T> {
   column = input.required<Column<any, any>>();

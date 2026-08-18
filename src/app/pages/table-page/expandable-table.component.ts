@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { KeyValuePipe, NgForOf, NgIf } from "@angular/common";
+import { KeyValuePipe } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 import exampleData from "./exampleData.json";
 

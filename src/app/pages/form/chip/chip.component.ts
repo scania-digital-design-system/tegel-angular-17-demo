@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NgIf } from "@angular/common";
+
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
