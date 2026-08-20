@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "^22.1.3",
     "@angular/router": "^22.1.3",
     "@faker-js/faker": "^8.4.1",
-    "@scania/tegel-angular-17": "file:../tegel/packages/angular-17/dist/components/scania-tegel-angular-17-1.61.0.tgz",
+    "@scania/tegel-angular-17": "^1.61.0",
     "@scania/tegel-styles": "1.0.0",
     "@tanstack/angular-table": "^8.19.2",
     "ag-grid-angular": "^31.3.2",
