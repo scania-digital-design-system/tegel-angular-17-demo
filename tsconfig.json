@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "rootDir": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -22,11 +22,12 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "paths": {
-      "@components/*": ["src/app/components/*"],
-      "@directives/*": ["src/app/directives/*"],
-      "@pipes/*": ["src/app/shared/pipes/*"],
-      "@routes/*": ["src/app/routes/*"],
-      "@pages/*": ["src/app/pages/*"]
+      "src/*": ["./src/*"],
+      "@components/*": ["./src/app/components/*"],
+      "@directives/*": ["./src/app/directives/*"],
+      "@pipes/*": ["./src/app/shared/pipes/*"],
+      "@routes/*": ["./src/app/routes/*"],
+      "@pages/*": ["./src/app/pages/*"]
     }
   },
   "angularCompilerOptions": {
