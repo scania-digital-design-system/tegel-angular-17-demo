@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import { Component } from "@angular/core";
 import {
   AbstractControl,
@@ -19,12 +19,10 @@ import { ToggleComponent } from "@pages/form/toggle/toggle.component";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-reactive-forms",
-  standalone: true,
-  templateUrl: "./reactive-forms.component.html",
-  styleUrls: ["./reactive-forms.component.css"],
-  imports: [
-    CommonModule,
+    selector: "app-reactive-forms",
+    templateUrl: "./reactive-forms.component.html",
+    styleUrls: ["./reactive-forms.component.css"],
+    imports: [
     ReactiveFormsModule,
     TextInputComponent,
     DropdownComponent,
@@ -34,8 +32,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
     SliderComponent,
     TegelModule,
     ChipComponent,
-    ToggleComponent,
-  ],
+    ToggleComponent
+]
 })
 export default class ReactiveFormsComponent {
   isEssayInvalid: boolean = false;

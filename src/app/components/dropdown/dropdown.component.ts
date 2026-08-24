@@ -2,10 +2,9 @@ import { Component, ViewChild } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-dropdown",
-  standalone: true,
-  templateUrl: "./dropdown.component.html", // Update this line
-  imports: [TegelModule],
+    selector: "app-dropdown",
+    templateUrl: "./dropdown.component.html", // Update this line
+    imports: [TegelModule]
 })
 export default class DropdownComponent {
   @ViewChild("dropdownRef", { static: true })

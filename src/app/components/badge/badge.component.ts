@@ -2,11 +2,10 @@ import { Component, Input } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-badge",
-  templateUrl: "./badge.component.html",
-  styleUrls: ["./badge.component.css"],
-  standalone: true,
-  imports: [TegelModule],
+    selector: "app-badge",
+    templateUrl: "./badge.component.html",
+    styleUrls: ["./badge.component.css"],
+    imports: [TegelModule]
 })
 export default class BadgeComponent {
   emailCount = 100;

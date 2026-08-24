@@ -13,22 +13,14 @@ import BreadcrumbsComponent from "../../../navigation/breadcrumbs/breadcrumbs.co
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-simple-form",
-  templateUrl: "./simple-form.component.html",
-  styleUrls: ["./simple-form.component.scss"],
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    ReactiveFormsComponent,
-    TextInputComponent,
-    CheckboxComponent,
-    RadioButtonComponent,
-    SliderComponent,
-    DropdownComponent,
-    BreadcrumbsComponent,
-    TegelModule,
-  ],
+    selector: "app-simple-form",
+    templateUrl: "./simple-form.component.html",
+    styleUrls: ["./simple-form.component.scss"],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        TegelModule,
+    ]
 })
 export default class SimpleFormComponent {
   nowegianTowns = norwayData;

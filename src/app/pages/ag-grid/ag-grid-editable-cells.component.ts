@@ -6,12 +6,11 @@ import { ColDef, GridApi, GridReadyEvent } from "ag-grid-community";
 import { AgGridModule } from "ag-grid-angular";
 
 @Component({
-  selector: "app-ag-grid-editable-cells",
-  standalone: true,
-  encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
-  templateUrl: "./ag-grid-editable-cells.component.html",
-  styleUrls: ["ag-styles-loader.css"],
-  imports: [TegelModule, AgGridModule, AgGridAngular],
+    selector: "app-ag-grid-editable-cells",
+    encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
+    templateUrl: "./ag-grid-editable-cells.component.html",
+    styleUrls: ["ag-styles-loader.css"],
+    imports: [TegelModule, AgGridModule, AgGridAngular]
 })
 export default class AgGridEditableCellsComponent {
   public columnDefs: ColDef[] = [

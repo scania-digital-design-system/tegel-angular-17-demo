@@ -2,10 +2,9 @@ import { Component, Output, EventEmitter } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-accordion",
-  templateUrl: "./accordion.component.html",
-  standalone: true,
-  imports: [TegelModule],
+    selector: "app-accordion",
+    templateUrl: "./accordion.component.html",
+    imports: [TegelModule]
 })
 export default class AccordionComponent {
   @Output() iconPositionChange = new EventEmitter<"end" | "start">();

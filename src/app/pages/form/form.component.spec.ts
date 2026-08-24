@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormComponent } from './form.component';
+import FormComponent from './form.component';
+import TabsSubpageComponent from '@pages/tabs-links-page/tabs-subpage/tabs-subpage.component';
+import { provideRouter } from '@angular/router';
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -8,7 +10,7 @@ describe('FormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [FormComponent]
+      providers: [provideRouter([{ path: "first-tab", component: TabsSubpageComponent }])]
     });
     fixture = TestBed.createComponent(FormComponent);
     component = fixture.componentInstance;

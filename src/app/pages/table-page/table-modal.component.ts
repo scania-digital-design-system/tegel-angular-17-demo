@@ -1,8 +1,8 @@
 import { Component, Input } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 @Component({
-  selector: "app-table-modal",
-  template: `
+    selector: "app-table-modal",
+    template: `
     <tds-modal
       selector="#my-modal-button"
       id="my-modal"
@@ -17,9 +17,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
       </span>
     </tds-modal>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [TegelModule],
+    styles: [``],
+    imports: [TegelModule]
 })
 export class TableModalComponent {
   @Input() content: string;

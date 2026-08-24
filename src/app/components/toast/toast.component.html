@@ -4,21 +4,23 @@
   <span slot="label">{{ hideToasts ? 'Hide Toast' : 'Show Toast' }}</span>
 </tds-toggle>
 
-<div *ngIf="hideToasts" class="toast-container tds-u-flex tds-u-flex-dir-col tds-u-gap1">
-  <tds-toast variant="success" header="Successful Toast!" subheader="( Closing prevented ! )"
-    (tdsClose)="preventClose($event)">
-    <div slot="subheader">This Toasts can't be closed.</div>
-  </tds-toast>
-  <tds-toast variant="error" header="Error Toast!">
-    <div slot="subheader">This Toasts can be closed.</div>
-  </tds-toast>
-  <tds-toast variant="information" header="Information Toast!">
-    <div slot="subheader">This Toasts has a link.</div>
-    <a slot="actions" href="/">
-      This is a link.
-    </a>
-  </tds-toast>
-  <tds-toast variant="warning" header="Warning Toast!">
-    <div slot="subheader">This Toast can be closed programmatically.</div>
-  </tds-toast>
-</div>
+@if (hideToasts) {
+  <div class="toast-container tds-u-flex tds-u-flex-dir-col tds-u-gap1">
+    <tds-toast variant="success" header="Successful Toast!" subheader="( Closing prevented ! )"
+      (tdsClose)="preventClose($event)">
+      <div slot="subheader">This Toasts can't be closed.</div>
+    </tds-toast>
+    <tds-toast variant="error" header="Error Toast!">
+      <div slot="subheader">This Toasts can be closed.</div>
+    </tds-toast>
+    <tds-toast variant="information" header="Information Toast!">
+      <div slot="subheader">This Toasts has a link.</div>
+      <a slot="actions" href="/">
+        This is a link.
+      </a>
+    </tds-toast>
+    <tds-toast variant="warning" header="Warning Toast!">
+      <div slot="subheader">This Toast can be closed programmatically.</div>
+    </tds-toast>
+  </div>
+}

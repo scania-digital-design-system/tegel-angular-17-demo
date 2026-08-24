@@ -1,12 +1,12 @@
 import { Component, ViewChild } from "@angular/core";
 import { ModalDirective } from "@directives/modal.directive";
 import exampleData from "./exampleData.json";
-import { CommonModule } from "@angular/common";
+
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-batch-actions-table",
-  template: `
+    selector: "app-batch-actions-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Batch Actions</div>
     <p>
       This Table uses the batch actions slot and multiselect in order to get
@@ -20,7 +20,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       compact-design="false"
       responsive
       no-min-width
-    >
+      >
       <tds-table-toolbar table-title="Batch action">
         <div slot="end">
           <tds-button
@@ -35,7 +35,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
         multiselect
         (tdsSelectAll)="selectAll($event)"
         [allSelected]="allSelected"
-      >
+        >
         <tds-header-cell
           cell-key="truck"
           cell-value="Truck type"
@@ -55,30 +55,30 @@ import { TegelModule } from "@scania/tegel-angular-17";
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        <tds-table-body-row
-          *ngFor="let row of tableData"
-          selected="{{ row.selected }}"
-          (tdsSelect)="handleRowSelect(row.id, $event)"
-        >
-          <tds-body-cell cell-key="truck">
-            {{ row.truck }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="driver">
-            {{ row.driver }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="country">
-            {{ row.country }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="mileage" text-align="right">
-            {{ row.mileage }}
-          </tds-body-cell>
-        </tds-table-body-row>
+        @for (row of tableData; track row) {
+          <tds-table-body-row
+            selected="{{ row.selected }}"
+            (tdsSelect)="handleRowSelect(row.id, $event)"
+            >
+            <tds-body-cell cell-key="truck">
+              {{ row.truck }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="driver">
+              {{ row.driver }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="country">
+              {{ row.country }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="mileage" text-align="right">
+              {{ row.mileage }}
+            </tds-body-cell>
+          </tds-table-body-row>
+        }
       </tds-table-body>
     </tds-table>
     <ng-template modal-dr />
-  `,
-  imports: [ModalDirective, CommonModule, TegelModule],
-  standalone: true,
+    `,
+    imports: [ModalDirective, TegelModule]
 })
 export class BatchActionsTableComponent {
   @ViewChild(ModalDirective, { static: true }) modalDirective!: ModalDirective;

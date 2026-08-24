@@ -22,7 +22,7 @@
 
       <tds-header>
         <tds-header-hamburger id="demo-hamburger" aria-label="Open application drawer" aria-haspopup="true"
-          aria-expanded="false" (click)="toggleMobileSideMenu()"></tds-header-hamburger>
+        aria-expanded="false" (click)="toggleMobileSideMenu()"></tds-header-hamburger>
 
         <tds-header-title>{{ title }} </tds-header-title>
 
@@ -33,7 +33,7 @@
           </div>
           <tds-header-dropdown-list size="lg">
             <tds-header-dropdown-list-user header="{{ userName }}"
-              subheader="{{ placeOfWork }}"></tds-header-dropdown-list-user>
+            subheader="{{ placeOfWork }}"></tds-header-dropdown-list-user>
             <tds-header-dropdown-list-item>
               <a routerLink="settings">
                 <tds-icon name="settings"></tds-icon>
@@ -42,7 +42,9 @@
             </tds-header-dropdown-list-item>
             <tds-header-dropdown-list-item>
               <a routerLink="notifications">
-                <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
+                @if (notifications.length) {
+                  <tds-badge [value]="notifications.length"></tds-badge>
+                }
                 <div class="tds-u-pl1">Notifications</div>
               </a>
             </tds-header-dropdown-list-item>
@@ -217,9 +219,9 @@
           <tds-side-menu-dropdown slot="end" [selected]="isActive('/settings') || isActive('/notifications')">
             <tds-side-menu-user-image slot="icon"
               src="https://www.svgrepo.com/show/384676/account-avatar-profile-user-6.svg"
-              alt="cenas"></tds-side-menu-user-image>
+            alt="cenas"></tds-side-menu-user-image>
             <tds-side-menu-user-label slot="label" heading="{{ userName }}"
-              subheading="{{ placeOfWork }}"></tds-side-menu-user-label>
+            subheading="{{ placeOfWork }}"></tds-side-menu-user-label>
             <tds-side-menu-dropdown-list>
               <tds-side-menu-dropdown-list-item [selected]="isActive('/settings')">
                 <a routerLink="settings">
@@ -229,7 +231,9 @@
               </tds-side-menu-dropdown-list-item>
               <tds-side-menu-dropdown-list-item [selected]="isActive('/notifications')">
                 <a routerLink="notifications">
-                  <tds-badge *ngIf="notifications.length" [value]="notifications.length"></tds-badge>
+                  @if (notifications.length) {
+                    <tds-badge [value]="notifications.length"></tds-badge>
+                  }
                   <div class="tds-u-pl1">Notifications</div>
                 </a>
               </tds-side-menu-dropdown-list-item>
@@ -240,14 +244,18 @@
         </tds-side-menu>
         <main class="tds-u-w-100">
           <div class="tds-u-h-100">
-            <div class="switcher-container" *ngIf="!is404page">
-              <h4 style="margin: 0">Theme Controls</h4>
-              <app-brand-switcher (handleBrandChange)="selectBrand($event)"></app-brand-switcher>
-              <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
-              <app-mode-variant-switcher (modeVariantToggle)="handleModeVariantToggle()"></app-mode-variant-switcher>
-            </div>
+            @if (!is404page) {
+              <div class="switcher-container">
+                <h4 style="margin: 0">Theme Controls</h4>
+                <app-brand-switcher (handleBrandChange)="selectBrand($event)"></app-brand-switcher>
+                <app-mode-switcher (modeToggle)="handleModeToggle()"></app-mode-switcher>
+                <app-mode-variant-switcher (modeVariantToggle)="handleModeVariantToggle()"></app-mode-variant-switcher>
+              </div>
+            }
             <div class="tds-u-h-100 tds-u-flex tds-u-flex-dir-col">
-              <nav-breadcrumbs *ngIf="!is404page"></nav-breadcrumbs>
+              @if (!is404page) {
+                <nav-breadcrumbs></nav-breadcrumbs>
+              }
 
               <div [ngClass]="
                   is404page

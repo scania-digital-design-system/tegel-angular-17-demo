@@ -9,7 +9,7 @@
       placeholder="Country select"
       size="lg"
       open-direction="down"
-    >
+      >
       <tds-dropdown-option value="sweden"> Sweden </tds-dropdown-option>
       <tds-dropdown-option disabled value="Finland">
         Finland
@@ -27,13 +27,14 @@
       size="lg"
       open-direction="down"
       multiselect
-    >
-      <tds-dropdown-option
-        *ngFor="let town of nowegianTowns; let idx = index"
-        value="{{ town.value }}"
       >
-        {{ town.label }}
-      </tds-dropdown-option>
+      @for (town of nowegianTowns; track town; let idx = $index) {
+        <tds-dropdown-option
+          value="{{ town.value }}"
+          >
+          {{ town.label }}
+        </tds-dropdown-option>
+      }
     </tds-dropdown>
 
     <tds-dropdown
@@ -46,12 +47,12 @@
       size="lg"
       open-direction="down"
       filter
-    >
-      <ng-container *ngFor="let town of swedishTowns; let idx = index">
+      >
+      @for (town of swedishTowns; track town; let idx = $index) {
         <tds-dropdown-option [value]="town.value">
           {{ town.label }}
         </tds-dropdown-option>
-      </ng-container>
+      }
     </tds-dropdown>
   </section>
 </ng-container>

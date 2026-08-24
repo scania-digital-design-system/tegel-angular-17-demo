@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-breadcrumbs",
-  template: `
+    selector: "app-breadcrumbs",
+    template: `
     <h1 class="tds-headline-02">Breadcrumbs</h1>
     <tds-breadcrumbs>
       <tds-breadcrumb>
@@ -17,7 +17,6 @@ import { TegelModule } from "@scania/tegel-angular-17";
       </tds-breadcrumb>
     </tds-breadcrumbs>
   `,
-  standalone: true,
-  imports: [TegelModule],
+    imports: [TegelModule]
 })
 export default class BreadcrumbsComponent { }

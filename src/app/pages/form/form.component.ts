@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CommonModule, Location } from "@angular/common";
+import { Location } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 import ReactiveFormsComponent from "./reactive-forms/reactive-forms.component";
 import { Router, RouterModule } from "@angular/router";
@@ -9,19 +9,14 @@ import { TegelModule } from "@scania/tegel-angular-17";
 import { untilDestroyedRef } from "src/utils";
 
 @Component({
-  selector: "app-form",
-  standalone: true,
-  imports: [
-    CommonModule,
+    selector: "app-form",
+    imports: [
     ReactiveFormsModule,
-    ReactiveFormsComponent,
-    BreadcrumbsComponent,
-    SimpleFormComponent,
     RouterModule,
-    TegelModule,
-  ],
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.css"],
+    TegelModule
+],
+    templateUrl: "./form.component.html",
+    styleUrls: ["./form.component.css"]
 })
 export default class FormComponent {
   fullPath: string;

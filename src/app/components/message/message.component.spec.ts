@@ -7,9 +7,6 @@ describe('MessageComponent', () => {
   let fixture: ComponentFixture<MessageComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [MessageComponent],
-    });
     fixture = TestBed.createComponent(MessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

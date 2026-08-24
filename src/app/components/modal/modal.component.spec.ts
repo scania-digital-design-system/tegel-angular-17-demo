@@ -6,9 +6,6 @@ describe('ModalComponent', () => {
   let fixture: ComponentFixture<ModalComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ModalComponent]
-    });
     fixture = TestBed.createComponent(ModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

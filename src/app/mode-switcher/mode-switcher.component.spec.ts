@@ -7,9 +7,6 @@ describe('ModeSwitcherComponent', () => {
   let fixture: ComponentFixture<ModeSwitcherComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ModeSwitcherComponent]
-    });
     fixture = TestBed.createComponent(ModeSwitcherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

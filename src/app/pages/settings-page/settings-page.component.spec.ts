@@ -7,9 +7,6 @@ describe('SettingsPageComponent', () => {
   let fixture: ComponentFixture<SettingsPageComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [SettingsPageComponent]
-    });
     fixture = TestBed.createComponent(SettingsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
