@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, signal, ViewChild } from "@angular/core";
 import { ModalDirective } from "@directives/modal.directive";
 import exampleData from "./exampleData.json";
 import { CommonModule } from "@angular/common";
@@ -12,6 +12,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
       This Table uses the batch actions slot and multiselect in order to get
       data out of the table.
     </p>
+    <tds-button type="button" size="sm" text="set false" (click)="testIt()"/>
+    <tds-button type="button" size="sm" text="set true" (click)="testIt2()"/>
     <tds-table
       #table
       id="batchTable"
@@ -34,7 +36,8 @@ import { TegelModule } from "@scania/tegel-angular-17";
       <tds-table-header
         multiselect
         (tdsSelectAll)="selectAll($event)"
-        [allSelected]="allSelected"
+        [selected]="checkSignal()"
+        [indeterminate]="checkSignal() && !allSelected"
       >
         <tds-header-cell
           cell-key="truck"
@@ -88,6 +91,33 @@ export class BatchActionsTableComponent {
 
   allSelected = this.tableData.every((row) => row.selected);
 
+  checkSignal = signal(true);
+  
+  testIt() {
+    console.log('before this.checkSignal', this.checkSignal());
+    this.checkSignal.set(false);
+    this.tableData = this.tableData.map((row) => {
+      return {
+        ...row,
+        selected: false,
+      };
+    });
+    console.log('after this.checkSignal', this.checkSignal());
+  }
+
+  testIt2() {
+    console.log('before this.checkSignal', this.checkSignal())
+    this.checkSignal.set(true);
+    this.tableData = this.tableData.map((row) => {
+      return {
+        ...row,
+        selected: true,
+      };
+    });
+    this.checkIfAllSelected();
+    console.log('after this.checkSignal', this.checkSignal())
+  }
+    
   async download() {
     this.modalDirective.showModal(
       JSON.stringify(await this.tableRef.getSelectedRows(), null, 2)
@@ -104,7 +134,10 @@ export class BatchActionsTableComponent {
     });
 
     this.checkIfAllSelected();
+    this.checkSignal.set(checked);
+    console.log("checked value:", checked);
   }
+
   handleRowSelect(rowId: number | string, event: any) {
     this.tableData = this.tableData.map((row) => {
       return {
@@ -112,8 +145,9 @@ export class BatchActionsTableComponent {
         selected: row.id === rowId ? event.detail.checked : row.selected,
       };
     });
-
+    this.checkSignal.set(true);
     this.checkIfAllSelected();
+
   }
 
   checkIfAllSelected() {
