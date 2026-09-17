@@ -7,9 +7,6 @@ describe('RadioButtonComponent', () => {
   let fixture: ComponentFixture<RadioButtonComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [RadioButtonComponent]
-    });
     fixture = TestBed.createComponent(RadioButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

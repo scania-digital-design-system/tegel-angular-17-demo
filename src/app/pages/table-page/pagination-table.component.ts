@@ -1,11 +1,11 @@
 import { ChangeDetectorRef, Component } from "@angular/core";
 import exampleData from "./exampleData.json";
-import { CommonModule } from "@angular/common";
+
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-pagination-table",
-  template: `
+    selector: "app-pagination-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Pagination Table</div>
     <p>This Table uses pagination.</p>
     <tds-table
@@ -13,7 +13,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       compact-design="false"
       responsive
       no-min-width
-    >
+      >
       <tds-table-header>
         <tds-header-cell
           cell-key="truck"
@@ -34,20 +34,22 @@ import { TegelModule } from "@scania/tegel-angular-17";
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        <tds-table-body-row *ngFor="let row of tableData">
-          <tds-body-cell cell-key="truck">
-            {{ row.truck }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="driver">
-            {{ row.driver }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="country">
-            {{ row.country }}
-          </tds-body-cell>
-          <tds-body-cell text-align="right" cell-key="mileage">
-            {{ row.mileage }}
-          </tds-body-cell>
-        </tds-table-body-row>
+        @for (row of tableData; track row) {
+          <tds-table-body-row>
+            <tds-body-cell cell-key="truck">
+              {{ row.truck }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="driver">
+              {{ row.driver }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="country">
+              {{ row.country }}
+            </tds-body-cell>
+            <tds-body-cell text-align="right" cell-key="mileage">
+              {{ row.mileage }}
+            </tds-body-cell>
+          </tds-table-body-row>
+        }
       </tds-table-body>
       <tds-table-footer
         pagination
@@ -57,10 +59,9 @@ import { TegelModule } from "@scania/tegel-angular-17";
         [rowsPerPageValue]="rowsPerPage"
       ></tds-table-footer>
     </tds-table>
-  `,
-  styles: [``],
-  standalone: true,
-  imports: [CommonModule, TegelModule],
+    `,
+    styles: [``],
+    imports: [TegelModule]
 })
 export class PaginationTableComponent {
   // Should probably be changed to signals since using ChangeDetectorRef 

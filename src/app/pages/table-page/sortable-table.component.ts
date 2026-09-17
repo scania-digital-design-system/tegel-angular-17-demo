@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import exampleData from "./exampleData.json";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-sortable-table",
-  template: `
+    selector: "app-sortable-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Sortable Table</div>
     <p>This Table is sortable.</p>
     <tds-table
@@ -14,7 +14,7 @@ import { TegelModule } from "@scania/tegel-angular-17";
       responsive
       (tdsSort)="sort($event)"
       no-min-width
-    >
+      >
       <tds-table-toolbar table-title="Sorting"></tds-table-toolbar>
       <tds-table-header>
         <tds-header-cell
@@ -40,26 +40,27 @@ import { TegelModule } from "@scania/tegel-angular-17";
         ></tds-header-cell>
       </tds-table-header>
       <tds-table-body>
-        <tds-table-body-row *ngFor="let row of tableData">
-          <tds-body-cell cell-key="truck">
-            {{ row.truck }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="driver">
-            {{ row.driver }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="country">
-            {{ row.country }}
-          </tds-body-cell>
-          <tds-body-cell cell-key="mileage" text-align="right">
-            {{ row.mileage }}
-          </tds-body-cell>
-        </tds-table-body-row>
+        @for (row of tableData; track row) {
+          <tds-table-body-row>
+            <tds-body-cell cell-key="truck">
+              {{ row.truck }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="driver">
+              {{ row.driver }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="country">
+              {{ row.country }}
+            </tds-body-cell>
+            <tds-body-cell cell-key="mileage" text-align="right">
+              {{ row.mileage }}
+            </tds-body-cell>
+          </tds-table-body-row>
+        }
       </tds-table-body>
     </tds-table>
-  `,
-  styles: [``],
-  standalone: true,
-  imports: [CommonModule, TegelModule],
+    `,
+    styles: [``],
+    imports: [TegelModule]
 })
 export class SortableTableComponent {
   tableData = exampleData;

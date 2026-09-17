@@ -1,11 +1,11 @@
 import { Component, Input } from "@angular/core";
-import { KeyValuePipe, NgForOf, NgIf } from "@angular/common";
+import { KeyValuePipe } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 import exampleData from "./exampleData.json";
 
 @Component({
-  selector: "app-expandable-table",
-  template: `
+    selector: "app-expandable-table",
+    template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Expandable Rows</div>
     <p>This Table uses expandable rows.</p>
     <tds-table
@@ -96,8 +96,7 @@ import exampleData from "./exampleData.json";
       </tds-table-body>
     </tds-table>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [NgForOf, KeyValuePipe, NgIf, TegelModule],
+    styles: [``],
+    imports: [TegelModule]
 })
 export class ExpandableTableComponent {}

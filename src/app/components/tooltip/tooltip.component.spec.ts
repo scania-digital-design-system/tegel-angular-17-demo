@@ -7,9 +7,6 @@ describe('TooltipComponent', () => {
   let fixture: ComponentFixture<TooltipComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [TooltipComponent]
-    });
     fixture = TestBed.createComponent(TooltipComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

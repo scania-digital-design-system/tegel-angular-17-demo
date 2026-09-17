@@ -26,7 +26,7 @@
     </tds-card>
   </div>
   <div class="card-carousel">
-    <ng-container *ngFor="let _ of [0, 1, 2, 3]; let idx = index">
+    @for (_ of [0, 1, 2, 3]; track _; let idx = $index) {
       <tds-card [header]="'Card'" [clickable]="true" [subheader]="'Simple Card'" [bodyDivider]="true"
         (tdsClick)="handleCardClick($event)">
         <div slot="body">
@@ -34,6 +34,6 @@
           in the Card.
         </div>
       </tds-card>
-    </ng-container>
+    }
   </div>
 </div>

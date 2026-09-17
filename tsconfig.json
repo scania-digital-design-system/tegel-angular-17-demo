@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "rootDir": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -13,9 +13,8 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
@@ -24,17 +23,27 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "paths": {
-      "@components/*": ["src/app/components/*"],
-      "@directives/*": ["src/app/directives/*"],
-      "@pipes/*": ["src/app/shared/pipes/*"],
-      "@routes/*": ["src/app/routes/*"],
-      "@pages/*": ["src/app/pages/*"],
-    },
+      "src/*": ["./src/*"],
+      "@components/*": ["./src/app/components/*"],
+      "@directives/*": ["./src/app/directives/*"],
+      "@pipes/*": ["./src/app/shared/pipes/*"],
+      "@routes/*": ["./src/app/routes/*"],
+      "@pages/*": ["./src/app/pages/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }

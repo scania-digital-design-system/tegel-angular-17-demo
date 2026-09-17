@@ -7,9 +7,6 @@ describe('ReactiveFormsComponent', () => {
   let fixture: ComponentFixture<ReactiveFormsComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ReactiveFormsComponent]
-    });
     fixture = TestBed.createComponent(ReactiveFormsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

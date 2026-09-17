@@ -4,10 +4,9 @@ import { TegelModule } from "@scania/tegel-angular-17";
 import TabsSubpageComponent from "@pages/tabs-links-page/tabs-subpage/tabs-subpage.component";
 
 @Component({
-  selector: "app-tabs-buttons-page",
-  templateUrl: "./tabs-buttons-page.component.html",
-  standalone: true,
-  imports: [BreadcrumbsComponent, TegelModule, TabsSubpageComponent],
+    selector: "app-tabs-buttons-page",
+    templateUrl: "./tabs-buttons-page.component.html",
+    imports: [TegelModule, TabsSubpageComponent]
 })
 export default class TabsButtonsPageComponent {
   folderTabIndex: number = 0;

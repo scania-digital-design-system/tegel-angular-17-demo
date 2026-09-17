@@ -2,10 +2,9 @@ import { Component, ElementRef, ViewChild } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-banner",
-  templateUrl: "./banner.component.html",
-  standalone: true,
-  imports: [TegelModule],
+    selector: "app-banner",
+    templateUrl: "./banner.component.html",
+    imports: [TegelModule]
 })
 export default class BannerComponent {
   bannerVisibility: boolean = true;

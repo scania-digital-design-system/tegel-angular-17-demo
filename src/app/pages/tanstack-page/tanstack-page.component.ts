@@ -3,9 +3,8 @@ import { ColumnSearchComponent } from "@components/tanstack-table/filtering/colu
 import { EditableDataComponent } from "@components/tanstack-table/editable-data/editable-data.component";
 
 @Component({
-  selector: "app-tanstack",
-  standalone: true,
-  imports: [ColumnSearchComponent, EditableDataComponent],
-  templateUrl: "./tanstack-page.component.html",
+    selector: "app-tanstack",
+    imports: [ColumnSearchComponent, EditableDataComponent],
+    templateUrl: "./tanstack-page.component.html"
 })
 export default class TanstackComponent {}

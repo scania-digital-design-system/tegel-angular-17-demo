@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TanstackComponent } from "./tanstack-page.component";
+import TanstackComponent from "./tanstack-page.component";
 
 describe("TanstackComponent", () => {
   let component: TanstackComponent;

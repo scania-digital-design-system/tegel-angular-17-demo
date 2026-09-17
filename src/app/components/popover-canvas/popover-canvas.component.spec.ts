@@ -7,9 +7,6 @@ describe('PopoverCanvasComponent', () => {
   let fixture: ComponentFixture<PopoverCanvasComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [PopoverCanvasComponent],
-    });
     fixture = TestBed.createComponent(PopoverCanvasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

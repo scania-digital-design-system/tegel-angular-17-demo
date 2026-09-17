@@ -1,4 +1,4 @@
-import { CommonModule, Location } from "@angular/common";
+import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { Router, RouterLink, RouterOutlet } from "@angular/router";
 import BreadcrumbsComponent from "../../navigation/breadcrumbs/breadcrumbs.component";
@@ -7,17 +7,13 @@ import { TegelModule } from "@scania/tegel-angular-17";
 import TabsSubpageComponent from "@pages/tabs-links-page/tabs-subpage/tabs-subpage.component";
 
 @Component({
-  selector: "app-tabs-links-page",
-  templateUrl: "./tabs-links-page.component.html",
-  standalone: true,
-  imports: [
-    BreadcrumbsComponent,
+    selector: "app-tabs-links-page",
+    templateUrl: "./tabs-links-page.component.html",
+    imports: [
     RouterLink,
-    RouterOutlet,
-    CommonModule,
     TegelModule,
-    TabsSubpageComponent,
-  ],
+    TabsSubpageComponent
+]
 })
 export default class TabsLinksPageComponent {
   fullPath: string;

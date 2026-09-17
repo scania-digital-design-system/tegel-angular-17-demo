@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CheckboxComponent } from './checkbox.component';
+import { FormBuilder } from '@angular/forms';
 
 describe('CheckboxComponent', () => {
   let component: CheckboxComponent;
   let fixture: ComponentFixture<CheckboxComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [CheckboxComponent]
-    });
     fixture = TestBed.createComponent(CheckboxComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput("checkboxGroup", (new FormBuilder()).group({ sodertalje: true, sergel: false, homeOffice: false, building260: false }));
+
     fixture.detectChanges();
   });
 

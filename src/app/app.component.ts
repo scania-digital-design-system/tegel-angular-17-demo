@@ -20,22 +20,20 @@ import { BrandSwitcherComponent } from "./brand-switcher/brand-switcher.componen
 
 type Brand = 'scania' | 'traton';
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
-  standalone: true,
-  imports: [
-    RouterLink,
-    RouterOutlet,
-    FooterComponent,
-    BannerComponent,
-    BreadcrumbsComponent,
-    BrandSwitcherComponent,
-    ModeSwitcherComponent,
-    ModeVariantSwitcherComponent,
-    CommonModule,
-    TegelModule,
-  ],
+    selector: "app-root",
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.css"],
+    imports: [
+        RouterLink,
+        RouterOutlet,
+        FooterComponent,
+        BreadcrumbsComponent,
+        BrandSwitcherComponent,
+        ModeSwitcherComponent,
+        ModeVariantSwitcherComponent,
+        CommonModule,
+        TegelModule,
+    ]
 })
 export class AppComponent implements OnInit, OnDestroy {
   constructor(

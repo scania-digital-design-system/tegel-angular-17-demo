@@ -6,7 +6,7 @@ import {
   OnInit,
   OnDestroy,
 } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import norwayData from "../../../../assets/norwegianTows.json";
 import swedenData from "../../../../assets/swedishTowns.json";
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
@@ -14,10 +14,9 @@ import { Subject, takeUntil } from "rxjs";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-dropdown",
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TegelModule],
-  templateUrl: "./dropdown.component.html",
+    selector: "app-dropdown",
+    imports: [ReactiveFormsModule, TegelModule],
+    templateUrl: "./dropdown.component.html"
 })
 export class DropdownComponent implements OnInit, OnDestroy {
   nowegianTowns = norwayData;

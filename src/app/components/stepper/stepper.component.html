@@ -3,21 +3,21 @@
 <section class="horizontal-stepper">
   <h2 class="tds-headline-03 tds-u-pb1">Horizontal</h2>
   <tds-stepper labelPosition="below" size='lg' orientation="horizontal">
-    <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+    @for (_ of [].constructor(4); track _; let index = $index) {
       <tds-step [state]="getState(index)" [index]="(index + 1).toString()">
         <span slot="label">Step {{ index + 1 }}</span>
       </tds-step>
-    </ng-container>
+    }
   </tds-stepper>
 
   <form>
-    <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+    @for (_ of [].constructor(4); track _; let index = $index) {
       <tds-text-field [disabled]="completedSteps < index" [placeholder]="'Step ' + (index + 1)"
         [state]="errorStepIndex === index ? 'error' : 'default'"
         [helper]="errorStepIndex === index ? 'Minimum 5 letters.' : undefined" (tdsInput)="onTdsInput(index, $event)"
         (tdsChange)="onTdsChange(index, $event)">
       </tds-text-field>
-    </ng-container>
+    }
   </form>
 </section>
 
@@ -25,21 +25,21 @@
   <h2 class="tds-headline-03 tds-u-pb1">Vertical</h2>
   <div class="tds-u-flex">
     <tds-stepper labelPosition="aside" size="lg" orientation="vertical">
-      <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+      @for (_ of [].constructor(4); track _; let index = $index) {
         <tds-step [state]="getState(index)" [index]="(index + 1).toString()">
           <span slot="label">Step {{ index + 1 }}</span>
         </tds-step>
-      </ng-container>
+      }
     </tds-stepper>
 
     <form>
-      <ng-container *ngFor="let _ of [].constructor(4); let index = index">
+      @for (_ of [].constructor(4); track _; let index = $index) {
         <tds-text-field [disabled]="completedSteps < index" [placeholder]="'Step ' + (index + 1)"
           [state]="errorStepIndex === index ? 'error' : 'default'"
           [helper]="errorStepIndex === index ? 'Minimum 5 letters.' : undefined" (tdsInput)="onTdsInput(index, $event)"
           (tdsChange)="onTdsChange(index, $event)">
         </tds-text-field>
-      </ng-container>
+      }
     </form>
   </div>
 </section>

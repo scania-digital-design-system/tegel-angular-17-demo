@@ -5,8 +5,8 @@ import { AsyncPipe } from "@angular/common";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-table-page",
-  template: `
+    selector: "app-table-page",
+    template: `
     <div class="tds-u-pb3">
       <tds-toggle
         (tdsToggle)="toggleMode()"
@@ -37,14 +37,12 @@ import { TegelModule } from "@scania/tegel-angular-17";
       <app-ag-grid-editable-cells></app-ag-grid-editable-cells>
     </div>
   `,
-  styles: [``],
-  standalone: true,
-  imports: [
-    AgGridColumnSearch,
-    AgGridEditableCells,
-    AsyncPipe,
-    TegelModule,
-  ],
+    styles: [``],
+    imports: [
+        AgGridColumnSearch,
+        AgGridEditableCells,
+        TegelModule,
+    ]
 })
 export default class AgGridPageComponent {
   classCompact = false;

@@ -7,9 +7,6 @@ describe('TextPageComponent', () => {
   let fixture: ComponentFixture<TextPageComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [TextPageComponent]
-    });
     fixture = TestBed.createComponent(TextPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

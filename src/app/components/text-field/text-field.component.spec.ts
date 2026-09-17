@@ -7,9 +7,6 @@ describe('TextFieldComponent', () => {
   let fixture: ComponentFixture<TextFieldComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [TextFieldComponent]
-    });
     fixture = TestBed.createComponent(TextFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

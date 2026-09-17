@@ -2,10 +2,9 @@ import { Component, EventEmitter, Output } from "@angular/core";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-mode-switcher",
-  templateUrl: "./mode-switcher.component.html",
-  standalone: true,
-  imports: [TegelModule],
+    selector: "app-mode-switcher",
+    templateUrl: "./mode-switcher.component.html",
+    imports: [TegelModule]
 })
 export class ModeSwitcherComponent {
   @Output() modeToggle = new EventEmitter<void>();

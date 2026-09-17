@@ -6,12 +6,11 @@ import { ColDef, GridApi, GridReadyEvent } from "ag-grid-community";
 import { AgGridModule } from "ag-grid-angular";
 
 @Component({
-  selector: "app-ag-grid-column-search",
-  standalone: true,
-  encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
-  templateUrl: "./ag-grid-column-search.component.html",
-  styleUrls: ["ag-styles-loader.css"],
-  imports: [TegelModule, AgGridModule, AgGridAngular],
+    selector: "app-ag-grid-column-search",
+    encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
+    templateUrl: "./ag-grid-column-search.component.html",
+    styleUrls: ["ag-styles-loader.css"],
+    imports: [TegelModule, AgGridModule, AgGridAngular]
 })
 export default class AgGridColumnSearchComponent {
   public columnDefs: ColDef[] = [

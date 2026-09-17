@@ -7,9 +7,6 @@ describe('StepperComponent', () => {
   let fixture: ComponentFixture<StepperComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [StepperComponent],
-    });
     fixture = TestBed.createComponent(StepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

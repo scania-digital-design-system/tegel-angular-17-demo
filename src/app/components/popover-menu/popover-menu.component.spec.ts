@@ -7,9 +7,6 @@ describe('PopoverMenuComponent', () => {
   let fixture: ComponentFixture<PopoverMenuComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [PopoverMenuComponent]
-    });
     fixture = TestBed.createComponent(PopoverMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

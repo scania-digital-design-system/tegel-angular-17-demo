@@ -3,9 +3,8 @@ import TextPageComponent from "../text-page/text-page.component";
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-  selector: "app-text-subpage",
-  standalone: true,
-  templateUrl: "./text-subpage.component.html",
-  imports: [TextPageComponent, TegelModule],
+    selector: "app-text-subpage",
+    templateUrl: "./text-subpage.component.html",
+    imports: [TegelModule]
 })
 export default class TextSubpageComponent {}

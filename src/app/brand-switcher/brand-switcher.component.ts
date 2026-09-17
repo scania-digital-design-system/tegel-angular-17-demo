@@ -3,10 +3,10 @@ import { TegelModule } from "@scania/tegel-angular-17";
 
 type Brand = 'scania' | 'traton';
 @Component({
-  selector: "app-brand-switcher",
-  templateUrl: "./brand-switcher.component.html",
-  standalone: true,
-  imports: [TegelModule],
+    selector: "app-brand-switcher",
+    templateUrl: "./brand-switcher.component.html",
+    standalone: true,
+    imports: [TegelModule],
 })
 export class BrandSwitcherComponent {
   @Output() handleBrandChange = new EventEmitter<Brand>();
