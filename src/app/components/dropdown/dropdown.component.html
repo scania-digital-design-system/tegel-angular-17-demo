@@ -1,6 +1,7 @@
 <h1 class="tds-headline-02">Dropdown</h1>
-<tds-dropdown #dropdownRef name="dropdown" label="Label text" label-position="outside" placeholder="Placeholder"
-  helper="Helper text" size="lg" multiselect open-direction="auto">
+<h2 class="tds-headline-03">Simple Dropdown (Large) with Label inside</h2>
+<tds-dropdown name="simple-dropdown" label="Label text" label-position="inside" placeholder="Placeholder"
+  helper="Helper text" size="lg" open-direction="auto">
   <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
   <tds-dropdown-option disabled value="option-2">Option 2</tds-dropdown-option>
   <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
@@ -9,4 +10,39 @@
   <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
   <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
 </tds-dropdown>
-<tds-button text="Reset Dropdown" (click)="resetDropdown()"></tds-button>
+
+<h2 class="tds-headline-03">Multiselect Dropdown (Large) with filter</h2>
+<tds-dropdown name="multiselect-dropdown" label="Label text" label-position="outside" placeholder="Placeholder"
+  helper="Helper text" size="lg" multiselect filter open-direction="auto">
+  <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
+  <tds-dropdown-option disabled value="option-2">Option 2</tds-dropdown-option>
+  <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
+  <tds-dropdown-option value="option-4">Option 4</tds-dropdown-option>
+  <tds-dropdown-option value="option-5">Option 5</tds-dropdown-option>
+  <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
+  <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
+</tds-dropdown>
+
+<h2 class="tds-headline-03">Dropdown (Medium) with Error State</h2>
+<tds-dropdown name="error-dropdown" label="Label text" label-position="inside" placeholder="Placeholder"
+  helper="Helper text" size="md" error open-direction="auto">
+  <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
+  <tds-dropdown-option disabled value="option-2">Option 2</tds-dropdown-option>
+  <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
+  <tds-dropdown-option value="option-4">Option 4</tds-dropdown-option>
+  <tds-dropdown-option value="option-5">Option 5</tds-dropdown-option>
+  <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
+  <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
+</tds-dropdown>
+
+<h2 class="tds-headline-03">Disabled Dropdown (Medium)</h2>
+<tds-dropdown name="disabled-dropdown" label="Label text" label-position="outside" placeholder="Placeholder"
+  helper="Helper text" size="md" disabled open-direction="auto">
+  <tds-dropdown-option value="option-1">Option 1</tds-dropdown-option>
+  <tds-dropdown-option disabled value="option-2">Option 2</tds-dropdown-option>
+  <tds-dropdown-option value="option-3">Option 3</tds-dropdown-option>
+  <tds-dropdown-option value="option-4">Option 4</tds-dropdown-option>
+  <tds-dropdown-option value="option-5">Option 5</tds-dropdown-option>
+  <tds-dropdown-option value="option-6">Option 6</tds-dropdown-option>
+  <tds-dropdown-option value="option-7">Option 7</tds-dropdown-option>
+</tds-dropdown>
