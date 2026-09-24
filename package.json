@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^22.1.3",
     "@angular/router": "^22.1.3",
     "@faker-js/faker": "^8.4.1",
+    "@scania/tegel": "1.64.0",
     "@scania/tegel-angular-17": "1.64.0",
     "@scania/tegel-styles": "1.0.0",
     "@tanstack/angular-table": "^8.19.2",
@@ -39,5 +40,6 @@
     "jsdom": "^30.0.1",
     "typescript": "~6.0.3",
     "vitest": "^4.1.11"
-  }
+  },
+  "packageManager": "pnpm@10.34.5"
 }
