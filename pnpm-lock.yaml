@@ -36,11 +36,11 @@ importers:
         specifier: ^8.4.1
         version: 8.4.1
       '@scania/tegel':
-        specifier: 1.64.0
-        version: 1.64.0
+        specifier: 1.63.0
+        version: 1.63.0
       '@scania/tegel-angular-17':
-        specifier: 1.64.0
-        version: 1.64.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(@angular/forms@22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1)))(rxjs@7.5.7))(@scania/tegel@1.64.0)
+        specifier: 1.63.0
+        version: 1.63.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(@scania/tegel@1.63.0)
       '@scania/tegel-styles':
         specifier: 1.0.0
         version: 1.0.0
@@ -1264,63 +1264,62 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@rollup/rollup-darwin-arm64@4.44.0':
-    resolution: {integrity: sha512-VGF3wy0Eq1gcEIkSCr8Ke03CWT+Pm2yveKLaDvq51pPpZza3JX/ClxXOCmTYYq3us5MvEuNRTaeyFThCKRQhOA==}
+  '@rollup/rollup-darwin-arm64@4.34.9':
+    resolution: {integrity: sha512-0CY3/K54slrzLDjOA7TOjN1NuLKERBgk9nY5V34mhmuu673YNb+7ghaDUs6N0ujXR7fz5XaS5Aa6d2TNxZd0OQ==}
     cpu: [arm64]
     os: [darwin]
 
-  '@rollup/rollup-darwin-x64@4.44.0':
-    resolution: {integrity: sha512-fBkyrDhwquRvrTxSGH/qqt3/T0w5Rg0L7ZIDypvBPc1/gzjJle6acCpZ36blwuwcKD/u6oCE/sRWlUAcxLWQbQ==}
+  '@rollup/rollup-darwin-x64@4.34.9':
+    resolution: {integrity: sha512-eOojSEAi/acnsJVYRxnMkPFqcxSMFfrw7r2iD9Q32SGkb/Q9FpUY1UlAu1DH9T7j++gZ0lHjnm4OyH2vCI7l7Q==}
     cpu: [x64]
     os: [darwin]
 
-  '@rollup/rollup-linux-arm64-gnu@4.44.0':
-    resolution: {integrity: sha512-ZTR2mxBHb4tK4wGf9b8SYg0Y6KQPjGpR4UWwTFdnmjB4qRtoATZ5dWn3KsDwGa5Z2ZBOE7K52L36J9LueKBdOQ==}
+  '@rollup/rollup-linux-arm64-gnu@4.34.9':
+    resolution: {integrity: sha512-6TZjPHjKZUQKmVKMUowF3ewHxctrRR09eYyvT5eFv8w/fXarEra83A2mHTVJLA5xU91aCNOUnM+DWFMSbQ0Nxw==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@rollup/rollup-linux-arm64-musl@4.44.0':
-    resolution: {integrity: sha512-GFWfAhVhWGd4r6UxmnKRTBwP1qmModHtd5gkraeW2G490BpFOZkFtem8yuX2NyafIP/mGpRJgTJ2PwohQkUY/Q==}
+  '@rollup/rollup-linux-arm64-musl@4.34.9':
+    resolution: {integrity: sha512-LD2fytxZJZ6xzOKnMbIpgzFOuIKlxVOpiMAXawsAZ2mHBPEYOnLRK5TTEsID6z4eM23DuO88X0Tq1mErHMVq0A==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-linux-x64-gnu@4.44.0':
-    resolution: {integrity: sha512-iUVJc3c0o8l9Sa/qlDL2Z9UP92UZZW1+EmQ4xfjTc1akr0iUFZNfxrXJ/R1T90h/ILm9iXEY6+iPrmYB3pXKjw==}
+  '@rollup/rollup-linux-x64-gnu@4.34.9':
+    resolution: {integrity: sha512-FwBHNSOjUTQLP4MG7y6rR6qbGw4MFeQnIBrMe161QGaQoBQLqSUEKlHIiVgF3g/mb3lxlxzJOpIBhaP+C+KP2A==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@rollup/rollup-linux-x64-musl@4.44.0':
-    resolution: {integrity: sha512-PQUobbhLTQT5yz/SPg116VJBgz+XOtXt8D1ck+sfJJhuEsMj2jSej5yTdp8CvWBSceu+WW+ibVL6dm0ptG5fcA==}
+  '@rollup/rollup-linux-x64-musl@4.34.9':
+    resolution: {integrity: sha512-cYRpV4650z2I3/s6+5/LONkjIz8MBeqrk+vPXV10ORBnshpn8S32bPqQ2Utv39jCiDcO2eJTuSlPXpnvmaIgRA==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-win32-arm64-msvc@4.44.0':
-    resolution: {integrity: sha512-M0CpcHf8TWn+4oTxJfh7LQuTuaYeXGbk0eageVjQCKzYLsajWS/lFC94qlRqOlyC2KvRT90ZrfXULYmukeIy7w==}
+  '@rollup/rollup-win32-arm64-msvc@4.34.9':
+    resolution: {integrity: sha512-z4mQK9dAN6byRA/vsSgQiPeuO63wdiDxZ9yg9iyX2QTzKuQM7T4xlBoeUP/J8uiFkqxkcWndWi+W7bXdPbt27Q==}
     cpu: [arm64]
     os: [win32]
 
-  '@rollup/rollup-win32-x64-msvc@4.44.0':
-    resolution: {integrity: sha512-Q2Mgwt+D8hd5FIPUuPDsvPR7Bguza6yTkJxspDGkZj7tBRn2y4KSWYuIXpftFSjBra76TbKerCV7rgFPQrn+wQ==}
+  '@rollup/rollup-win32-x64-msvc@4.34.9':
+    resolution: {integrity: sha512-AyleYRPU7+rgkMWbEh71fQlrzRfeP6SyMnRf9XX4fCdDPAJumdSBqYEcWPMzVQ4ScAl7E4oFfK0GUVn77xSwbw==}
     cpu: [x64]
     os: [win32]
 
-  '@scania/tegel-angular-17@1.64.0':
-    resolution: {integrity: sha512-6//sBbAxPNAIxaCMrXUUtlWq9FIImYl51WEhHfCDt+ny2JmNBY/RTuATolHPheAPIps14daozs6Z6RqpOULbwA==}
+  '@scania/tegel-angular-17@1.63.0':
+    resolution: {integrity: sha512-4jJWBgkzp6fgPUMZcg0B6r/A5schh48JtBKrGZGBlknise7/GgliKXJ4HxkkdS+5PYY8rLKmrxxu0Hd1/ZFrwg==}
     peerDependencies:
       '@angular/common': '>=17.0.0'
       '@angular/core': '>=17.0.0'
-      '@angular/forms': '>=17.0.0'
-      '@scania/tegel': 1.64.0
+      '@scania/tegel': ^1.63.0
 
   '@scania/tegel-styles@1.0.0':
     resolution: {integrity: sha512-RXj0/LZ2UVn17pYleynS6IabQoGNKM17VOXP18Zk0NvhNeQy/fjYYUUixlEKRHdwS1b9YyDVCkC1zphFTlQe7A==}
 
-  '@scania/tegel@1.64.0':
-    resolution: {integrity: sha512-8sbbKMeJ6O5s5C9H0YHg1vJ+m1AGCfDRsHhx+JgagJkKvjNqhbJF7a/eJ8oB2z7kTsSxMM9PVMCHcq/jBA1kbw==}
+  '@scania/tegel@1.63.0':
+    resolution: {integrity: sha512-pQGIcXf3didFBhAD76cfJPXXKvpOFxOM2mv/22iA+vtAHxVzi3vE/suNwdP5Y6Sdut8DURUNahSRNofluu4TIg==}
     hasBin: true
 
   '@schematics/angular@22.2.0':
@@ -1330,8 +1329,8 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@stencil/core@4.45.1':
-    resolution: {integrity: sha512-/b8CItmSwOzZwafxXwomJnN9X/Ic/Fxum9ka/RDHmADVf4DA4152uY7zitzLV+vk8JdXxKA7FKyLT3GKNo9R3A==}
+  '@stencil/core@4.43.0':
+    resolution: {integrity: sha512-6Uj2Z3lzLuufYAE7asZ6NLKgSwsB9uxl84Eh34PASnUjfj32GkrP4DtKK7fNeh1WFGGyffsTDka3gwtl+4reUg==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
@@ -3387,36 +3386,35 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@rollup/rollup-darwin-arm64@4.44.0':
+  '@rollup/rollup-darwin-arm64@4.34.9':
     optional: true
 
-  '@rollup/rollup-darwin-x64@4.44.0':
+  '@rollup/rollup-darwin-x64@4.34.9':
     optional: true
 
-  '@rollup/rollup-linux-arm64-gnu@4.44.0':
+  '@rollup/rollup-linux-arm64-gnu@4.34.9':
     optional: true
 
-  '@rollup/rollup-linux-arm64-musl@4.44.0':
+  '@rollup/rollup-linux-arm64-musl@4.34.9':
     optional: true
 
-  '@rollup/rollup-linux-x64-gnu@4.44.0':
+  '@rollup/rollup-linux-x64-gnu@4.34.9':
     optional: true
 
-  '@rollup/rollup-linux-x64-musl@4.44.0':
+  '@rollup/rollup-linux-x64-musl@4.34.9':
     optional: true
 
-  '@rollup/rollup-win32-arm64-msvc@4.44.0':
+  '@rollup/rollup-win32-arm64-msvc@4.34.9':
     optional: true
 
-  '@rollup/rollup-win32-x64-msvc@4.44.0':
+  '@rollup/rollup-win32-x64-msvc@4.34.9':
     optional: true
 
-  '@scania/tegel-angular-17@1.64.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(@angular/forms@22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1)))(rxjs@7.5.7))(@scania/tegel@1.64.0)':
+  '@scania/tegel-angular-17@1.63.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(@scania/tegel@1.63.0)':
     dependencies:
       '@angular/common': 22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7)
       '@angular/core': 22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1)
-      '@angular/forms': 22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))(rxjs@7.5.7))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1)))(rxjs@7.5.7)
-      '@scania/tegel': 1.64.0
+      '@scania/tegel': 1.63.0
       tslib: 2.8.1
 
   '@scania/tegel-styles@1.0.0':
@@ -3424,10 +3422,10 @@ snapshots:
       glob: 8.1.0
       postcss: 8.5.28
 
-  '@scania/tegel@1.64.0':
+  '@scania/tegel@1.63.0':
     dependencies:
       '@popperjs/core': 2.11.8
-      '@stencil/core': 4.45.1
+      '@stencil/core': 4.43.0
 
   '@schematics/angular@22.2.0(chokidar@5.0.0)':
     dependencies:
@@ -3441,16 +3439,16 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@stencil/core@4.45.1':
+  '@stencil/core@4.43.0':
     optionalDependencies:
-      '@rollup/rollup-darwin-arm64': 4.44.0
-      '@rollup/rollup-darwin-x64': 4.44.0
-      '@rollup/rollup-linux-arm64-gnu': 4.44.0
-      '@rollup/rollup-linux-arm64-musl': 4.44.0
-      '@rollup/rollup-linux-x64-gnu': 4.44.0
-      '@rollup/rollup-linux-x64-musl': 4.44.0
-      '@rollup/rollup-win32-arm64-msvc': 4.44.0
-      '@rollup/rollup-win32-x64-msvc': 4.44.0
+      '@rollup/rollup-darwin-arm64': 4.34.9
+      '@rollup/rollup-darwin-x64': 4.34.9
+      '@rollup/rollup-linux-arm64-gnu': 4.34.9
+      '@rollup/rollup-linux-arm64-musl': 4.34.9
+      '@rollup/rollup-linux-x64-gnu': 4.34.9
+      '@rollup/rollup-linux-x64-musl': 4.34.9
+      '@rollup/rollup-win32-arm64-msvc': 4.34.9
+      '@rollup/rollup-win32-x64-msvc': 4.34.9
 
   '@tanstack/angular-table@8.21.4(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.5.7)(zone.js@0.15.1))':
     dependencies:
