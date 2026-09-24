@@ -55,7 +55,7 @@ jobs:
 
           if [ "$LATEST_ANGULAR" = "$CURRENT_ANGULAR" ]; then
             echo "up_to_date=true" >> $GITHUB_OUTPUT
-            echo "Tegel is already up to date (@scania/tegel-angular-17: $CURRENT_ANGULAR)"  
+            echo "Tegel is already up to date (@scania/tegel-angular-17: $CURRENT_ANGULAR)"
           else
             echo "up_to_date=false" >> $GITHUB_OUTPUT
             echo "@scania/tegel-angular-17: $CURRENT_ANGULAR -> $LATEST_ANGULAR"
