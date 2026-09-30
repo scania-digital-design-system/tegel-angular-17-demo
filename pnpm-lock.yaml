@@ -48,8 +48,8 @@ importers:
         specifier: ^8.21.4
         version: 8.21.4(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))
       ag-grid-angular:
-        specifier: ^31.3.4
-        version: 31.3.4(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(ag-grid-community@31.3.4)
+        specifier: ^36.2.0
+        version: 36.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))
       ag-grid-community:
         specifier: ^31.3.4
         version: 31.3.4
@@ -1398,15 +1398,23 @@ packages:
   '@vitest/utils@4.1.11':
     resolution: {integrity: sha512-zTCVGpyFsGWBhllOyKlTw/vnr6D9qxsfSDyfbyZmTyjHw5N/VuvzHpHoQjm2ZJzn4RJgx5w4r7V0er69CmLgPQ==}
 
-  ag-grid-angular@31.3.4:
-    resolution: {integrity: sha512-ELDqSc0R1fZRQBPTJgYWWF3Gbe7EbenmwzH3cNaQp38HbBQFkUcAvDqKHgSfmESe1GM76PoMHMxpCdqaWM3SmQ==}
+  ag-charts-types@14.2.0:
+    resolution: {integrity: sha512-4pDV6/4zbzPN7t607Gr1o6DO9RhmPafQGr+hIpTJBaerbaMoC+WOO3v/wkxFbvCNrHKOexEKSfNTH7PaAR4UzA==}
+
+  ag-grid-angular@36.2.0:
+    resolution: {integrity: sha512-efr4sZVLUX9y+5sLdwub9IV0vqpSpkKknZPLoLvF4+pRbCXUjneybiI9uiFTJCOk/xIvIFdNhUYPbVgb/rVceA==}
     peerDependencies:
-      '@angular/common': '>= 14.0.0'
-      '@angular/core': '>= 14.0.0'
-      ag-grid-community: 31.3.4
+      '@angular/common': '>= 20.0.0'
+      '@angular/core': '>= 20.0.0'
 
   ag-grid-community@31.3.4:
     resolution: {integrity: sha512-jOxQO86C6eLnk1GdP24HB6aqaouFzMWizgfUwNY5MnetiWzz9ZaAmOGSnW/XBvdjXvC5Fpk3gSbvVKKQ7h9kBw==}
+
+  ag-grid-community@36.2.0:
+    resolution: {integrity: sha512-tK0Toj7t0fV/OMLPnDc0xlYKAqDbnCT3iJodYSn2TJ541caU8jPdYwWhMdW+AP2+pUNwFiJVgc04eJNfvBPsWw==}
+
+  ag-stack@36.2.0:
+    resolution: {integrity: sha512-f3XT2htFs9dUPcHni2z9ak69QNta5ODEpooHuuNvbjN98JkokpEqRQ9YLQHQJFdCcgi9Ybs/j3zkkvmNRamIPg==}
 
   agent-base@9.0.0:
     resolution: {integrity: sha512-TQf59BsZnytt8GdJKLPfUZ54g/iaUL2OWDSFCCvMOhsHduDQxO8xC4PNeyIkVcA5KwL2phPSv0douC0fgWzmnA==}
@@ -3519,14 +3527,23 @@ snapshots:
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.1
 
-  ag-grid-angular@31.3.4(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(ag-grid-community@31.3.4):
+  ag-charts-types@14.2.0: {}
+
+  ag-grid-angular@36.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)):
     dependencies:
       '@angular/common': 22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2)
       '@angular/core': 22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)
-      ag-grid-community: 31.3.4
+      ag-grid-community: 36.2.0
       tslib: 2.8.1
 
   ag-grid-community@31.3.4: {}
+
+  ag-grid-community@36.2.0:
+    dependencies:
+      ag-charts-types: 14.2.0
+      ag-stack: 36.2.0
+
+  ag-stack@36.2.0: {}
 
   agent-base@9.0.0: {}
 
