@@ -36,11 +36,11 @@ importers:
         specifier: ^10.5.0
         version: 10.5.0
       '@scania/tegel':
-        specifier: 1.65.0
-        version: 1.65.0
+        specifier: 1.65.0-dd-select-all-beta.0
+        version: 1.65.0-dd-select-all-beta.0
       '@scania/tegel-angular-17':
-        specifier: 1.65.0
-        version: 1.65.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/forms@22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(rxjs@7.8.2))(@scania/tegel@1.65.0)
+        specifier: 1.65.0-dd-select-all-beta.0
+        version: 1.65.0-dd-select-all-beta.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/forms@22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(rxjs@7.8.2))(@scania/tegel@1.65.0-dd-select-all-beta.0)
       '@scania/tegel-styles':
         specifier: 1.0.1
         version: 1.0.1
@@ -1310,19 +1310,19 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@scania/tegel-angular-17@1.65.0':
-    resolution: {integrity: sha512-4UP4nSw65DYVlfVLmTHchvNVC9dXGXkSl2weWsSpiOIVzgz+1lAgjG5emUEGz63bXxajH12rEr4WGIrIOzkEsg==}
+  '@scania/tegel-angular-17@1.65.0-dd-select-all-beta.0':
+    resolution: {integrity: sha512-H1r+21BDPyTv4zp1UkA7+nllexzIyxFJ66O5CHXeH5xNcU3QPvRXKz/4DhCIni9+IKFPOfdESG1GW4sT32f/ZA==}
     peerDependencies:
       '@angular/common': '>=17.0.0'
       '@angular/core': '>=17.0.0'
       '@angular/forms': '>=17.0.0'
-      '@scania/tegel': 1.65.0
+      '@scania/tegel': 1.65.0-dd-select-all-beta.0
 
   '@scania/tegel-styles@1.0.1':
     resolution: {integrity: sha512-aQfF+CnrdgtuU8WLClPjw8xmIxFZDbs6dMNsgO+La2wzDjhbTHKT3RE8gjJ7F9zWOo4jHOTVm4kgnt4kn3ssYA==}
 
-  '@scania/tegel@1.65.0':
-    resolution: {integrity: sha512-yY6NW5pllNmk6JGRLOlQKd7uLXyOUgso0WxMnTtHfnBNfc/x3PpuUQI+vWVtPG+DEVdTHVgKf7Wcj82zAMn2iQ==}
+  '@scania/tegel@1.65.0-dd-select-all-beta.0':
+    resolution: {integrity: sha512-CWZIwkV8cUeQDMg4eba5Q66ISIvncgodk6U8ZNqkDUFvKiJv5IUqC3e78+irSN1tkKnyEu6460HKvutWzW8q1w==}
     hasBin: true
 
   '@schematics/angular@22.2.0':
@@ -3410,12 +3410,12 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.44.0':
     optional: true
 
-  '@scania/tegel-angular-17@1.65.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/forms@22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(rxjs@7.8.2))(@scania/tegel@1.65.0)':
+  '@scania/tegel-angular-17@1.65.0-dd-select-all-beta.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/forms@22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(rxjs@7.8.2))(@scania/tegel@1.65.0-dd-select-all-beta.0)':
     dependencies:
       '@angular/common': 22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2)
       '@angular/core': 22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)
       '@angular/forms': 22.2.0(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/platform-browser@22.2.0(@angular/animations@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(@angular/common@22.2.0(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@22.2.0(@angular/compiler@22.2.0)(rxjs@7.8.2)(zone.js@0.16.3)))(rxjs@7.8.2)
-      '@scania/tegel': 1.65.0
+      '@scania/tegel': 1.65.0-dd-select-all-beta.0
       tslib: 2.8.1
 
   '@scania/tegel-styles@1.0.1':
@@ -3423,7 +3423,7 @@ snapshots:
       glob: 8.1.0
       postcss: 8.5.28
 
-  '@scania/tegel@1.65.0':
+  '@scania/tegel@1.65.0-dd-select-all-beta.0':
     dependencies:
       '@popperjs/core': 2.11.8
       '@stencil/core': 4.45.1
