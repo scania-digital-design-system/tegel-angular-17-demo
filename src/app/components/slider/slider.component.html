@@ -1,0 +1,86 @@
+<h1 class="tds-headline-02 tds-u-pb1">Slider</h1>
+
+<section id="simple-slider">
+  <h3 class="tds-headline-03 tds-u-pb1">Simple Slider with Label</h3>
+  <tds-slider
+          label="This is a Label for the Simple Slider"
+          min="0"
+          max="100"
+          [value]="value"
+          (tdsInput)="onTdsInput($event)"
+    ></tds-slider>
+        <p>Note: This slider has value {{value}}. Drag the thumb to see the value change.</p>
+</section>
+
+<section id="simple-slider-tooltip">
+  <h3 class="tds-headline-03 tds-u-pb1">Simple Slider with tooltip on hover</h3>
+    <tds-slider
+          min="0"
+          max="100"
+          [tooltip]="showTooltipSimple"
+          (mouseenter)="setShowTooltipSimple(true)"
+          (mouseleave)="setShowTooltipSimple(false)"
+    ></tds-slider>
+</section>
+
+<section id="controls-slider">
+  <h3 class="tds-headline-03 tds-u-pb1">Slider with Controls and tooltip on press</h3>
+    <tds-slider
+          min="0"
+          max="100"
+          show-tick-numbers
+          ticks="4"
+          (tdsInput)="setShowTooltipControls(true)"
+          [tooltip]="showTooltipControls"
+          (mouseleave)="setShowTooltipControls(false)"
+          controls
+    ></tds-slider>
+</section>
+
+<section id="input-slider">
+  <h3 class="tds-headline-03 tds-u-pb1">Slider with Input field, without tick numbers</h3>
+    <tds-slider
+          min="0"
+          max="100"
+          ticks="4"
+          input
+    ></tds-slider>
+</section>
+
+<section id="input-slider-decimal">
+  <h3 class="tds-headline-03 tds-u-pb1">Slider with decimal Input field, with tick numbers</h3>
+    <tds-slider
+          min="0"
+          max="10"
+          show-tick-numbers
+          ticks="4"
+          input
+          step="0.1"
+    ></tds-slider>
+</section>
+
+<section id="input-slider-read-only">
+  <h3 class="tds-headline-03 tds-u-pb1">Slider with Input field, Read Only</h3>
+    <tds-slider
+          min="0"
+          max="100"
+          value="37"
+          show-tick-numbers
+          ticks="4"
+          input
+          read-only
+    ></tds-slider>
+</section>
+
+<section id="controls-slider-disabled">
+  <h3 class="tds-headline-03 tds-u-pb1">Controls Slider, Disabled</h3>
+    <tds-slider
+          min="0"
+          max="100"
+          value="85"
+          show-tick-numbers
+          ticks="9"
+          controls
+          disabled
+    ></tds-slider>
+</section>
