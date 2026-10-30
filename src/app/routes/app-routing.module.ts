@@ -88,6 +88,10 @@ const routes = [
     loadComponent: () => import("@components/radio-button/radio-button.component"),
   },
   {
+    path: "web-components/slider",
+    loadComponent: () => import("@components/slider/slider.component"),
+  },
+  {
     path: "web-components/spinner",
     loadComponent: () => import("@components/spinner/spinner.component"),
   },
