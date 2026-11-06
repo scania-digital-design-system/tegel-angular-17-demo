@@ -18,7 +18,7 @@
     "@angular/forms": "^22.2.0",
     "@angular/platform-browser": "^22.2.0",
     "@angular/platform-browser-dynamic": "^22.2.0",
-    "@angular/router": "^22.2.0",
+    "@angular/router": "^22.2.1",
     "@faker-js/faker": "^10.5.0",
     "@scania/tegel": "1.67.0",
     "@scania/tegel-angular-17": "1.67.0",
