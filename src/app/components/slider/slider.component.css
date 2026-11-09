@@ -1,0 +1,28 @@
+/* section.vertical-stepper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+section.vertical-stepper form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+section.horizontal-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section.horizontal-stepper form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+section.example-stepper {
+  margin-top: 32px;
+} */
