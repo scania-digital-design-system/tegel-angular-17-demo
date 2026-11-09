@@ -25,7 +25,7 @@
     "@scania/tegel-styles": "1.0.1",
     "@tanstack/angular-table": "^8.21.4",
     "ag-grid-angular": "^36.2.0",
-    "ag-grid-community": "^31.3.4",
+    "ag-grid-community": "^36.2.0",
     "prettier": "^2.8.8",
     "rxjs": "~7.8.2",
     "tslib": "^2.8.1",
