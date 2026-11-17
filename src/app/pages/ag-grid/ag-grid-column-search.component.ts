@@ -3,14 +3,13 @@ import { TegelModule } from "@scania/tegel-angular-17";
 import { HttpClient } from "@angular/common/http";
 import { AgGridAngular } from "ag-grid-angular"; // Angular Data Grid Component
 import { ColDef, GridApi, GridReadyEvent } from "ag-grid-community";
-import { AgGridModule } from "ag-grid-angular";
 
 @Component({
     selector: "app-ag-grid-column-search",
     encapsulation: ViewEncapsulation.None, // Disable Angular's style encapsulation
     templateUrl: "./ag-grid-column-search.component.html",
     styleUrls: ["ag-styles-loader.css"],
-    imports: [TegelModule, AgGridModule, AgGridAngular]
+    imports: [TegelModule, AgGridAngular]
 })
 export default class AgGridColumnSearchComponent {
   public columnDefs: ColDef[] = [
