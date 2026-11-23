@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import exampleData from "./exampleData.json";
 
 import { TegelModule } from "@scania/tegel-angular-17";
 
 @Component({
-    selector: "app-filter-table",
-    template: `
+  selector: "app-filter-table",
+  template: `
     <div class="tds-headline-02 tds-u-pb1 tds-u-pt3">Filter Table</div>
     <p>This Table can be filtered.</p>
     <tds-table
@@ -13,10 +13,12 @@ import { TegelModule } from "@scania/tegel-angular-17";
       compact-design="false"
       responsive
       no-min-width
-      >
+    >
       <tds-table-toolbar
+        #toolbar
         table-title="Filter"
         filter
+        tds-search-aria-label="Search vehicles"
         (tdsFilter)="handleFilter($event)"
       ></tds-table-toolbar>
       <tds-table-header>
@@ -38,7 +40,35 @@ import { TegelModule } from "@scania/tegel-angular-17";
           text-align="right"
         ></tds-header-cell>
       </tds-table-header>
-      <tds-table-body>
+      <tds-table-body
+        [emptyState]="tableData.length === 0 ? 'no-filtered-data' : 'none'"
+      >
+        <div
+          slot="no-filtered-data"
+          class="tds-u-flex-center"
+          style="padding: var(--unit-32);"
+        >
+          <div class="tds-u-flex tds-u-gap2" style="max-width: 560px;">
+            <tds-icon name="search" size="28px" aria-hidden="true"></tds-icon>
+            <div>
+              <h4 class="tds-headline-04" style="margin: 0;">No data found</h4>
+              <p
+                class="tds-body-02"
+                style="margin-block: var(--unit-16) 0; color: var(--color-text-defined);"
+              >
+                There's nothing to show here yet. Try adjusting your filters or
+                check back later.
+              </p>
+              <tds-button
+                variant="primary"
+                size="sm"
+                text="Clear filters"
+                style="margin-block-start: var(--unit-32);"
+                (click)="clearFilters()"
+              ></tds-button>
+            </div>
+          </div>
+        </div>
         @for (row of tableData; track row) {
           <tds-table-body-row>
             <tds-body-cell cell-key="truck">
@@ -57,19 +87,30 @@ import { TegelModule } from "@scania/tegel-angular-17";
         }
       </tds-table-body>
     </tds-table>
-    `,
-    styles: [``],
-    imports: [TegelModule]
+  `,
+  styles: [``],
+  imports: [TegelModule],
 })
 export class FilterTableComponent {
+  @ViewChild("toolbar", { read: ElementRef })
+  toolbar!: ElementRef<HTMLTdsTableToolbarElement>;
   tableData = exampleData;
+
+  clearFilters() {
+    const searchField =
+      this.toolbar.nativeElement.shadowRoot?.querySelector("tds-text-field");
+    if (searchField) {
+      searchField.value = "";
+    }
+    this.tableData = exampleData;
+  }
 
   handleFilter(event: any) {
     const { query } = event.detail;
     this.tableData = exampleData.filter((object) =>
       Object.values(object).some((value) =>
-        value.toString().toLowerCase().includes(query.toLowerCase())
-      )
+        value.toString().toLowerCase().includes(query.toLowerCase()),
+      ),
     );
   }
 }
