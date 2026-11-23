@@ -3,3 +3,7 @@ allowBuilds:
   esbuild: true
   lmdb: true
   msgpackr-extract: true
+
+overrides:
+  '@scania/tegel': '1.68.0-empty-state-beta.1'
+  '@scania/tegel-angular-17': '1.68.0-empty-state-beta.1'
